@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
     name: 'isBusinessOwner',
-    initialState: false,
+    initialState: true,
     reducers: {
         changeState: (state, action) => {
             state = action.payload

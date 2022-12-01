@@ -27,25 +27,86 @@ export const FormElement = () => {
                 className='mb-3'
                 >
                     <FloatingLabel
-                    label='Business Type input'
+                    label='Business Type'
                     >
-                    <FormSelect>
-                        <option>Coffee</option>
-                        <option>Food</option>
-                        <option>Clothing</option>
-                        <option>Home Goods</option>
-                        <option>Others</option>
-                    </FormSelect>
+                    <FormControl type='text' list='businessType' />
+                        <datalist id='businessType'>
+                            <option>Coffee</option>
+                            <option>Food</option>
+                            <option>Clothing</option>
+                            <option>Home Goods</option>
+                        </datalist>
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
                 className='mb-3 input'
                 >
+                    <Row>
+                        <Col>
                     <FloatingLabel
-                    label='Adress'
-                    >
-                    <FormControl type='text' />
+                    label='County'>
+                    <FormSelect type='text'>
+                        <option selected></option>
+                        <option>Jackson</option>
+                        <option>Clinton</option>
+                        <option>Caldwell</option>
+                        <option>Platte</option>
+                        <option>Clay</option>
+                        <option>Ray</option>
+                        <option>Leavenworth</option>
+                        <option>Wyandotte</option>
+                        <option>Lafayette</option>
+                        <option>Johnson</option>
+                        <option>Miami</option>
+                        <option>Cass</option>
+                        <option>Linn</option>
+                        <option>Bates</option>
+                    </FormSelect>
                     </FloatingLabel>
+                    </Col>
+                    <Col>
+                    <FloatingLabel
+                    label='City'
+                    >
+                    <FormControl type='text' list='city' />
+                    <datalist id='city'>
+                        <option>Cameron</option>
+                        <option>Hamilton</option>
+                        <option>Platte City</option>
+                        <option>Leavenworth</option>
+                        <option>Gladston</option>
+                        <option>Liberty</option>
+                        <option>Richmond</option>
+                        <option>Kansas City</option>
+                        <option>Shawnee</option>
+                        <option>Independence</option>
+                        <option>Prairrie Village</option>
+                        <option>Raytown</option>
+                        <option>Blue Springs</option>
+                        <option>Odessa</option>
+                        <option>Lee's Summit</option>
+                        <option>Grandview</option>
+                        <option>Overland Park</option>
+                        <option>Lenexa</option>
+                        <option>Leawood</option>
+                        <option>Olathe</option>
+                        <option>Gardner</option>
+                        <option>Paola</option>
+                        <option>Belton</option>
+                        <option>Raymore</option>
+                        <option>Pleasanton</option>
+                        <option>Butler</option>
+                    </datalist>
+                    </FloatingLabel>
+                    </Col>
+                    <Col>
+                    <FloatingLabel
+                    label='Zipcode'
+                    >
+                    <FormControl type='number' max='68000' min='64000' />
+                    </FloatingLabel>
+                    </Col>
+                    </Row>
                 </FormGroup>
                 <FormGroup
                 className='mb-3 input'
