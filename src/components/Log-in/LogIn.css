@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
+#log-in{
+    box-sizing: border-box;
+    width: 40vw;
+    height: 50vh;
+    margin: 2% 20%;
+    position: absolute;
+    min-width: 350px;
+    max-width: 550px;
+    max-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#svg-login{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    max-width: 550px;
+}
+
+#log-in-form{
+    position: relative;
+    z-index: 3;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    height: 50vh;
+    max-height: 550px;
+    padding: 10% 3% 12% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#logInTitle {
+    font-size: 2rem;
+    font-family: 'Fugaz One';
+    color: #AA283C;
+    padding-bottom: 6%;
+}
+#SignUpTitle {
+    font-size: 2rem;
+    font-family: 'Fugaz One';
+    color: #AA283C;
+    padding-bottom: 3%;
+}

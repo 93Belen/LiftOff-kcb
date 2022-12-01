@@ -1,0 +1,60 @@
+
+
+#doneButton {
+    float: right;
+    margin-top: 7%;
+    border: black 2px solid;
+    padding: 0.3rem 1.65rem;
+    font-size: 1.2rem;
+}
+
+#likeButton {
+    width: 40%;
+    align-self: flex-end;
+    min-width: fit-content;
+    border: 2px solid #FABD38;
+    color: black;
+}
+#likeButton:hover {
+    background: #FABD38;
+    color: white;
+}
+
+#deleteButton {
+    width: 40%;
+    align-self: flex-end;
+    margin-right: 1rem;
+    min-width: fit-content;
+    border: 2px solid #AA283C;
+    color: black;
+}
+
+#deleteButton:hover {
+    background: #AA283C;
+    color: white;
+}
+
+
+#addNewButton {
+    margin-bottom: 5%;
+    width: 20%;
+    background: white;
+    min-width: fit-content;
+    border: black 2px solid;
+    padding: 0.3rem 1.65rem;
+    font-size: 1.2rem;
+}
+
+#addNewButton:hover {
+    background: black;
+    color: white;
+}
+
+
+
+#signInButton{
+    width: 40%;
+    align-self: center;
+    justify-self: center;
+}
+

@@ -1,0 +1,36 @@
+#formDiv{
+    box-sizing: border-box;
+    position: absolute;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 45vw;
+    margin-left: 7%;
+    height: fit-content;
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+#svg{
+    position: absolute;
+    z-index: 0;
+    width: 35vw;
+    max-width: 500px;
+}
+#form{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 3;
+    padding: 10% 7%;
+    height: 70vh;
+    max-width: 500px;
+    width: 33vw;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+    align-content: center;
+}
+
+
+.input{
+    font-size: 0.95rem;
+    height: fit-content;
+}

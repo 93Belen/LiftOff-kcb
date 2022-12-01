@@ -1,0 +1,23 @@
+.county:hover {
+    fill: #AA283C;
+}
+
+.businessType:hover {
+    filter: none;
+    transform: translate(4px, 4px);
+}
+
+
+#map {
+    margin-left: -10%;
+    margin-right: 7%;
+}
+
+
+
+
+
+
+
+
+

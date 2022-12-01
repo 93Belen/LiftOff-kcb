@@ -1,0 +1,48 @@
+.navbar {
+    border-bottom: 3px black solid;
+    margin-top: -0.5rem;
+    width: 100vw;
+    height: 9rem;
+    padding: 1.5rem 0 1.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.navDiv {
+    max-width: 15vw;
+    width: auto;
+}
+
+
+#navBarSearcher {
+    box-sizing: border-box;
+    border: black solid 3px;
+    width: 20vw;
+    height: fit-content;
+    border-radius: 7px;
+}
+
+.navLinkAct {
+    padding: 0.5rem;
+    width: 50%;
+    text-align: center;
+    background: #AA283C;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+}
+.navLink {
+    border-radius: 2px;
+    padding: 0.5rem;
+    width: 50%;
+    text-align: center;
+    background: white;
+    text-decoration: none;
+    color: black;
+}
+.navLinkAct:hover{
+    color: white;
+}
+.navLink:hover{
+    color: #AA283C;
+}
+

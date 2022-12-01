@@ -1,0 +1,26 @@
+import { Container, Row, Col, Stack } from 'react-bootstrap';
+import { Map } from '../Map/Map';
+import './Body.css';
+import { Routes, Route } from 'react-router';
+import { CardsFeed } from '../CardsFeed/CardsFeed';
+import { LikedFeed } from '../CardsFeed/LikedFeed';
+
+export const Body = () => {
+    return (
+        <Stack
+        id='body'
+        direction='horizontal'
+        gap={5}
+        >
+        <Routes>
+        <Route path='/' element={
+            <Row>
+                <Col><Map /></Col>
+                <Col><CardsFeed/></Col>
+            </Row>
+        } />
+        <Route path='/liked' element={<LikedFeed />} />
+        </Routes>
+        </Stack>
+    )
+}
