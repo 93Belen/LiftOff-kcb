@@ -107,6 +107,16 @@ export const FormElement = () => {
                     </FloatingLabel>
                     </Col>
                     </Row>
+                    <Row
+                    className='mt-1'>
+                        <Col>
+                        <FloatingLabel
+                    label='Street and number'
+                    >
+                    <FormControl type='text' />
+                    </FloatingLabel>
+                        </Col>
+                    </Row>
                 </FormGroup>
                 <FormGroup
                 className='mb-3 input'
