@@ -10,10 +10,10 @@ export const NavBarSearcher = () => {
       className='m-4'>
         <NavLink className={({ isActive }) =>
               isActive ? 'navLinkAct' : 'navLink'
-            } to='/'>Search</NavLink>
+            } to='/user/home'>Search</NavLink>
         <NavLink className={({ isActive }) =>
               isActive ? 'navLinkAct' : 'navLink'
-            } to="/liked" >Liked</NavLink>
+            } to="/user/liked" >Liked</NavLink>
       </Stack>
       </div>
     )

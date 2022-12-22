@@ -1,10 +1,20 @@
 import { Button } from "react-bootstrap"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router";
 
 
 
 export const LogOut = () => {
+    const dispatch = useDispatch();
+
+    const logOut = () => {
+        
+    }
+
+
     return (
         <Button
+        onClick={logOut}
         id='log-out'
         variant='dark'
         >

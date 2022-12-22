@@ -13,7 +13,7 @@ export const BodyBusinessOwner = () => {
         gap={5}
         >
         <Routes>
-        <Route path='/' element={
+        <Route path='home' element={
             <Row>
                 <Col><CardsFeed/></Col>
                 <Col><FormElement /></Col>

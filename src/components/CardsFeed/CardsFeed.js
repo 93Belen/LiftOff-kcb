@@ -1,6 +1,6 @@
 import { Container, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectDisplayed, selectIsBusinessOwner, selectSignedIn } from "../../state-redux/Store/Selectors";
+import { selectBusinesses, selectIsBusinessOwner, selectSignedIn } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { CardComponent } from "../Card/CardComponent";
 import './CardsFeed.css';
@@ -10,7 +10,7 @@ export const CardsFeed = (props) => {
     const isSignedIn = useSelector(selectSignedIn);
 
     // Info to be displayed (Map-form filters allSlice and add it to displayedSlice)
-    const display = useSelector(selectDisplayed);
+    const businesses = useSelector(selectBusinesses);
 
     let addButton;
 

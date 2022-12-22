@@ -15,13 +15,13 @@ export const BodyHomePage = () => {
         gap={5}
         >
         <Routes>
-        <Route path='/home' element={
+        <Route path='/' element={
             <Row>
                 <Col><Map /></Col>
                 <Col><CardsFeed /></Col>
             </Row>
         } />
-        <Route path='/' element={
+        <Route path='/login' element={
             <LogIn />
         } />
         </Routes>

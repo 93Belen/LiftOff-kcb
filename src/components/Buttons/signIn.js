@@ -1,55 +1,61 @@
 import { Button } from "react-bootstrap"
 import './Buttons.css';
 import { useDispatch } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { selectJwt } from '../../state-redux/Store/Selectors';
+import store from "../../state-redux/Store/Store";
+
+
+
 
 // React Element => Sign-in Button
 export const SignIn = () => {
-    let dispatch = useDispatch();
+    const jwt = useSelector(selectJwt);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     // on click event
-    const handleClick = async() => {
+    const handleClick = () => {
         // Get email and password from the log-in form
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
 
         // Put info in request body
-        const data = new FormData();
-        data.append('email', email);
-        data.append('password', password);
+            const reqBody = {
+                "username": email,
+                "password": password
+            }   
 
-        try{
-            // Post request
-            const response = await fetch('http://localhost:8080/auth', {
-            method: 'POST',
-            body: data
-            });
-            // If post request is successful
-            if(response.ok){
+
+            const callBackEndAuth = async() => {
                 try{
-                    // Change Redux state to => Signed in
-                    dispatch({type: 'signedIn', payload: true});
 
-                    // Get info about user (is he a business owner)
-                    const response = await fetch('http://localhost:8080/isBusinessOwner');
+                    const response = await fetch("http://localhost:8080/api/auth/login", {
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        method: "post",
+                        body: JSON.stringify(reqBody)
+                    });
                     if(response.ok){
-                        // Store true or false in Redux state??
                         const jsonResponse = response.json();
-                        dispatch({type:'isBusinessOwner/setSate', payload: jsonResponse}) // Add then() with get request (if is business owner // if is not)
+                        return jsonResponse;
+                    }
+                    else {
+                        console.log("auth failed");
                     }
         
-                }
-                // if request for user info is unsuccessful: console.log error
-                catch(e){
+                } catch(e){
                     console.log(e);
                 }
             }
+            callBackEndAuth().then(response => dispatch({type: 'jwt/changeState', payload: response})).then(() => navigate("/user/home", {replace: true}));
 
-        }
-        // If log-in is unsuccessful: console.log error
-        catch(e){
-            console.log(e);
-        }
-        
+            //console.log(store.getState());
+            console.log(jwt);
+
 
     }
 

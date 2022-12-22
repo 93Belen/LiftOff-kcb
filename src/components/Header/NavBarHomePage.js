@@ -10,10 +10,10 @@ export const NavBarHomePage = () => {
       className='m-4'>
         <NavLink className={({ isActive }) =>
               isActive ? 'navLinkAct' : 'navLink'
-            } to='/home'>Home</NavLink>
+            } to='/'>Home</NavLink>
         <NavLink className={({ isActive }) =>
               isActive ? 'navLinkAct' : 'navLink'
-            } to="/" >Log-in</NavLink>
+            } to="/login" >Log-in</NavLink>
       </Stack>
       </div>
     )

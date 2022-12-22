@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
     name: 'signedIn',
-    initialState: true,
+    initialState: false,
     reducers: {
         changeState: (state, action) => {
             state = action.payload

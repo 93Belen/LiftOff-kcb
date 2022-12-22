@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
-    name: 'displayed',
-    initialState: [],
+    name: 'jwt',
+    initialState: null,
     reducers: {
         changeState: (state, action) => {
             state = action.payload
@@ -12,6 +12,6 @@ const options = {
 }
 
 
-const displayedSlice = createSlice(options);
-export const { changeState } = displayedSlice.actions;
-export default displayedSlice.reducer;
+const jwtSlice = createSlice(options);
+export const { changeState } = jwtSlice.actions;
+export default jwtSlice.reducer;
