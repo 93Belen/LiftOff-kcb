@@ -1,4 +1,4 @@
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Button } from "react-bootstrap"
+import { Nav, Container, FloatingLabel, Form, FormControl, FormGroup, Button } from "react-bootstrap"
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { SignIn } from "../Buttons/signIn";
@@ -28,7 +28,7 @@ export const LogIn = () => {
                     </FloatingLabel>
                 </FormGroup>
                 <SignIn />
-                <Link>Sign up</Link>
+                <Nav.Link href='/signup'>Sign up</Nav.Link>
             </Form>
             
         </Container>

@@ -11,6 +11,7 @@ import { LikedFeed } from './components/CardsFeed/LikedFeed';
 import { FormElement } from './components/Form/Form';
 import { HeaderSearcher } from './components/Header/HeaderSearcher';
 import { PrivateRoutes } from './components/PrivateRoutes/PrivateRoutes';
+import { SignUp } from './components/Log-in/SignUp';
 
 
 

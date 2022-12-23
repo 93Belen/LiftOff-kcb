@@ -1,4 +1,4 @@
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Button } from "react-bootstrap"
+import { Container, FloatingLabel, Form, FormControl, FormGroup, Button, FormCheck } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import './LogIn.css';
 
@@ -32,11 +32,15 @@ export const SignUp = () => {
                         <FormControl type='password' />
                     </FloatingLabel>
                 </FormGroup>
+                <FormGroup
+                className='mb-2'
+                >
+                    <FormCheck type='radio' label='I am a business owner' />
+                </FormGroup>
                 <Button
                 className='m-3 mb-0'
                 variant='warning'
                 >Done!</Button>
-                <Link>Log-in</Link>
             </Form>
             
         </Container>
