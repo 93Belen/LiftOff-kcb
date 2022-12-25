@@ -1,5 +1,6 @@
 import { Container, FloatingLabel, Form, FormControl, FormGroup, Button, FormCheck } from "react-bootstrap"
 import { Link } from "react-router-dom";
+import { SignupButton } from "../Buttons/Signup";
 import './LogIn.css';
 
 export const SignUp = () => {
@@ -15,14 +16,14 @@ export const SignUp = () => {
                 className='mb-3'
                 >
                     <FloatingLabel label='Email'>
-                        <FormControl type='email' />
+                        <FormControl id='register-email' type='email' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
                 className='mb-2'
                 >
                     <FloatingLabel label='Password'>
-                        <FormControl type='password' />
+                        <FormControl id='register-password' type='password' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
@@ -33,14 +34,12 @@ export const SignUp = () => {
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
-                className='mb-2'
+                id='role-group'
+                className='mb-1'
                 >
-                    <FormCheck type='radio' label='I am a business owner' />
+                    <FormCheck id='role' type='radio' label='I am a business owner' />
                 </FormGroup>
-                <Button
-                className='m-3 mb-0'
-                variant='warning'
-                >Done!</Button>
+                <SignupButton />
             </Form>
             
         </Container>
