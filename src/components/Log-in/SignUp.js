@@ -37,7 +37,7 @@ export const SignUp = () => {
                 id='role-group'
                 className='mb-1'
                 >
-                    <FormCheck id='role' type='radio' label='I am a business owner' />
+                    <FormCheck id='role' type='checkbox' label='I am a business owner' />
                 </FormGroup>
                 <SignupButton />
             </Form>
