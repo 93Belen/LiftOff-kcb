@@ -14,6 +14,9 @@ export const NavBarBusinessOwner = () => {
         <NavLink className={({ isActive }) =>
               isActive ? 'navLinkAct' : 'navLink'
             } to="/businessowner/search" >Search</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive ? 'navLinkAct' : 'navLink'
+        } to="/businessowner/liked" >Liked</NavLink>
       </Stack>
       </div>
     )

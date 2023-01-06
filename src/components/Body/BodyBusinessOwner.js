@@ -25,6 +25,12 @@ export const BodyBusinessOwner = () => {
             <Col><CardsFeed searchPage={true}/></Col>
         </Row>
         } />
+        <Route path='/liked' element={
+            <Row>
+            <Col><CardsFeed searchPage={false} /></Col>
+            <Col><CardsFeed searchPage={false}/></Col>
+        </Row>
+        } />
         </Routes>
         </Stack>
     )
