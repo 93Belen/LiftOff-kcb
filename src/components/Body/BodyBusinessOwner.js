@@ -15,7 +15,10 @@ export const BodyBusinessOwner = () => {
         <Routes>
         <Route path='home' element={
             <Row>
-                <Col><CardsFeed/></Col>
+                <Col>
+                <Row><h2 style={{fontSize: 24}}>My Businesses</h2></Row>
+                <Row><CardsFeed/></Row>
+                </Col>
                 <Col><FormElement /></Col>
             </Row>
         } />
