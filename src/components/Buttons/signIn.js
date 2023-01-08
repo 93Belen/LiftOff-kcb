@@ -90,9 +90,11 @@ export const SignIn = () => {
                 console.log(response.roles[0].name);
                 const userRole = response.roles[0].name;
                 if(userRole === "USER"){
+                    dispatch({type:'loginInfo/changeState', payload: 'user'})
                     navigate("/user/home", {replace: true});
                 }
                 else if(userRole === "OWNER"){
+                    dispatch({type:'loginInfo/changeState', payload: 'owner'})
                     navigate("/businessowner/home", {replace: true})
                 }
             })

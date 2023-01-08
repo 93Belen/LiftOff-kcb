@@ -4,6 +4,8 @@ import './Body.css';
 import { Routes, Route } from 'react-router';
 import { CardsFeed } from '../CardsFeed/CardsFeed';
 import { FormElement } from '../Form/Form';
+import { MyBusinessFeed } from '../CardsFeed/myBusinessesFeed';
+import { LikedFeed } from '../CardsFeed/LikedFeed';
 
 export const BodyBusinessOwner = () => {
     return (
@@ -15,23 +17,20 @@ export const BodyBusinessOwner = () => {
         <Routes>
         <Route path='home' element={
             <Row>
-                <Col>
-                <Row><h2 style={{fontSize: 24}}>My Businesses</h2></Row>
-                <Row><CardsFeed/></Row>
-                </Col>
+                <Col><MyBusinessFeed /></Col>
                 <Col><FormElement /></Col>
             </Row>
         } />
         <Route path='/search' element={
             <Row>
             <Col><Map /></Col>
-            <Col><CardsFeed searchPage={true}/></Col>
+            <Col><CardsFeed /></Col>
         </Row>
         } />
         <Route path='/liked' element={
             <Row>
-            <Col><CardsFeed searchPage={false} /></Col>
-            <Col><CardsFeed searchPage={false}/></Col>
+            <Col><LikedFeed /></Col>
+            <Col><LikedFeed /></Col>
         </Row>
         } />
         </Routes>

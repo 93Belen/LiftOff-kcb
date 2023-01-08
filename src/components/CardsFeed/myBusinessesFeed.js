@@ -1,30 +1,27 @@
-import { Container, Stack } from "react-bootstrap";
+import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { selectBusinesses, selectIsBusinessOwner } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { CardComponent } from "../Card/CardComponent";
+import { MyBusinessCard } from "../Card/myBusinessesCard";
 import './CardsFeed.css';
 
-export const CardsFeed = () => {
- 
-
-    // Info to be displayed (Map-form filters allSlice and add it to displayedSlice)
-    const businesses = useSelector(selectBusinesses);
-
-    let addButton;
-
+export const MyBusinessFeed = () => {
 
 
 
     return (
         <Container id='feed'>
-            {addButton}
+            <Row>
+                <Col><h2 style={{fontSize: 24}}>My Businesses</h2></Col>
+                <Col><AddNew /></Col>
+            </Row>
             <Stack
             gap={4}
             direction='vertical'>
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
+                <MyBusinessCard />
+                <MyBusinessCard />
+                <MyBusinessCard />
             </Stack>
         </Container>
     )

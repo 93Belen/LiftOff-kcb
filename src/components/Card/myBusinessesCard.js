@@ -7,7 +7,7 @@ import { Like } from "../Buttons/Like";
 import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 
-export const CardComponent = () => {
+export const MyBusinessCard = () => {
 
 
     return (
@@ -26,7 +26,7 @@ export const CardComponent = () => {
             </Row>
             <Row>
                 <Col><p id='adress'>Adresss</p></Col>
-                <Col className='right-col'><Like /></Col>
+                <Col className='right-col'><Delete /><Edit /></Col>
             </Row>
         </Card>
     )

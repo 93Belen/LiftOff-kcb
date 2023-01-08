@@ -1,5 +1,6 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { CardComponent } from "../Card/CardComponent";
+import { LikedCard } from "../Card/likedCard";
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
@@ -9,16 +10,16 @@ export const LikedFeed = () => {
             gap={4}
             direction='vertical'>
                 <Row>
-                    <Col><CardComponent likedPage={true} /></Col>
-                    <Col><CardComponent likedPage={true} /></Col>
+                    <Col><LikedCard /></Col>
+                    <Col><LikedCard /></Col>
                 </Row>
                 <Row>
-                    <Col><CardComponent likedPage={true} /></Col>
-                    <Col><CardComponent likedPage={true} /></Col>
+                    <Col><LikedCard /></Col>
+                    <Col><LikedCard /></Col>
                 </Row>
                 <Row>
-                    <Col><CardComponent likedPage={true} /></Col>
-                    <Col><CardComponent likedPage={true} /></Col>
+                    <Col><LikedCard /></Col>
+                    <Col><LikedCard /></Col>
                 </Row>
             </Stack>
         </Container>

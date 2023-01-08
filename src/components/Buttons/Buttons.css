@@ -43,6 +43,7 @@
     border: black 2px solid;
     padding: 0.3rem 1.65rem;
     font-size: 1.2rem;
+    float: right;
 }
 
 #addNewButton:hover {

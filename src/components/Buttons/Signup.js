@@ -12,8 +12,17 @@ import store from "../../state-redux/Store/Store";
 
 // React Element => Sign-in Button
 export const SignupButton = () => {
+
+    // USE THIS TO NAVIGATE TO EACH HOME PAGE
+    const navigate = useNavigate();
+    // navigate("/user/home", {replace: true});
+    // navigate("/businessowner/home", {replace: true})
+
+
+
     // on click event
     const handleClick = async() => {
+
         // Get email and password from the log-in form
         let email = document.getElementById('register-email').value;
         let password = document.getElementById('register-password').value;
@@ -25,9 +34,10 @@ export const SignupButton = () => {
                 "username": email,
                 "password": password,
                 "role": role
-            }   
+            }  
+             
 
-            console.log(reqBody);
+            //console.log(reqBody);
                 try{
 
                     const response = await fetch("http://localhost:8080/api/auth/register", {
