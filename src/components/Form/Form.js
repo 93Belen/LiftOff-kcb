@@ -1,4 +1,5 @@
 import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
+import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
 
@@ -189,7 +190,8 @@ export const FormElement = () => {
                 </FormGroup>
                     </Col>
                     <Col>
-                    <DoneEditing />
+                    {/* Done Editing and Done Adding buttons have to be changed when needed */}
+                    <DoneAdding />
                     </Col>
                 </Row>
             </Form>
