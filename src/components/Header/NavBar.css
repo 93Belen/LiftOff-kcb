@@ -9,7 +9,7 @@
 }
 .navDiv {
     max-width: 15vw;
-    width: auto;
+    width: 100%;
 }
 
 
@@ -46,3 +46,12 @@
     color: #AA283C;
 }
 
+
+@media screen and (max-width: 900px) {
+ .navbar{
+     width: 100vw;
+     height: 5rem;
+     padding: 0;
+ }
+
+}

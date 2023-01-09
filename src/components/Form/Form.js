@@ -130,6 +130,7 @@ export const FormElement = () => {
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
+                id='switch'
                 className='mb-3 input'
                 >
                     <Container>

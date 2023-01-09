@@ -52,3 +52,30 @@
 #role-group{
     text-align: left;
 }
+
+@media screen and (max-width: 900px) {
+    #log-in{
+    width: 90vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+    justify-content: center;
+    margin-top: -30%;
+    padding: 0;
+    }
+    #svg-login{
+        display: none;
+    }
+    #log-in-form{
+        width: 100%;
+        max-width: 90vw;
+        text-align: center;
+        height: 90vh;
+        padding: 0;
+    }
+    #sign-up-link{
+        color: white;
+    }
+}

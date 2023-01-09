@@ -14,10 +14,10 @@ export const HeaderBusiness = () => {
             <Row
             className='navbar'
             >
-                <Col xs={2} md={2} lg={2}><LogoName /></Col>
-                <Col xs={2} md={2} lg={2}><LogoDecor/></Col>
-                <Col xs={2} md={2} lg={2}><NavBarBusinessOwner /></Col>
-                <Col xs={1} md={1} lg={1}><LogOut /></Col>
+                <Col xs={4} md={4} lg={4}><LogoName /></Col>
+                <Col xs={0} md={0} lg={4}><LogoDecor/></Col>
+                <Col xs={4} md={4} lg={3}><NavBarBusinessOwner /></Col>
+                <Col xs={4} md={4} lg={1}><LogOut /></Col>
             </Row>
         </Container>
     )

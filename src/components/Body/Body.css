@@ -1,9 +1,20 @@
 #body {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     margin: 4rem 0 4rem 5rem;
     align-self: center;
     align-items: flex-start;
     justify-content: space-between;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+    #body {
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 

@@ -10,14 +10,13 @@ export const BodyHomePage = () => {
     return (
         <Stack
         id='body'
-        direction='horizontal'
         gap={5}
         >
         <Routes>
         <Route path='/' element={
             <Row>
-                <Col><Map /></Col>
-                <Col><CardsFeed /></Col>
+                <Col lg={6}><Map /></Col>
+                <Col lg={6}><CardsFeed /></Col>
             </Row>
         } />
         <Route path='/login' element={
