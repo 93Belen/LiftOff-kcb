@@ -8,7 +8,7 @@ export const Like = () => {
     const navigate = useNavigate();
     // USE THIS TO CHANGE LIKED IN REDUX
      // dispatch({type:'liked/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
-    const jwt = useSelector(selectJwt);
+     const jwt = sessionStorage.getItem("jwt");
 
     const onClick = () => {
         // If it's not logged in -> redirect to Log-in form
