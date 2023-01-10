@@ -2,11 +2,8 @@ import { Button } from "react-bootstrap"
 import './Buttons.css';
 import { useDispatch } from "react-redux";
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { selectJwt } from '../../state-redux/Store/Selectors';
-import store from "../../state-redux/Store/Store";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
+
 
 
 
@@ -15,8 +12,6 @@ import { selectLoginInfo } from "../../state-redux/Store/Selectors";
 
 // React Element => Sign-in Button
 export const SignIn = () => {
-    const jwt = useSelector(selectJwt);
-    const loginInfo = useSelector(selectLoginInfo);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -86,8 +81,11 @@ export const SignIn = () => {
 
 
 
-            callBackEndAuth().then(response => dispatch({type: 'jwt/changeState', payload: response})).then((response)=> getUserInfo(response)).then((response)=> {
-                console.log(response.roles[0].name);
+            callBackEndAuth().then(response => {
+                sessionStorage.setItem('jwt', response["accessToken"])
+                return dispatch({type: 'jwt/changeState', payload: response})
+            }).then((response)=> getUserInfo(response)).then((response)=> {
+                //console.log(response.roles[0].name);
                 const userRole = response.roles[0].name;
                 if(userRole === "USER"){
                     dispatch({type:'loginInfo/changeState', payload: 'user'})
@@ -99,7 +97,6 @@ export const SignIn = () => {
                 }
             })
             
-
 
     }
 

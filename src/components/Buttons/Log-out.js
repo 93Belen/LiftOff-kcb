@@ -6,9 +6,11 @@ import { useNavigate } from "react-router";
 
 export const LogOut = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const logOut = () => {
-        
+        sessionStorage.removeItem('jwt')
+        navigate("/login", {replace: true})
     }
 
 
