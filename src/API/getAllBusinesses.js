@@ -3,7 +3,7 @@ export const getAllBusinesses = async(jwt) => {
 
         const response = await fetch("http://localhost:8080/api/business/getall", {
             headers: {
-                "Authorization": jwt
+                "Authorization": "Bearer " + jwt
             }
         });
         if(response.ok){
