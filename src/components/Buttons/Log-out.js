@@ -9,7 +9,7 @@ export const LogOut = () => {
     const navigate = useNavigate();
 
     const logOut = () => {
-        sessionStorage.removeItem('jwt')
+        localStorage.removeItem('jwt')
         navigate("/login", {replace: true})
     }
 

@@ -5,7 +5,7 @@ import { selectJwt } from '../../state-redux/Store/Selectors';
 import { Searcher } from '../Searcher/Searcher';
 
 export const PrivateRoutes = () => {
-    const jwt = sessionStorage.getItem("jwt");
+    const jwt = localStorage.getItem("jwt");
 
 
     return jwt ? <Outlet /> : <Navigate to="/login" />;

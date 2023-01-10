@@ -82,7 +82,7 @@ export const SignIn = () => {
 
 
             callBackEndAuth().then(response => {
-                sessionStorage.setItem('jwt', response["accessToken"])
+                localStorage.setItem('jwt', response["accessToken"])
                 return dispatch({type: 'jwt/changeState', payload: response})
             }).then((response)=> getUserInfo(response)).then((response)=> {
                 //console.log(response.roles[0].name);

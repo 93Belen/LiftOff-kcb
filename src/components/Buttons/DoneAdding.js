@@ -4,7 +4,7 @@ import { selectJwt } from '../../state-redux/Store/Selectors';
 import './Buttons.css';
 
 export const DoneAdding = () => {
-    const jwt = sessionStorage.getItem("jwt");
+    const jwt = localStorage.getItem("jwt");
 
 
     // USE THIS TO ADD INFO INTO REDUX (bussinesses & myBusiness)

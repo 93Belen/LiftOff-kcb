@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectJwt } from '../../state-redux/Store/Selectors';
 
 export const Delete = () => {
-    const jwt = sessionStorage.getItem("jwt");
+    const jwt = localStorage.getItem("jwt");
 
     // USE THIS TO CHANGE INFO IN REDUX (bussinesses & myBusiness)
     const dispatch = useDispatch();
