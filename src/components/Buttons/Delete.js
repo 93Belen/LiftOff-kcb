@@ -1,8 +1,10 @@
 import { Button } from 'react-bootstrap';
 import './Buttons.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectJwt } from '../../state-redux/Store/Selectors';
 
 export const Delete = () => {
+    const jwt = useSelector(selectJwt);
 
     // USE THIS TO CHANGE INFO IN REDUX (bussinesses & myBusiness)
     const dispatch = useDispatch();

@@ -1,8 +1,10 @@
 import { Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectJwt } from '../../state-redux/Store/Selectors';
 import './Buttons.css';
 
 export const DoneAdding = () => {
+    const jwt = useSelector(selectJwt);
 
 
     // USE THIS TO ADD INFO INTO REDUX (bussinesses & myBusiness)
