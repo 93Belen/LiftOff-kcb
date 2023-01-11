@@ -29,6 +29,8 @@ export const PrivateRouteOwner = () => {
         }
         else {
             canLogIn = false
+            sessionStorage.removeItem('jwt')
+            sessionStorage.removeItem('role')
         }
     }
 
