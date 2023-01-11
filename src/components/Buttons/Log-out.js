@@ -10,6 +10,7 @@ export const LogOut = () => {
 
     const logOut = () => {
         localStorage.removeItem('jwt')
+        localStorage.removeItem('role')
         navigate("/login", {replace: true})
     }
 

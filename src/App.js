@@ -10,7 +10,8 @@ import { CardsFeed } from './components/CardsFeed/CardsFeed';
 import { LikedFeed } from './components/CardsFeed/LikedFeed';
 import { FormElement } from './components/Form/Form';
 import { HeaderSearcher } from './components/Header/HeaderSearcher';
-import { PrivateRoutes } from './components/PrivateRoutes/PrivateRoutes';
+import { PrivateRouteUser } from './components/PrivateRoutes/PrivateRouteUser';
+import { PrivateRouteOwner} from './components/PrivateRoutes/PrivateRouteOwner';
 import { SignUp } from './components/Log-in/SignUp';
 
 
@@ -31,10 +32,12 @@ function App() {
               <Route path='/*' element={
               <HomePage />
               }></Route>
-              <Route element={<PrivateRoutes />} >
+              <Route element={<PrivateRouteUser />} >
                 <Route path='/user/*' element={
                   <Searcher /> 
                 }></Route>
+                </Route>
+                <Route element={<PrivateRouteOwner />} >
                 <Route path='/businessowner/*' element={
                   <BusinessOwner />
                 }></Route>
