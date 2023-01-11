@@ -20,6 +20,6 @@ export const DoneEditing = () => {
         <Button
         id='doneButton'
         variant='warning'
-        >Done</Button>
+        >Edit</Button>
     )
 }

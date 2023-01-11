@@ -4,6 +4,7 @@ import likedSlice from "../Slices/likedSlice";
 import myBusinessSlice from "../Slices/myBusinessSlice";
 import jwtSlice from '../Slices/jwt';
 import loginInfoSlice from "../Slices/loginInfoSlice";
+import editingAddingSlice from "../Slices/editing-adding";
 
 const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
         liked: likedSlice,
         myBusiness: myBusinessSlice,
         jwt: jwtSlice,
-        loginInfo: loginInfoSlice
+        loginInfo: loginInfoSlice,
+        editingAdding: editingAddingSlice
     }
 })
 

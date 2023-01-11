@@ -90,6 +90,6 @@ export const DoneAdding = () => {
         onClick={onClick}
         id='doneButton'
         variant='warning'
-        >Done</Button>
+        >Add</Button>
     )
 }
