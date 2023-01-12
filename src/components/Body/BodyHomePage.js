@@ -21,7 +21,7 @@ export const BodyHomePage = () => {
                 </Col>
                 <Col lg={6}>
                   <CardsFeed />
-              </Col>
+                </Col>
             </Row>
           }
         />

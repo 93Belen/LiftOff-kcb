@@ -6,7 +6,6 @@
     height: 50vh;
     margin: 2% 20%;
     position: absolute;
-    min-width: 350px;
     max-width: 550px;
     max-height: 550px;
     display: flex;
@@ -55,6 +54,7 @@
 
 @media screen and (max-width: 900px) {
     #log-in{
+    box-sizing: border-box;
     width: 90vw;
     height: fit-content;
     display: flex;
@@ -89,5 +89,4 @@
     .form-check-label{
         color: white;
     }
-
 }

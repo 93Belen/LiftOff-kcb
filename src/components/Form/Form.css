@@ -51,10 +51,13 @@
         position: relative;
     }
     #form{
-        padding: 0;
+        padding:  10% 5%;
         max-width: 90vw;
         width: 95%;
         height: fit-content;
+        align-self: center;
+        align-content: center;
+        align-items: center;
     }
     #switch{
         color: white;
