@@ -42,7 +42,7 @@
     color: #AA283C;
     padding-bottom: 6%;
 }
-#SignUpTitle {
+#signUpTitle {
     font-size: 2rem;
     font-family: 'Fugaz One';
     color: #AA283C;
@@ -78,4 +78,16 @@
     #sign-up-link{
         color: white;
     }
+    #logInTitle{
+        color: white;
+        text-align: start;
+    }
+    #signUpTitle{
+        color: white;
+        text-align: start;
+    }
+    .form-check-label{
+        color: white;
+    }
+
 }

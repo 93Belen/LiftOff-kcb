@@ -13,7 +13,7 @@ export const MyBusinessFeed = () => {
     return (
         <Container id='feed'>
             <Row>
-                <Col><h2 style={{fontSize: 24}}>My Businesses</h2></Col>
+                <Col><h2 id='my-businesses-h2' style={{fontSize: 24}}>My Businesses</h2></Col>
                 <Col><AddNew /></Col>
             </Row>
             <Stack
