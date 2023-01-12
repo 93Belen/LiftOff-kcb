@@ -54,4 +54,8 @@
      padding: 0;
  }
 
+ .logout-btn {
+    display: none;
+ }
+
 }
