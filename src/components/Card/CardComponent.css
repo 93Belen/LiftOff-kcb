@@ -1,4 +1,4 @@
-#cardComponent {
+.cardComponent {
     box-sizing: border-box;
     min-height: 200px;
     height: fit-content;
@@ -8,10 +8,11 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     padding: 1.5rem;
+    text-align: start;
 }
 
 .right-col{
-    text-align: end;
+    text-align: right;
 }
 a{
     color: #AA283C;
@@ -31,5 +32,7 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
- 
+ .cardComponent{
+     box-shadow: 4px 4px 0px #AA283C;
+ }
 }
