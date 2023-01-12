@@ -5,6 +5,7 @@
     align-self: center;
     align-items: flex-start;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 .accordion-container {
