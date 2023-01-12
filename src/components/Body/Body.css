@@ -1,12 +1,14 @@
 #body {
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     margin: 4rem 0 4rem 5rem;
     align-self: center;
     align-items: flex-start;
     justify-content: space-between;
-    height: fit-content;
-    min-height: 100vh;
+}
+
+.accordion-container {
+    display: none;
 }
 
 @media screen and (max-width: 900px) {
@@ -15,6 +17,16 @@
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .accordion-container {
+        display: block;
+        width: 75%;
+        margin: 0 auto 1rem auto;
+    }
+
+    .map {
+        display: hidden;
     }
 }
 
