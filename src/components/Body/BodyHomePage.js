@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router";
 import { CardsFeed } from "../CardsFeed/CardsFeed";
 import { LogIn } from "../Log-in/LogIn";
 import { SignUp } from "../Log-in/SignUp";
-import MobileAccordion from "../Form/MobileAccordion";
+import MobileAccordion from "../MobileAccordion.js/MobileAccordion";
 
 export const BodyHomePage = () => {
   return (
@@ -15,16 +15,12 @@ export const BodyHomePage = () => {
           path="/"
           element={
               <Row>
-                  <Col lg={6}>
-                <Map />
-              </Col>
-              <Col lg={6}>
-                <div className="accordion-container">
+                <Col lg={6}>
                   <MobileAccordion />
-                </div>
-              </Col>
-              <Col lg={6}>
-                <CardsFeed />
+                  <Map />
+                </Col>
+                <Col lg={6}>
+                  <CardsFeed />
               </Col>
             </Row>
           }
