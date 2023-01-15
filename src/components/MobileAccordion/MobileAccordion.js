@@ -8,7 +8,7 @@ import { ownerType } from "../../svg-buttons/ownerType";
 
 function MobileAccordion() {
   return (
-    <Accordion flush class="accordion filter-button">
+    <Accordion flush class="accordion" className="filter-button">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Choose county</Accordion.Header>
         <Accordion.Body>

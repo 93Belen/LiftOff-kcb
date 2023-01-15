@@ -3,6 +3,7 @@
   justify-content: space-around;
   text-align: center;
   margin: 3rem;
+  box-shadow: 10px 10px red;
 }
 .accordion {
   display: none;
