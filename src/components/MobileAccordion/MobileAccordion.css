@@ -1,0 +1,15 @@
+.filter-button {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 3rem;
+}
+.accordion {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .accordion {
+    display: block;
+  }
+}

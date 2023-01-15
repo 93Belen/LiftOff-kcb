@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router";
 import { CardsFeed } from "../CardsFeed/CardsFeed";
 import { LogIn } from "../Log-in/LogIn";
 import { SignUp } from "../Log-in/SignUp";
-import MobileAccordion from "../MobileAccordion.js/MobileAccordion";
+import MobileAccordion from "../MobileAccordion/MobileAccordion";
 
 export const BodyHomePage = () => {
   return (
@@ -14,14 +14,14 @@ export const BodyHomePage = () => {
         <Route
           path="/"
           element={
-              <Row>
-                <Col lg={6}>
-                  <MobileAccordion />
-                  <Map />
-                </Col>
-                <Col lg={6}>
-                  <CardsFeed />
-                </Col>
+            <Row>
+              <Col lg={6}>
+                <MobileAccordion />
+                <Map />
+              </Col>
+              <Col lg={6}>
+                <CardsFeed />
+              </Col>
             </Row>
           }
         />
