@@ -57,5 +57,25 @@
  .logout-btn {
     display: none;
  }
+ #collasible-nav-dropdown{
+     background-color: black;
+     padding: 0;
+ }
+ #drop-down-button{
+     background-color: black;
+     border: none
+ }
+ .dropdown-menu {
+     background-color: #FFFFFF;
+     padding:  1.2rem 2rem;
+     color: black;
+     text-align: center;
+    font-family: "Roboto Condensed";
+    font-size: 2rem;
+ }
+ .navLinkAct {
+     color: #AA283C;
+     background-color: #FFFFFF;
+ }
 
 }

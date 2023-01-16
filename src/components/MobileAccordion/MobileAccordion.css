@@ -1,6 +1,6 @@
 .filter-button {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: left;
   margin: 0 5rem;
 }
