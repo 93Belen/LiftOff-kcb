@@ -19,7 +19,7 @@ export const NavBarHomePage = () => {
   if (width > breakpoint) {
     return (
       <div className="navDiv">
-            <Stack id="navBarSearcher" direction="horizontal" className="m-4">
+        <Stack id="navBarSearcher" direction="horizontal" className="m-4">
           <NavLink
             className={({ isActive }) => (isActive ? "navLinkAct" : "navLink")}
             to="/"

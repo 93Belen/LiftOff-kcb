@@ -1,6 +1,11 @@
-#logoName{
-    height: 6rem;
-    max-width: 20vw;
-    width: auto;
+#logoName {
+  height: 6rem;
+  max-width: 20vw;
+  width: auto;
 }
 
+@media screen and (max-width: 900px) {
+  #logoName {
+    padding: 15px;
+  }
+}
