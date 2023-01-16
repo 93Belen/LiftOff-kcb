@@ -37,16 +37,30 @@ export const NavBarSearcher = () => {
     );
   } else {
     return (
-      <Button variant="secondary" align="start">
+      <Button id='drop-down-button' variant="secondary" align="start">
         <NavDropdown
           title="Menu"
           id="collasible-nav-dropdown"
           class="dropdownLink"
           menuVariant="dark"
         >
-          <NavDropdown.Item href="/user/home">Search</NavDropdown.Item>
-          <NavDropdown.Item href="/user/liked">Liked</NavDropdown.Item>
-          <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+          <NavDropdown.Item>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navLinkAct" : "navLink")}
+            to="/user/home"
+          >
+            Search
+          </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navLinkAct" : "navLink")}
+            to="/user/liked"
+          >
+            Liked
+          </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>Logout</NavDropdown.Item>
         </NavDropdown>
       </Button>
     );
