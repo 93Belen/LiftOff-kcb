@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin: 3rem;
-  box-shadow: 10px 10px red;
+  margin: 0 5rem;
 }
 .accordion {
   display: none;
@@ -12,5 +11,42 @@
 @media screen and (max-width: 900px) {
   .accordion {
     display: block;
+    border: 3px solid #000000;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+  }
+
+  .accordion-button {
+    background: black;
+    color: white;
+    margin: 1rem 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem;
+    border: none;
+  }
+
+  .accordion button {
+    margin-bottom: 0;
+  }
+
+  .accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: white;
+    background-color: black;
+  }
+
+  .accordion-body {
+    border-radius: 15px;
+  }
+
+  .accordion-body:not(.collapsed) {
+    border-radius: 15px;
   }
 }
