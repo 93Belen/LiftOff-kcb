@@ -7,6 +7,7 @@ import { FormElement } from '../Form/Form';
 import { MyBusinessFeed } from '../CardsFeed/myBusinessesFeed';
 import { LikedFeed } from '../CardsFeed/LikedFeed';
 import { First } from 'react-bootstrap/esm/PageItem';
+import MobileAccordion from '../MobileAccordion/MobileAccordion';
 
 export const BodyBusinessOwner = () => {
     return (
@@ -22,10 +23,13 @@ export const BodyBusinessOwner = () => {
             </Row>
         } />
         <Route path='/search' element={
-            <Row>
-            <Col lg={6}><Map /></Col>
-            <Col lg={6}><CardsFeed /></Col>
-        </Row>
+             <Row>
+             <Col>
+                 <MobileAccordion />
+                 <Map />
+             </Col>
+             <Col><CardsFeed/></Col>
+         </Row>
         } />
         <Route path='/liked' element={
             <Row>

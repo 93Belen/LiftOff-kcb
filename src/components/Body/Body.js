@@ -4,6 +4,7 @@ import './Body.css';
 import { Routes, Route } from 'react-router';
 import { CardsFeed } from '../CardsFeed/CardsFeed';
 import { LikedFeed } from '../CardsFeed/LikedFeed';
+import MobileAccordion from '../MobileAccordion/MobileAccordion';
 
 export const Body = () => {
     return (
@@ -15,7 +16,10 @@ export const Body = () => {
         <Routes>
         <Route path='/home' element={
             <Row>
-                <Col><Map /></Col>
+                <Col>
+                    <MobileAccordion />
+                    <Map />
+                </Col>
                 <Col><CardsFeed/></Col>
             </Row>
         } />

@@ -44,19 +44,19 @@ export const NavBarBusinessOwner = () => {
           <line x1="2.15054" y1="22.8999" x2="48.1505" y2="22.8999" stroke="#F8F6F5" stroke-width="4" stroke-linecap="round"/>
           </svg>} id="collasible-nav-dropdown" class="dropdownLink" menuVariant='dark'>
                 <NavDropdown.Item>
-                <NavLink className={({ isActive }) =>
-                isActive ? 'navLinkAct' : 'navLink'
-                } to='/businessowner/home'>Home</NavLink>
+                  <NavLink className={({ isActive }) =>
+                  isActive ? 'navLinkAct' : 'navLink'
+                  } to='/businessowner/home'>Home</NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                <NavLink className={({ isActive }) =>
-                isActive ? 'navLinkAct' : 'navLink'
-                } to="/businessowner/search" >Search</NavLink>
+                  <NavLink className={({ isActive }) =>
+                  isActive ? 'navLinkAct' : 'navLink'
+                  } to="/businessowner/search" >Search</NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                <NavLink className={({ isActive }) =>
-                isActive ? 'navLinkAct' : 'navLink'
-                } to="/businessowner/liked" >Liked</NavLink>
+                  <NavLink className={({ isActive }) =>
+                  isActive ? 'navLinkAct' : 'navLink'
+                  } to="/businessowner/liked" >Liked</NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>Logout</NavDropdown.Item>
               </NavDropdown>

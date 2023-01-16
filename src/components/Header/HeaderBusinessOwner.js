@@ -17,7 +17,7 @@ export const HeaderBusiness = () => {
                 <Col><LogoName /></Col>
                 <Col><LogoDecor/></Col>
                 <Col><NavBarBusinessOwner /></Col>
-                <Col className='logout-btn' xs={4} md={4} lg={1}><LogOut /></Col>
+                <Col className='logout-btn' xs={1} md={1} lg={1}><LogOut /></Col>
             </Row>
         </Container>
     )
