@@ -39,7 +39,11 @@ export const NavBarSearcher = () => {
     return (
       <Button id='drop-down-button' variant="secondary" align="start">
         <NavDropdown
-          title="Menu"
+          title={<svg width="51" height="30" viewBox="0 0 51 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="2.15054" y1="2.8999" x2="48.1505" y2="2.8999" stroke="#F8F6F5" stroke-width="4" stroke-linecap="round"/>
+          <line x1="2.15054" y1="12.8999" x2="48.1505" y2="12.8999" stroke="#F8F6F5" stroke-width="4" stroke-linecap="round"/>
+          <line x1="2.15054" y1="22.8999" x2="48.1505" y2="22.8999" stroke="#F8F6F5" stroke-width="4" stroke-linecap="round"/>
+          </svg>}
           id="collasible-nav-dropdown"
           class="dropdownLink"
           menuVariant="dark"
