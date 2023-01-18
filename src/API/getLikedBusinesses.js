@@ -3,7 +3,7 @@ export const getLikedBusinesses = async(jwt) => {
 
         const response = await fetch("http://localhost:8080/api/user/getliked", {
             headers: {
-                "Authorization": jwt
+                "Authorization": "Bearer " + jwt
             }
         });
         if(response.ok){
