@@ -1,4 +1,6 @@
 import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
+import { useSelector } from "react-redux";
+import { selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
@@ -6,6 +8,15 @@ import "./Form.css";
 
 
 export const FormElement = () => {
+    const editingAdding = useSelector(selectEditingAdding);
+
+    let button;
+    if(editingAdding === 'adding'){
+        button = <DoneAdding />
+    }
+    else if(editingAdding === 'editing'){
+        button = <DoneEditing />
+    }
     
     return (
         <Container
@@ -210,7 +221,7 @@ export const FormElement = () => {
                     </Col>
                     <Col>
                     {/* Done Editing and Done Adding buttons have to be changed when needed */}
-                    <DoneAdding />
+                    {button}
                     </Col>
                 </Row>
             </Form>
