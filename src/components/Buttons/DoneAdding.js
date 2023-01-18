@@ -43,21 +43,21 @@ export const DoneAdding = () => {
 
 
     const reqBody = {
-        "business-name": businessName,
-        "business-type": businessType,
+        "name": businessName,
+        "businessType": businessType,
         "county": county,
         "city": city,
         "zipcode": zipcode,
         "address-description": addressDescription,
         "drescription": description,
         "website": website,
-        "owner": owner
+        "ownerType": owner
     }
 
     const postInfo = async(jwt) => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/business/add", {
+            const response = await fetch("http://localhost:8080/api/businesses", {
                 headers: {
                     "Content-type": "application/json",
                     "Authorization": jwt
