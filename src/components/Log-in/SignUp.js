@@ -30,7 +30,7 @@ export const SignUp = () => {
                 className='mb-2'
                 >
                     <FloatingLabel label='Confirm Password'>
-                        <FormControl type='password' />
+                        <FormControl id='confirm-password' type='password' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
