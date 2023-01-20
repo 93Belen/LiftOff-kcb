@@ -1,4 +1,6 @@
 import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
+import { useSelector } from "react-redux";
+import { selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
@@ -6,6 +8,15 @@ import "./Form.css";
 
 
 export const FormElement = () => {
+    const editingAdding = useSelector(selectEditingAdding);
+
+    let button;
+    if(editingAdding === 'adding'){
+        button = <DoneAdding />
+    }
+    else if(editingAdding === 'editing'){
+        button = <DoneEditing />
+    }
     
     return (
         <Container
@@ -22,7 +33,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Name'
                     >
-                    <FormControl type='text' />
+                    <FormControl id='business-name' type='text' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
@@ -31,7 +42,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Business Type'
                     >
-                    <FormControl type='text' list='businessType' />
+                    <FormControl id='business-type' type='text' list='businessType' />
                         <datalist id='businessType'>
                             <option>Coffee</option>
                             <option>Food</option>
@@ -47,7 +58,7 @@ export const FormElement = () => {
                         <Col>
                     <FloatingLabel
                     label='County'>
-                    <FormSelect type='text'>
+                    <FormSelect id='county' type='text'>
                         <option selected></option>
                         <option>Jackson</option>
                         <option>Clinton</option>
@@ -70,7 +81,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='City'
                     >
-                    <FormControl type='text' list='city' />
+                    <FormControl id='business-city' type='text' list='city' />
                     <datalist id='city'>
                         <option>Cameron</option>
                         <option>Hamilton</option>
@@ -105,7 +116,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Zipcode'
                     >
-                    <FormControl type='number' max='68000' min='64000' />
+                    <FormControl id='zipcode' type='number' max='68000' min='64000' />
                     </FloatingLabel>
                     </Col>
                     </Row>
@@ -115,7 +126,7 @@ export const FormElement = () => {
                         <FloatingLabel
                     label='Street and number'
                     >
-                    <FormControl type='text' />
+                    <FormControl id='address-description' type='text' />
                     </FloatingLabel>
                         </Col>
                     </Row>
@@ -126,23 +137,29 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Description'
                     >
-                    <FormControl as='textarea' />
+                    <FormControl id='description' as='textarea' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
-                id='switch'
+                id='owner'
                 className='mb-3 input'
                 >
                     <Container>
                     <Row>
                         <Col>
                             <FormCheck
+                            id='woman-owned'
+                            className='ownerType'
+                            value='woman'
                             type='switch'
                             label='Woman'
                             />
                         </Col>
                         <Col>
                             <FormCheck
+                            id='black-owned'
+                            className='ownerType'
+                            value='black'
                             type='switch'
                             label='Black'
                             />
@@ -151,12 +168,18 @@ export const FormElement = () => {
                     <Row>
                         <Col>
                             <FormCheck
+                            id='latino-owned'
+                            className='ownerType'
+                            value='latino'
                             type='switch'
                             label='Latino'
                             />
                         </Col>
                         <Col>
                             <FormCheck
+                            id='inmigrant-owned'
+                            className='ownerType'
+                            value='inmigrant'
                             type='switch'
                             label='Inmigrant'
                             />
@@ -165,12 +188,18 @@ export const FormElement = () => {
                     <Row>
                         <Col>
                             <FormCheck
+                            id='lgbtqia-owned'
                             type='switch'
+                            value='lgbtqia'
+                            className='ownerType'
                             label='LGBTQIA'
                             />
                         </Col>
                         <Col>
                             <FormCheck
+                            id='asian-owned'
+                            className='ownerType'
+                            value='asian'
                             type='switch'
                             label='Asian'
                             />
@@ -186,13 +215,13 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Website link'
                     >
-                    <FormControl type='text' />
+                    <FormControl id='website' type='text' />
                     </FloatingLabel>
                 </FormGroup>
                     </Col>
                     <Col>
                     {/* Done Editing and Done Adding buttons have to be changed when needed */}
-                    <DoneAdding />
+                    {button}
                     </Col>
                 </Row>
             </Form>

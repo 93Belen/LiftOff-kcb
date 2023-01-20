@@ -3,6 +3,7 @@ import { HeaderBusiness } from "../Header/HeaderBusinessOwner"
 
 
 export const BusinessOwner = () => {
+
     return (
         <div id='businessOwner'>
            <HeaderBusiness />
