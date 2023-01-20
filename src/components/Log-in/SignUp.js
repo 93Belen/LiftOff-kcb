@@ -11,7 +11,7 @@ export const SignUp = () => {
             <path d="M920.838 801.652L47.0722 885.762L2.63549 82.5747L858.225 42.707L920.838 801.652Z" stroke="#201D1D" stroke-width="5" stroke-linejoin="round"/>
             </svg>
             <Form id='log-in-form'>
-                <h2 id='SignUpTitle'>Sign Up</h2>
+                <h2 id='signUpTitle'>Sign Up</h2>
                 <FormGroup
                 className='mb-3'
                 >

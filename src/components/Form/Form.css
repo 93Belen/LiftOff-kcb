@@ -34,3 +34,32 @@
     font-size: 0.95rem;
     height: fit-content;
 }
+
+@media screen and (max-width: 900px) {
+    #svg {
+        display: none;
+    }
+    #formDiv {
+        width: 90vw;
+        justify-self: center;
+        justify-self: center;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        padding: 1rem;
+        position: relative;
+    }
+    #form{
+        padding:  10% 5%;
+        max-width: 90vw;
+        width: 95%;
+        height: fit-content;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+    }
+    #switch{
+        color: white;
+    }
+}

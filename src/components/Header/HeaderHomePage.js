@@ -1,9 +1,8 @@
-import {Col, Row, Stack} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { LogoDecor } from "../LogoDecor/LogoDecor"
 import { LogoName } from "../LogoName/LogoName";
 import "./NavBar.css";
-import { NavBarBusinessOwner } from './NavBarBusinessOwner';
 import { NavBarHomePage } from './NavBarHomePage';
 
 
