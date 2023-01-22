@@ -59,3 +59,22 @@
     justify-self: center;
 }
 
+@media screen and (max-width: 900px) {
+    #signInButton{
+        align-self: flex-end;
+        background: #AA283C;
+        border-color: #AA283C;
+        color: white;
+    }
+    #sign-up-link{
+       margin-top: 7rem;
+       height: 2.5rem;
+       padding: 0.5rem;
+       width: 10rem;
+       border-radius: 10px;
+       background-color: #FABD38;
+       align-self: center;
+       color: black;
+    }
+
+}

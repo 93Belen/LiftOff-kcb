@@ -7,3 +7,13 @@
     height: fit-content;
     margin-left: 0;
 }
+
+@media screen and (max-width: 900px) {
+    #feed {
+        width: 90vw;
+        justify-content: center;
+    }
+    #my-businesses-h2{
+        color: white;
+    }
+}

@@ -1,6 +1,5 @@
-import { BodyHomePage } from "../Body/BodyHomePage"
-import { HeaderHomePage } from "../Header/HeaderHomePage"
-
+import { BodyHomePage } from "../Body/BodyHomePage";
+import { HeaderHomePage } from "../Header/HeaderHomePage";
 
 export const HomePage = () => {
     // fetch all businesses here and store them in redux
@@ -32,3 +31,4 @@ export const HomePage = () => {
         </div>
     )
 }
+

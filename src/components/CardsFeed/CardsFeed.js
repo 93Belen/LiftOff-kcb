@@ -18,7 +18,6 @@ export const CardsFeed = () => {
 
     return (
         <Container id='feed'>
-            {addButton}
             <Stack
             gap={4}
             direction='vertical'>

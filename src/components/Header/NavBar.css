@@ -9,7 +9,7 @@
 }
 .navDiv {
     max-width: 15vw;
-    width: auto;
+    width: 100%;
 }
 
 
@@ -46,3 +46,36 @@
     color: #AA283C;
 }
 
+
+@media screen and (max-width: 900px) {
+ .navbar{
+     width: 100vw;
+     height: 5rem;
+     padding: 0;
+ }
+
+ .logout-btn {
+    display: none;
+ }
+ #collasible-nav-dropdown{
+     background-color: black;
+     padding: 0;
+ }
+ #drop-down-button{
+     background-color: black;
+     border: none
+ }
+ .dropdown-menu {
+     background-color: #FFFFFF;
+     padding:  1.2rem 2rem;
+     color: black;
+     text-align: center;
+    font-family: "Roboto Condensed";
+    font-size: 2rem;
+ }
+ .navLinkAct {
+     color: #AA283C;
+     background-color: #FFFFFF;
+ }
+
+}

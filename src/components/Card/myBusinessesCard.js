@@ -11,7 +11,7 @@ export const MyBusinessCard = () => {
 
 
     return (
-        <Card id='cardComponent'>
+        <Card className='cardComponent'>
             <Row>
                 <Col><h2>Business name</h2></Col>
                 <Col className='right-col'><a href='' target='_blank'>Websitelink.com</a></Col>
@@ -21,12 +21,12 @@ export const MyBusinessCard = () => {
                 <Col className='right-col details'><p>Coffee</p></Col>
             </Row>
             <Row>
-                <Col><p>Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></Col>
+                <Col lg={8} xs={10}><p>Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></Col>
                 <Col></Col>
             </Row>
             <Row>
                 <Col><p id='adress'>Adresss</p></Col>
-                <Col className='right-col'><Delete /><Edit /></Col>
+                <Col lg={6} className='right-col'><Delete /><Edit /></Col>
             </Row>
         </Card>
     )
