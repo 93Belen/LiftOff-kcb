@@ -41,35 +41,26 @@ export const DoneAdding = () => {
         lgbtqia: lgbtqia
     }
 
-    const ownerType = [];
-
-    for (const type in owner) {
-        if(owner[type] === true){
-            ownerType.push(type);
-        }
-    }
-    
-
 
     const reqBody = {
-        "name": businessName,
-        "businessType": businessType,
+        "business-name": businessName,
+        "business-type": businessType,
         "county": county,
         "city": city,
         "zipcode": zipcode,
-        // "address-description": addressDescription,
+        "address-description": addressDescription,
         "drescription": description,
         "website": website,
-        "ownerType": 'probisional string'
+        "owner": owner
     }
 
     const postInfo = async(jwt) => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/businesses", {
+            const response = await fetch("http://localhost:8080/api/business/add", {
                 headers: {
                     "Content-type": "application/json",
-                    "Authorization": "Bearer " + jwt
+                    "Authorization": jwt
                 },
                 method: "post",
                 body: JSON.stringify(reqBody)
@@ -87,9 +78,7 @@ export const DoneAdding = () => {
         }
     }
 
-        const response = postInfo().then(response => response);
-        console.log(response)
-        return response;
+
 
     }
     
