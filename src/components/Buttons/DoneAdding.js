@@ -34,19 +34,18 @@ export const DoneAdding = () => {
     
     
     const owner = {
-        woman: ["woman", woman],
-        black: ["black", black],
-        latino: ["latino", latino],
-        asian: ["asian", asian],
-        inmigrant: ["immigrant", immigrant],
-        lgbtqia: ["lgbtqia", lgbtqia]
+        woman: ["Woman", woman],
+        black: ["Black", black],
+        latino: ["Latino", latino],
+        asian: ["Asian", asian],
+        inmigrant: ["Immigrant", immigrant],
+        lgbtqia: ["LGBTQIA", lgbtqia]
     }
 
     let ownerTypeToSend = [];
 
     for(const ownerType in owner){
         if(owner[ownerType][1] === true){
-            console.log(owner[ownerType][1])
             ownerTypeToSend.push({
                 name: owner[ownerType][0]
             })

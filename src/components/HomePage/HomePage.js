@@ -25,10 +25,10 @@ export const HomePage = () => {
         owner: {id: 28, username: "owner@owner.com"},
         ownerType: [
             {
-                name: "latino"
+                name: "Latino"
             },
             {
-                name: "black"
+                name: "Black"
             }
         ]
     },
@@ -51,7 +51,7 @@ export const HomePage = () => {
         owner: {id: 28, username: "owner@owner.com"},
         ownerType: [
             {
-                name: "lgbtqia"
+                name: "LGBTQIA"
             }
         ]
     },
@@ -72,17 +72,17 @@ export const HomePage = () => {
         owner: {id: 28, username: "owner@owner.com"},
         ownerType: [
             {
-                name: "asian"
+                name: "Asian"
             },
             {
-                name: "woman"
+                name: "Woman"
             }
         ]
     }
 ]
     
 
-    const response = getAllBusinesses().then(resp => tranformIntoObj(arr));
+    const response = getAllBusinesses().then(resp => tranformIntoObj(resp));
     console.log(response)
 
 
