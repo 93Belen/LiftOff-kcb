@@ -19,7 +19,7 @@ export const HomePage = () => {
             streetName: "Metcalf Avenue",
             zipCode: 66212
         },
-        businessType: {id: 1, name: "food"},
+        businessType: {id: 1, name: "food and coffee"},
         id: 1,
         name: "Brandon's Ice Cream Shop",
         owner: {id: 28, username: "owner@owner.com"},
@@ -32,6 +32,8 @@ export const HomePage = () => {
             }
         ]
     },
+
+    // businessLocation.county, businessType.name, id, ownerType 
     {
         businessDetails: {id: 2, description: "A sweet spot that offers a variety of delicious ice cream flavors.", websiteUrl: "brandonicecream.com"},
         businessLocation: {
@@ -78,7 +80,6 @@ export const HomePage = () => {
         ]
     }
 ]
-     
     
 
     const response = getAllBusinesses().then(resp => tranformIntoObj(arr));

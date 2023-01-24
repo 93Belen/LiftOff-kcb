@@ -893,6 +893,11 @@ export const getAllBusinesses = async() => {
 
 // Get business type into right section
 const getRightBusinessType = (str) => {
+    let food = [];
+    let coffee = [];
+    let clothing = [];
+    let homegoods = [];
+    let others = [];
     let arr = str.split(' ');
     let type = [];
     if(arr.includes('Food') || arr.includes('food')){

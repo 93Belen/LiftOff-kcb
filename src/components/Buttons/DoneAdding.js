@@ -29,44 +29,47 @@ export const DoneAdding = () => {
     const black = document.getElementById('black-owned').checked;
     const latino = document.getElementById('latino-owned').checked;
     const asian = document.getElementById('asian-owned').checked;
-    const inmigrant = document.getElementById('inmigrant-owned').checked;
+    const immigrant = document.getElementById('inmigrant-owned').checked;
     const lgbtqia = document.getElementById('lgbtqia-owned').checked;
     
     
     const owner = {
-        woman: woman,
-        black: black,
-        latino: latino,
-        asian: asian,
-        inmigrant: inmigrant,
-        lgbtqia: lgbtqia
+        woman: ["woman", woman],
+        black: ["black", black],
+        latino: ["latino", latino],
+        asian: ["asian", asian],
+        inmigrant: ["immigrant", immigrant],
+        lgbtqia: ["lgbtqia", lgbtqia]
     }
 
+    let ownerTypeToSend = [];
+
+    for(const ownerType in owner){
+        if(owner[ownerType][1] === true){
+            console.log(owner[ownerType][1])
+            ownerTypeToSend.push({
+                name: owner[ownerType][0]
+            })
+        }
+    }
 
     const reqBody = {
-        "name": "Brandon's Ice Cream Shop",
+        "name": businessName,
         "businessDetails": {
-            "description": "A sweet spot that offers a variety of delicious ice cream flavors.",
-            "websiteUrl": "brandonicecream.com"
+            "description": description,
+            "websiteUrl": website
         },
         "businessType": {
-            "name": "Food & Beverage"
+            "name": businessType
         },
-        "ownerTypes": [
-            {
-                "name": "Latino"
-            },
-            {
-                "name": "Immigrant"
-            }
-        ],
+        "ownerTypes": ownerTypeToSend,
         "businessLocation": {
-            "county": "Johnson",
-            "city": "Overland Park",
+            "county": county,
+            "city": city,
             "state": "Kansas",
             "buildingNumber": "369",
             "streetName": "Metcalf Avenue",
-            "zipCode": 66212
+            "zipCode": Number(zipcode)
         }
     }
 
