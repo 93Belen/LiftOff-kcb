@@ -5,6 +5,7 @@ import './Buttons.css';
 
 export const DoneAdding = () => {
     const jwt = localStorage.getItem("jwt");
+    console.log(jwt)
 
 
     // USE THIS TO ADD INFO INTO REDUX (bussinesses & myBusiness)
@@ -43,24 +44,39 @@ export const DoneAdding = () => {
 
 
     const reqBody = {
-        "business-name": businessName,
-        "business-type": businessType,
-        "county": county,
-        "city": city,
-        "zipcode": zipcode,
-        "address-description": addressDescription,
-        "drescription": description,
-        "website": website,
-        "owner": owner
+        "name": "Brandon's Ice Cream Shop",
+        "businessDetails": {
+            "description": "A sweet spot that offers a variety of delicious ice cream flavors.",
+            "websiteUrl": "brandonicecream.com"
+        },
+        "businessType": {
+            "name": "Food & Beverage"
+        },
+        "ownerTypes": [
+            {
+                "name": "Latino"
+            },
+            {
+                "name": "Immigrant"
+            }
+        ],
+        "businessLocation": {
+            "county": "Johnson",
+            "city": "Overland Park",
+            "state": "Kansas",
+            "buildingNumber": "369",
+            "streetName": "Metcalf Avenue",
+            "zipCode": 66212
+        }
     }
 
-    const postInfo = async(jwt) => {
+    const postInfo = async() => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/business/add", {
+            const response = await fetch("http://localhost:8080/api/businesses", {
                 headers: {
-                    "Content-type": "application/json",
-                    "Authorization": jwt
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + jwt
                 },
                 method: "post",
                 body: JSON.stringify(reqBody)
@@ -78,7 +94,7 @@ export const DoneAdding = () => {
         }
     }
 
-
+    postInfo()
 
     }
     
