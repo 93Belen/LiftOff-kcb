@@ -12,7 +12,6 @@ import store from "../../state-redux/Store/Store";
 
 // React Element => Sign-in Button
 export const SignupButton = () => {
-
     // USE THIS TO NAVIGATE TO EACH HOME PAGE
     const navigate = useNavigate();
     // navigate("/user/home", {replace: true});
@@ -36,8 +35,6 @@ export const SignupButton = () => {
                 "role": role
             }  
              
-
-            //console.log(reqBody);
                 try{
 
                     const response = await fetch("http://localhost:8080/api/auth/register", {

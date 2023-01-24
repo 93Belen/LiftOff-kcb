@@ -5,6 +5,7 @@ import './Buttons.css';
 
 export const DoneAdding = () => {
     const jwt = localStorage.getItem("jwt");
+    const dispatch = useDispatch();
 
     // Adds data to business table in database
     const onClick = () => {
@@ -82,6 +83,7 @@ export const DoneAdding = () => {
             });
             if(response.ok){
                 const jsonResponse = response.json();
+                
                 return jsonResponse;
             }
             else {
@@ -93,7 +95,9 @@ export const DoneAdding = () => {
         }
     }
 
-    postInfo()
+    postInfo().then(resp => dispatch({type: 'myBusiness/changeState', payload: [resp]}))
+
+    
 
     }
     

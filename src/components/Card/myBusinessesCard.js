@@ -7,8 +7,13 @@ import { Like } from "../Buttons/Like";
 import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 
-export const MyBusinessCard = () => {
-
+export const MyBusinessCard = (props) => {
+    let name = props.name;
+    let website = props.website;
+    let owner = props.owner;
+    let type = props.type;
+    let description = props.description;
+    let address = props.address;
 
     return (
         <Card className='cardComponent'>

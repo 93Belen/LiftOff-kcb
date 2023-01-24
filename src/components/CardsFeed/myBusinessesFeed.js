@@ -1,13 +1,19 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectBusinesses, selectIsBusinessOwner } from "../../state-redux/Store/Selectors";
+import { selectBusinesses, selectIsBusinessOwner, selectMyBusinesses } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { CardComponent } from "../Card/CardComponent";
 import { MyBusinessCard } from "../Card/myBusinessesCard";
 import './CardsFeed.css';
 
 export const MyBusinessFeed = () => {
+    const myBusiesses = useSelector(selectMyBusinesses);
 
+    console.log(myBusiesses);
+
+    for(const business of myBusiesses){
+        return <MyBusinessCard />
+    }
 
 
     return (
