@@ -5,13 +5,6 @@ import './Buttons.css';
 
 export const DoneAdding = () => {
     const jwt = localStorage.getItem("jwt");
-    console.log(jwt)
-
-
-    // USE THIS TO ADD INFO INTO REDUX (bussinesses & myBusiness)
-    const dispatch = useDispatch();
-    // dispatch({type:'businesses/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
-    // dispatch({type:'myBusiness/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
 
     // Adds data to business table in database
     const onClick = () => {
@@ -42,6 +35,8 @@ export const DoneAdding = () => {
         lgbtqia: ["LGBTQIA", lgbtqia]
     }
 
+
+    // Get ownerTypes in needed format
     let ownerTypeToSend = [];
 
     for(const ownerType in owner){
@@ -52,6 +47,7 @@ export const DoneAdding = () => {
         }
     }
 
+    // Body
     const reqBody = {
         "name": businessName,
         "businessDetails": {
@@ -65,13 +61,14 @@ export const DoneAdding = () => {
         "businessLocation": {
             "county": county,
             "city": city,
-            "state": "Kansas",
-            "buildingNumber": "369",
-            "streetName": "Metcalf Avenue",
+            "state": null,
+            "buildingNumber": null,
+            "streetName": null,
             "zipCode": Number(zipcode)
         }
     }
 
+    // Post Request
     const postInfo = async() => {
         try{
 
