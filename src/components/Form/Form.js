@@ -150,7 +150,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='woman-owned'
                             className='ownerType'
-                            value='woman'
+                            value='Woman'
                             type='switch'
                             label='Woman'
                             />
@@ -159,7 +159,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='black-owned'
                             className='ownerType'
-                            value='black'
+                            value='Black'
                             type='switch'
                             label='Black'
                             />
@@ -170,7 +170,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='latino-owned'
                             className='ownerType'
-                            value='latino'
+                            value='Latino'
                             type='switch'
                             label='Latino'
                             />
@@ -179,7 +179,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='inmigrant-owned'
                             className='ownerType'
-                            value='inmigrant'
+                            value='Immigrant'
                             type='switch'
                             label='Inmigrant'
                             />
@@ -190,7 +190,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='lgbtqia-owned'
                             type='switch'
-                            value='lgbtqia'
+                            value='LGBTQIA'
                             className='ownerType'
                             label='LGBTQIA'
                             />
@@ -199,7 +199,7 @@ export const FormElement = () => {
                             <FormCheck
                             id='asian-owned'
                             className='ownerType'
-                            value='asian'
+                            value='Asian'
                             type='switch'
                             label='Asian'
                             />

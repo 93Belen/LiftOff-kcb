@@ -5,5 +5,29 @@
     align-self: center;
     align-items: flex-start;
     justify-content: space-between;
+    min-height: 100vh;
+}
+
+.accordion-container {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    #body {
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .accordion-container {
+        display: block;
+        width: 75%;
+        margin: 0 auto 1rem auto;
+    }
+
+    .map {
+        display: hidden;
+    }
 }
 

@@ -6,12 +6,13 @@ import { CardsFeed } from '../CardsFeed/CardsFeed';
 import { FormElement } from '../Form/Form';
 import { MyBusinessFeed } from '../CardsFeed/myBusinessesFeed';
 import { LikedFeed } from '../CardsFeed/LikedFeed';
+import { First } from 'react-bootstrap/esm/PageItem';
+import MobileAccordion from '../MobileAccordion/MobileAccordion';
 
 export const BodyBusinessOwner = () => {
     return (
-        <Stack
+        <Container
         id='body'
-        direction='horizontal'
         gap={5}
         >
         <Routes>
@@ -22,18 +23,20 @@ export const BodyBusinessOwner = () => {
             </Row>
         } />
         <Route path='/search' element={
-            <Row>
-            <Col><Map /></Col>
-            <Col><CardsFeed /></Col>
-        </Row>
+             <Row>
+             <Col>
+                 <MobileAccordion />
+                 <Map />
+             </Col>
+             <Col><CardsFeed/></Col>
+         </Row>
         } />
         <Route path='/liked' element={
             <Row>
             <Col><LikedFeed /></Col>
-            <Col><LikedFeed /></Col>
         </Row>
         } />
         </Routes>
-        </Stack>
+        </Container>
     )
 }

@@ -67,48 +67,49 @@ export const SignUp = () => {
                 <path d="M920.838 801.652L47.0722 885.762L2.63549 82.5747L858.225 42.707L920.838 801.652Z" stroke="#201D1D" stroke-width="5" stroke-linejoin="round" />
             </svg> */}
             <Form id='log-in-form'>
+
                 <h2 id='SignUpTitle'>Sign Up</h2>
 
 
 
-                <Form.Group className="mb-2">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
+                <FormGroup className="mb-2">
+                    <FormLabel>Email address</FormLabel>
+                    <FormControl
                         type="email"
                         name="email"
                         id="register-email"
                         value={newUser.email}
                         onChange={handleOnChange}
                         placeholder="Enter email" />
-                </Form.Group>
+                </FormGroup>
 
-                <Form.Group className="mb-2">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
+                <FormGroup className="mb-2">
+                    <FormLabel>Password</FormLabel>
+                    <FormControl
                         type="password"
                         name="password"
                         id="register-password"
                         value={newUser.password}
                         onChange={handleOnChange}
                         placeholder="Password" />
-                </Form.Group>
+                </FormGroup>
 
-                <Form.Group className="mb-2">
-                    <Form.Label>Confrim Password</Form.Label>
-                    <Form.Control
+                <FormGroup className="mb-2">
+                    <FormLabel>Confrim Password</FormLabel>
+                    <FormControl
                         type="password"
                         name="confirmPass"
                         id="confirm-password"
                         value={newUser.confirmPass}
                         onChange={handleOnChange}
                         placeholder="Confrim Password" />
-                </Form.Group>
+                </FormGroup>
 
-                <Form.Text>
+                <FormText>
                     {!passwordError.confirmPass && (
                         <div className="text-danger mb-3">Password doesn't match!</div>
                     )}
-                </Form.Text>
+                </FormText>
 
 
 
@@ -126,9 +127,9 @@ export const SignUp = () => {
 
 
 
-                <Form.Group id='role-group' className="mb-1">
-                    <Form.Check id='role' type="checkbox" label="I am a business owner" />
-                </Form.Group>
+                <FormGroup id='role-group' className="mb-1">
+                    <FormCheck id='role' type="checkbox" label="I am a business owner" />
+                </FormGroup>
 
                 <Button
                     variant="primary"
@@ -136,6 +137,8 @@ export const SignUp = () => {
                     disabled={Object.values(passwordError).includes(false)}>
                     Test
                 </Button>
+
+
 
                 <SignupButton />
             </Form>

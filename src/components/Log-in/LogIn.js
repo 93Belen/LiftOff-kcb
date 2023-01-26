@@ -28,7 +28,7 @@ export const LogIn = () => {
                     </FloatingLabel>
                 </FormGroup>
                 <SignIn />
-                <Nav.Link href='/signup'>Sign up</Nav.Link>
+                <Nav.Link id='sign-up-link' href='/signup'>Sign up</Nav.Link>
             </Form>
             
         </Container>

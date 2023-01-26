@@ -23,7 +23,17 @@ p {
     font-size: 0.85rem;
 }
 
+
 /* Media query (900px max) 
 - bakground color
 - padding ?
 */
+
+@media screen and (max-width: 900px) {
+    .App {
+        background: black;
+        height: fit-content;
+        min-height: 100vh;
+    }
+}
+

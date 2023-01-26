@@ -15,10 +15,10 @@ export const HeaderSearcher = () => {
             <Row
             className='navbar'
             >
-                <Col xs={2} md={2} lg={2}><LogoName /></Col>
-                <Col xs={2} md={2} lg={2}><LogoDecor/></Col>
-                <Col xs={2} md={2} lg={2}><NavBarSearcher /></Col>
-                <Col xs={1} md={1} lg={1}><LogOut /></Col>
+                <Col><LogoName /></Col>
+                <Col><LogoDecor/></Col>
+                <Col><NavBarSearcher /></Col>
+                <Col className='logout-btn' xs={1} md={1} lg={1}><LogOut /></Col>
             </Row>
         </Container>
     )

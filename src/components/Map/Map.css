@@ -11,8 +11,15 @@
 #map {
     margin-left: -10%;
     margin-right: 7%;
+    display: block;
 }
 
+@media screen and (max-width: 900px) {
+    #map {
+        background: black;
+        display: none;
+    }
+}
 
 
 
