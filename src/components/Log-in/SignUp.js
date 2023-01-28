@@ -73,7 +73,7 @@ export const SignUp = () => {
 
 
                 <FormGroup className="mb-2">
-                    <FormLabel>Email address</FormLabel>
+                    <Form.Label>Email address</Form.Label>
                     <FormControl
                         type="email"
                         name="email"
@@ -84,7 +84,7 @@ export const SignUp = () => {
                 </FormGroup>
 
                 <FormGroup className="mb-2">
-                    <FormLabel>Password</FormLabel>
+                    <Form.Label>Password</Form.Label>
                     <FormControl
                         type="password"
                         name="password"
@@ -95,7 +95,7 @@ export const SignUp = () => {
                 </FormGroup>
 
                 <FormGroup className="mb-2">
-                    <FormLabel>Confrim Password</FormLabel>
+                    <Form.Label>Confrim Password</Form.Label>
                     <FormControl
                         type="password"
                         name="confirmPass"
@@ -105,11 +105,11 @@ export const SignUp = () => {
                         placeholder="Confrim Password" />
                 </FormGroup>
 
-                <FormText>
+                <Form.Text>
                     {!passwordError.confirmPass && (
                         <div className="text-danger mb-3">Password doesn't match!</div>
                     )}
-                </FormText>
+                </Form.Text>
 
 
 
