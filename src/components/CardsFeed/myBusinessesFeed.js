@@ -1,39 +1,25 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectBusinesses, selectIsBusinessOwner, selectMyBusinesses } from "../../state-redux/Store/Selectors";
+import businesses from "../../state-redux/Slices/businesses";
+import { selectMyBusinesses } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
-import { CardComponent } from "../Card/CardComponent";
 import { MyBusinessCard } from "../Card/myBusinessesCard";
 import './CardsFeed.css';
 
 export const MyBusinessFeed = () => {
-    const myBusiesses = useSelector(selectMyBusinesses);
-    const jwt = localStorage.getItem("jwt")
-
-    const getUserId = async() => {
-        try {
-            const response = await fetch("http://localhost:8080/api/users/me/", {
-                headers: {
-                    "Content-type": "application/json",
-                    "Cache-Control": "no-cache",
-                    "Authorization": "Bearer " + jwt
-                },
-            });
-                if(response.ok){
-                    const jsonResponse = response.json();
-                    return jsonResponse;
-                }
-            } catch (e) {
-            console.log(e)
+    let myBusinesses = useSelector(selectMyBusinesses)
+    console.log(myBusinesses);
+    const displayCards = () => {
+        let arrayOfCards = [];
+        for(const business of myBusinesses){
+            arrayOfCards.push(<MyBusinessCard info={business} />)
         }
+        return arrayOfCards;
     }
+
     
-    getUserId().then(response => console.log(response.id));
  
 
-    for(const business of myBusiesses){
-        return <MyBusinessCard />
-    }
 
 
     return (
@@ -45,9 +31,7 @@ export const MyBusinessFeed = () => {
             <Stack
             gap={4}
             direction='vertical'>
-                <MyBusinessCard />
-                <MyBusinessCard />
-                <MyBusinessCard />
+                {displayCards()}
             </Stack>
         </Container>
     )
