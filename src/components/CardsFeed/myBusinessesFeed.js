@@ -8,8 +8,28 @@ import './CardsFeed.css';
 
 export const MyBusinessFeed = () => {
     const myBusiesses = useSelector(selectMyBusinesses);
+    const jwt = localStorage.getItem("jwt")
 
-    console.log(myBusiesses);
+    const getUserId = async() => {
+        try {
+            const response = await fetch("http://localhost:8080/api/users/me/", {
+                headers: {
+                    "Content-type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Authorization": "Bearer " + jwt
+                },
+            });
+                if(response.ok){
+                    const jsonResponse = response.json();
+                    return jsonResponse;
+                }
+            } catch (e) {
+            console.log(e)
+        }
+    }
+    
+    getUserId().then(response => console.log(response.id));
+ 
 
     for(const business of myBusiesses){
         return <MyBusinessCard />
