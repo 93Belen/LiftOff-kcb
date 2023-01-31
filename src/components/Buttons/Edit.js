@@ -30,6 +30,22 @@ export const Edit = (props) => {
         getBusinessToEdit().then(response => {
             console.log(response)
            dispatch({type:'businessToEdit/changeState', payload: response})
+            document.getElementById('business-name').value = response.name;
+            document.getElementById('business-type').value = response.businessType.name;
+            document.getElementById('county').value = response.businessLocation.county;
+            document.getElementById('business-city').value = response.businessLocation.city;
+            document.getElementById('zipcode').value = response.businessLocation.zipCode;
+            // document.getElementById('address-description').value;
+            document.getElementById('description').value = response.businessDetails.description;
+            document.getElementById('website').value = response.businessDetails.websiteUrl;
+
+            // document.getElementById('woman-owned').checked;
+            // document.getElementById('black-owned').checked;
+            // document.getElementById('latino-owned').checked;
+            // document.getElementById('asian-owned').checked;
+            // document.getElementById('inmigrant-owned').checked;
+            // document.getElementById('lgbtqia-owned').checked;
+    
         })
     }
     

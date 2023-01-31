@@ -1,5 +1,7 @@
+
+import { useEffect, useState } from "react";
 import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectbusinessToEdit, selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
@@ -9,8 +11,6 @@ import "./Form.css";
 
 export const FormElement = () => {
     const editingAdding = useSelector(selectEditingAdding);
-    const businessToEdit = useSelector(selectbusinessToEdit);
-    console.log(businessToEdit);
 
     let button;
     if(editingAdding === 'adding'){
@@ -35,7 +35,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Name'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.name : ""} id='business-name' type='text' />
+                    <FormControl id='business-name' type='text' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
@@ -44,7 +44,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Business Type'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.businessType.name : ""} id='business-type' type='text' list='businessType' />
+                    <FormControl id='business-type' type='text' list='businessType' />
                         <datalist id='businessType'>
                             <option>Coffee</option>
                             <option>Food</option>
@@ -60,7 +60,7 @@ export const FormElement = () => {
                         <Col>
                     <FloatingLabel
                     label='County'>
-                    <FormSelect value={businessToEdit ? businessToEdit.businessLocation.county : ""} id='county' type='text'>
+                    <FormSelect id='county' type='text'>
                         <option selected></option>
                         <option>Jackson</option>
                         <option>Clinton</option>
@@ -83,7 +83,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='City'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.businessLocation.city : ""} id='business-city' type='text' list='city' />
+                    <FormControl id='business-city' type='text' list='city' />
                     <datalist id='city'>
                         <option>Cameron</option>
                         <option>Hamilton</option>
@@ -118,7 +118,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Zipcode'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.businessLocation.zipCode : ""} id='zipcode' type='number' max='68000' min='64000' />
+                    <FormControl id='zipcode' type='number' max='68000' min='64000' />
                     </FloatingLabel>
                     </Col>
                     </Row>
@@ -139,7 +139,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Description'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.businessDetails.description : ""} id='description' as='textarea' />
+                    <FormControl id='description' as='textarea' />
                     </FloatingLabel>
                 </FormGroup>
                 <FormGroup
@@ -217,7 +217,7 @@ export const FormElement = () => {
                     <FloatingLabel
                     label='Website link'
                     >
-                    <FormControl value={businessToEdit ? businessToEdit.businessDetails.websiteUrl : ""} id='website' type='text' />
+                    <FormControl id='website' type='text' />
                     </FloatingLabel>
                 </FormGroup>
                     </Col>
