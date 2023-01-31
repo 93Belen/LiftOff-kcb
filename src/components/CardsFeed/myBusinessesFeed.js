@@ -21,7 +21,7 @@ export const MyBusinessFeed = () => {
     const displayCards = () => {
         let arrayOfCards = [];
         for(const business of myBusinesses){
-            arrayOfCards.push(<li key={business.id}><MyBusinessCard info={business} /></li>)
+            arrayOfCards.push(<li style={{listStyle: 'none'}} key={business.id}><MyBusinessCard info={business} /></li>)
         }
         return arrayOfCards;
     }
