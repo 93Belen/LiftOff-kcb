@@ -7,6 +7,7 @@ export const AddNew = () => {
 
     const onClick = () => {
         dispatch({type: 'editingAdding/changeState', payload: 'adding'})
+        dispatch({type: 'businessToEdit/changeState', payload: null})
     }
 
     return (

@@ -28,7 +28,8 @@ export const Edit = (props) => {
             }
         }
         getBusinessToEdit().then(response => {
-            console.log(response);
+            console.log(response)
+           dispatch({type:'businessToEdit/changeState', payload: response})
         })
     }
     
