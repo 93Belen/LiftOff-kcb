@@ -20,8 +20,7 @@ export const Delete = (props) => {
                     method: 'DELETE'
                 });
                     if(response.ok){
-                        const jsonResponse = response.json();
-                        return jsonResponse;
+                        console.log('Response was ok!')
                     }
                 } catch (e) {
                 console.log(e)
@@ -35,7 +34,7 @@ export const Delete = (props) => {
                         "Content-type": "application/json",
                         "Cache-Control": "no-cache",
                         "Authorization": "Bearer " + jwt
-                    },
+                    }
                 });
                     if(response.ok){
                         const jsonResponse = response.json();
