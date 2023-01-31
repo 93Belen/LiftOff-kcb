@@ -5,10 +5,19 @@ import { selectMyBusinesses } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { MyBusinessCard } from "../Card/myBusinessesCard";
 import './CardsFeed.css';
+import autoAnimate from '@formkit/auto-animate'
+import { useRef, useEffect } from "react";
+
 
 export const MyBusinessFeed = () => {
-    let myBusinesses = useSelector(selectMyBusinesses)
-    console.log(myBusinesses);
+    let myBusinesses = useSelector(selectMyBusinesses);
+    const parent = useRef(null)
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
+
+
     const displayCards = () => {
         let arrayOfCards = [];
         for(const business of myBusinesses){
@@ -30,6 +39,7 @@ export const MyBusinessFeed = () => {
             </Row>
             <Stack
             gap={4}
+            ref={parent}
             direction='vertical'>
                 {displayCards()}
             </Stack>

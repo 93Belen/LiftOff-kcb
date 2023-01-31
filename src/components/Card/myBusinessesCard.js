@@ -24,7 +24,7 @@ export const MyBusinessCard = (props) => {
     }
 
     return (
-        <Card className='cardComponent'>
+        <Card key={info.id} className='cardComponent'>
             <Row>
                 <Col><h2>{info.name}</h2></Col>
                 <Col className='right-col'><a href='' target='_blank'>{info.businessDetails.websiteUrl}</a></Col>

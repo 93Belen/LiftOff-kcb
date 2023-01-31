@@ -1,12 +1,13 @@
 import { Button } from 'react-bootstrap';
 import './Buttons.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectJwt } from '../../state-redux/Store/Selectors';
+
 
 export const Delete = (props) => {
     const jwt = localStorage.getItem("jwt");
     let id = props.id;
     const dispatch = useDispatch();
+
 
     const onClickDelete = () => {
         const deleteBusiness = async() => {
