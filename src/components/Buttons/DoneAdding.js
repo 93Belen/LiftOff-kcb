@@ -15,7 +15,7 @@ export const DoneAdding = () => {
     const county = document.getElementById('county').value;
     const city = document.getElementById('business-city').value;
     const zipcode = document.getElementById('zipcode').value;
-    const addressDescription = document.getElementById('address-description').value;
+    // const addressDescription = document.getElementById('address-description').value;
     const description = document.getElementById('description').value;
     const website = document.getElementById('website').value;
 
