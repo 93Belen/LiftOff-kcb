@@ -1,39 +1,34 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectBusinesses, selectIsBusinessOwner, selectMyBusinesses } from "../../state-redux/Store/Selectors";
+import businesses from "../../state-redux/Slices/businesses";
+import { selectMyBusinesses } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
-import { CardComponent } from "../Card/CardComponent";
 import { MyBusinessCard } from "../Card/myBusinessesCard";
 import './CardsFeed.css';
+import autoAnimate from '@formkit/auto-animate'
+import { useRef, useEffect } from "react";
+
 
 export const MyBusinessFeed = () => {
-    const myBusiesses = useSelector(selectMyBusinesses);
-    const jwt = localStorage.getItem("jwt")
+    let myBusinesses = useSelector(selectMyBusinesses);
+    const parent = useRef(null)
 
-    const getUserId = async() => {
-        try {
-            const response = await fetch("http://localhost:8080/api/users/me/", {
-                headers: {
-                    "Content-type": "application/json",
-                    "Cache-Control": "no-cache",
-                    "Authorization": "Bearer " + jwt
-                },
-            });
-                if(response.ok){
-                    const jsonResponse = response.json();
-                    return jsonResponse;
-                }
-            } catch (e) {
-            console.log(e)
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
+
+
+    const displayCards = () => {
+        let arrayOfCards = [];
+        for(const business of myBusinesses){
+            arrayOfCards.push(<li style={{listStyle: 'none'}} key={business.id}><MyBusinessCard info={business} /></li>)
         }
+        return arrayOfCards;
     }
+
     
-    getUserId().then(response => console.log(response.id));
  
 
-    for(const business of myBusiesses){
-        return <MyBusinessCard />
-    }
 
 
     return (
@@ -44,10 +39,9 @@ export const MyBusinessFeed = () => {
             </Row>
             <Stack
             gap={4}
+            ref={parent}
             direction='vertical'>
-                <MyBusinessCard />
-                <MyBusinessCard />
-                <MyBusinessCard />
+                {displayCards()}
             </Stack>
         </Container>
     )

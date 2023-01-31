@@ -95,7 +95,26 @@ export const DoneAdding = () => {
         }
     }
 
-    postInfo().then(resp => dispatch({type: 'myBusiness/changeState', payload: [resp]}))
+    const getOwnedBusinesses = async() => {
+        try {
+            const response = await fetch("http://localhost:8080/api/users/me/owned-businesses", {
+                headers: {
+                    "Content-type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Authorization": "Bearer " + jwt
+                },
+            });
+                if(response.ok){
+                    const jsonResponse = response.json();
+                    return jsonResponse;
+                }
+            } catch (e) {
+            console.log(e)
+        }
+    }
+
+
+    postInfo().then(()=> getOwnedBusinesses()).then(response => dispatch({type:'myBusiness/changeState', payload: response}))
 
     
 
