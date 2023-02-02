@@ -8,7 +8,8 @@ import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 import { DeleteLiked } from "../Buttons/DeleteLiked";
 
-export const LikedCard = () => {
+export const LikedCard = (props) => {
+    console.log(props.info)
 
 
     return (
