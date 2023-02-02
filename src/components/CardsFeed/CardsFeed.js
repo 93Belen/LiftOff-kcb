@@ -11,7 +11,7 @@ export const CardsFeed = () => {
     // Info to be displayed (Map-form filters allSlice and add it to displayedSlice)
     const businesses = useSelector(selectBusinesses);
 
-    let addButton;
+    console.log(businesses);
 
 
 

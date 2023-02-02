@@ -1,12 +1,15 @@
 import { useDispatch } from "react-redux";
 import { BodyBusinessOwner } from "../Body/BodyBusinessOwner"
 import { HeaderBusiness } from "../Header/HeaderBusinessOwner"
+import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 
 
 export const BusinessOwner = () => {
+    const dispatch = useDispatch();
+    // fetch all businesses here and store them in redux
+    getBusinessFromBackEnd().then(response => dispatch({type: 'businesses/changeState', payload: response}));
 
     let jwt = localStorage.getItem("jwt");
-    let dispatch = useDispatch();
 
     const getOwnedBusinesses = async() => {
         try {
