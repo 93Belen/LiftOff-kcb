@@ -1,35 +1,48 @@
-import { Button } from "react-bootstrap"
-import { useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { selectJwt } from "../../state-redux/Store/Selectors";
-import './Buttons.css';
+import "./Buttons.css";
 
-export const Like = () => {
-    const navigate = useNavigate();
-    // USE THIS TO CHANGE LIKED IN REDUX
-     // dispatch({type:'liked/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
-     const jwt = localStorage.getItem("jwt");
+export const Like = (props) => {
+  const navigate = useNavigate();
+  const jwt = localStorage.getItem("jwt");
+  const dispatch = useDispatch();
+  let id = props.id;
 
-    const onClick = () => {
-        // If it's not logged in -> redirect to Log-in form
-        if(jwt === null){
-            navigate('/user/', {replace: true})
-        }
-
-
+  const onClickLike = () => {
+    if (jwt === null) {
+      navigate("/user/", { replace: true });
     }
 
+    const likeBusiness = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/businesses/${id}/like`,
+          {
+            headers: {
+              "Content-type": "application/json",
+              "Cache-Control": "no-cache",
+              Authorization: "Bearer " + jwt,
+            },
+            method: "POST",
+          }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Response was ok!", data);
+          dispatch({ type: "liked/changeState", payload: data });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
 
+    likeBusiness();
+  };
 
-    // On Click it needs to get the business id by props and add to liked database
-
-    
-    return (
-        <Button
-        onClick={onClick}
-        id='likeButton'
-        variant='outline-warning'>
-            Like
-        </Button>
-    )
-}
+  return (
+    <Button onClick={onClickLike} id="likeButton" variant="outline-warning">
+      Like
+    </Button>
+  );
+};
