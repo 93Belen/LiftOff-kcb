@@ -7,6 +7,7 @@ export const Like = (props) => {
   const jwt = localStorage.getItem("jwt");
   const dispatch = useDispatch();
   let id = props.id;
+  let navigate = useNavigate();
 
   const onClickLike = () => {
     if (jwt === null) {
