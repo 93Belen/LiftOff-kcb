@@ -9,6 +9,10 @@ export const Like = (props) => {
   let id = props.id;
 
   const onClickLike = () => {
+    if (jwt === null) {
+      navigate("/user/", { replace: true });
+    }
+
     const likeBusiness = async () => {
       try {
         const response = await fetch(
