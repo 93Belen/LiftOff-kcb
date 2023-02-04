@@ -1,30 +1,51 @@
+import autoAnimate from "@formkit/auto-animate";
+import { useEffect, useRef, useState } from "react";
 import { Container, Stack } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { selectBusinesses, selectIsBusinessOwner } from "../../state-redux/Store/Selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllBusinesses } from "../../call-backend/getAllBusinesses";
+import {
+  selectBusinesses,
+  selectIsBusinessOwner,
+} from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { CardComponent } from "../Card/CardComponent";
-import './CardsFeed.css';
+import "./CardsFeed.css";
 
 export const CardsFeed = () => {
- 
+  const [businesses, setBusinesses] = useState([]);
+  const parent = useRef(null);
 
-    // Info to be displayed (Map-form filters allSlice and add it to displayedSlice)
-    const businesses = useSelector(selectBusinesses);
+  useEffect(() => {
+    getAllBusinesses()
+      .then((resolvedBusinesses) => {
+        setBusinesses(resolvedBusinesses);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-    console.log(businesses);
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
 
+  const displayCards = () => {
+    let arrayOfCards = [];
+    for (const business of businesses) {
+      arrayOfCards.push(
+        <li style={{ listStyle: "none" }} key={business.id}>
+          <CardComponent info={business} />
+        </li>
+      );
+    }
+    return arrayOfCards;
+  };
 
-
-
-    return (
-        <Container id='feed'>
-            <Stack
-            gap={4}
-            direction='vertical'>
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-            </Stack>
-        </Container>
-    )
-}
+  return (
+    <Container id="feed">
+      <Stack gap={4} direction="vertical">
+        {displayCards()}
+      </Stack>
+    </Container>
+  );
+};
