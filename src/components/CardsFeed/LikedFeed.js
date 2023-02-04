@@ -1,12 +1,17 @@
 import autoAnimate from '@formkit/auto-animate'
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Col, Container, Row, Stack } from "react-bootstrap";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLiked } from '../../state-redux/Store/Selectors';
 import { CardComponent } from "../Card/CardComponent";
 import { LikedCard } from "../Card/likedCard";
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
     const jwt = localStorage.getItem("jwt");
+    const dispatch = useDispatch();
+    let businesses = useSelector(selectLiked);
+    const [arrayOfCards, setArrayOfCards] = useState();
 
     const getLikedBusinesses = async() => {
         try {
@@ -25,18 +30,20 @@ export const LikedFeed = () => {
             console.log(e)
         }
     }
-    let arrayOfCards = [];
+    
     const displayCards = (response) => {
-        
+        let list = [];
         for(const business of response){
-            arrayOfCards.push(<li style={{listStyle: 'none'}} key={business.id}><LikedCard info={business} /></li>)
+        list.push(<li style={{listStyle: 'none'}} key={business.id}><Col><LikedCard info={business} /></Col></li>)
         }
-        return arrayOfCards;
+       return list;
     }
+    useEffect(() => {
+        getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
+        
+    }, [])
 
-    getLikedBusinesses().then(response => displayCards(response));
     const parent = useRef(null);
-    console.log(arrayOfCards);
 
   useEffect(() => {
     parent.current && autoAnimate(parent.current)
@@ -47,8 +54,8 @@ export const LikedFeed = () => {
 
 
     return (
-        <Container ref={parent} id='feedLiked'>
-                {arrayOfCards}
+        <Container id='feedLiked'>
+                <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )
 }

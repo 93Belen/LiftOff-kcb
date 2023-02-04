@@ -1,7 +1,7 @@
 .cardComponent {
     box-sizing: border-box;
     min-height: 200px;
-    height: fit-content;
+    height: 100%;
     width: 100%;
     background: #F8F6F5;
     border: 3px solid #000000;
@@ -9,6 +9,7 @@
     border-radius: 15px;
     padding: 1.5rem;
     text-align: start;
+    max-width: 40vw;
 }
 
 .right-col{

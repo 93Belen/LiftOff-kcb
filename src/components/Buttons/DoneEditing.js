@@ -2,10 +2,12 @@ import { Button } from 'react-bootstrap';
 import './Buttons.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectbusinessToEdit, selectJwt } from '../../state-redux/Store/Selectors';
+import { useEffect } from 'react';
 
 export const DoneEditing = () => {
     const jwt = localStorage.getItem("jwt");
     const businessToEdit = useSelector(selectbusinessToEdit);
+    console.log(businessToEdit.id);
     const dispatch = useDispatch();
 
     const onClickEdit = () => {
@@ -51,6 +53,7 @@ export const DoneEditing = () => {
 
     // Body
     const reqBody = {
+        "id": businessToEdit.id,
         "name": businessName,
         "businessDetails": {
             "description": description,
@@ -69,6 +72,7 @@ export const DoneEditing = () => {
             "zipCode": Number(zipcode)
         }
     }
+    console.log(reqBody)
 
     const updateInfo = async() => {
         try{

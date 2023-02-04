@@ -11,7 +11,7 @@ export const Like = (props) => {
 
   const onClickLike = () => {
     if (jwt === null) {
-      navigate("/user/", { replace: true });
+      navigate("/login", { replace: true });
     }
 
     const likeBusiness = async () => {

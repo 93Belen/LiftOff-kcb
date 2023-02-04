@@ -7,28 +7,30 @@ import { Like } from "../Buttons/Like";
 import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 import { DeleteLiked } from "../Buttons/DeleteLiked";
+import { InvalidTokenError } from "jwt-decode";
 
 export const LikedCard = (props) => {
-    console.log(props.info)
+    const info = props.info;
+    //console.log(props.info)
 
 
     return (
         <Card className='cardComponent'>
             <Row>
-                <Col><h2>Business name</h2></Col>
-                <Col className='right-col'><a href='' target='_blank'>Websitelink.com</a></Col>
+                <Col xs={9} lg={9}><h2>{info.name}</h2></Col>
+                <Col xs={3} lg={3} className='right-col'><a href='' target='_blank'>{info.businessDetails.websiteUrl}</a></Col>
             </Row>
             <Row>
                 <Col><p className='details'>Women owned</p></Col>
-                <Col className='right-col details'><p>Coffee</p></Col>
+                <Col className='right-col details'><p>{info.businessType.name}</p></Col>
             </Row>
             <Row>
-                <Col lg={8} xs={10}><p>Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></Col>
+                <Col lg={8} xs={10}><p>{info.businessDetails.description}</p></Col>
                 <Col></Col>
             </Row>
             <Row>
                 <Col><p id='adress'>Adresss</p></Col>
-                <Col className='right-col'><DeleteLiked /></Col>
+                <Col className='right-col'><DeleteLiked id={info.id} /></Col>
             </Row>
         </Card>
     )
