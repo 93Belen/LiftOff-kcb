@@ -1,9 +1,9 @@
 #feed{
     height: fit-content;
-    width: 45vw;
+    width: 42vw;
 }
 #feedLiked{
-    width: 100vw;
+    width: 99vw;
     height: fit-content;
     margin-left: 0;
 }

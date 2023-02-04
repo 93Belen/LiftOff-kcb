@@ -6,6 +6,7 @@ import { selectbusinessToEdit, selectJwt } from '../../state-redux/Store/Selecto
 export const DoneEditing = () => {
     const jwt = localStorage.getItem("jwt");
     const businessToEdit = useSelector(selectbusinessToEdit);
+    console.log(businessToEdit.id);
     const dispatch = useDispatch();
 
     const onClickEdit = () => {
@@ -51,6 +52,7 @@ export const DoneEditing = () => {
 
     // Body
     const reqBody = {
+        "id": businessToEdit.id,
         "name": businessName,
         "businessDetails": {
             "description": description,
@@ -69,6 +71,7 @@ export const DoneEditing = () => {
             "zipCode": Number(zipcode)
         }
     }
+    console.log(reqBody)
 
     const updateInfo = async() => {
         try{
