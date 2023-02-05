@@ -8,6 +8,31 @@
     margin-left: 0;
 }
 
+
+@keyframes appear {
+    0%{
+        opacity: 0.1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#liked-message {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    height: 350px;
+    max-width: 80vw;
+    animation-name: appear;
+    animation-duration: 0.7s;
+
+}
+
+
+
 @media screen and (max-width: 900px) {
     #feed {
         width: 90vw;

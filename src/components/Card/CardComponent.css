@@ -35,6 +35,7 @@ a:hover {
 @media screen and (max-width: 900px) {
  .cardComponent{
      box-shadow: 4px 4px 0px #AA283C;
+     max-width: 90vw;
  }
  
 }
