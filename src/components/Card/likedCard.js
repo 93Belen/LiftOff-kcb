@@ -12,7 +12,17 @@ import { InvalidTokenError } from "jwt-decode";
 export const LikedCard = (props) => {
     const info = props.info;
     //console.log(props.info)
-
+    const displayAllOwnerTypes = () => {
+        let arrayCol = [];
+        info.ownerTypes.forEach((owner, index) => {
+          if (index > 0) {
+            arrayCol.push(" & " + owner.name);
+          } else {
+            arrayCol.push(owner.name);
+          }
+        });
+        return arrayCol;
+      };
 
     return (
         <Card className='cardComponent'>
@@ -21,7 +31,7 @@ export const LikedCard = (props) => {
                 <Col xs={3} lg={3} className='right-col'><a href='' target='_blank'>{info.businessDetails.websiteUrl}</a></Col>
             </Row>
             <Row>
-                <Col><p className='details'>Women owned</p></Col>
+                <Col><p className='details'>{displayAllOwnerTypes()} owned</p></Col>
                 <Col className='right-col details'><p>{info.businessType.name}</p></Col>
             </Row>
             <Row>
