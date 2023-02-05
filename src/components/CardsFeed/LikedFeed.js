@@ -34,7 +34,7 @@ export const LikedFeed = () => {
     const displayCards = (response) => {
         let list = [];
         for(const business of response){
-        list.push(<li style={{listStyle: 'none'}} key={business.id}><Col><LikedCard info={business} /></Col></li>)
+        list.push(<li style={{listStyle: 'none', paddingBottom: '2%'}} key={business.id}><Col><LikedCard info={business} /></Col></li>)
         }
        return list;
     }
