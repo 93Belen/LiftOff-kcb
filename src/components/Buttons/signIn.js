@@ -44,6 +44,7 @@ export const SignIn = () => {
                     }
                     else {
                         console.log("auth failed");
+                        window.alert("Wrong password or email")
                     }
         
                 } catch(e){
