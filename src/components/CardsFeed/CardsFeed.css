@@ -33,6 +33,15 @@
     animation-duration: 1s;
 
 }
+#my-business-message{
+    position: fixed;
+    bottom: 0;
+    height: 350px;
+    max-width: 50vw;
+    animation-name: appear;
+    animation-duration: 1s;
+    display: block;
+}
 
 
 
@@ -43,5 +52,8 @@
     }
     #my-businesses-h2{
         color: white;
+    }
+    #my-business-message{
+        display: none;
     }
 }
