@@ -61,6 +61,7 @@ export const SignupButton = () => {
                 }
                 else {
                     console.log("auth failed");
+                    window.alert("This email has already been registred")
                 }
     
             } catch(e){
