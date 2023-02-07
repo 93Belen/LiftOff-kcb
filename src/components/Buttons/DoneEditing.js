@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export const DoneEditing = () => {
     const jwt = localStorage.getItem("jwt");
     const businessToEdit = useSelector(selectbusinessToEdit);
-    console.log(businessToEdit.id);
+    //console.log(businessToEdit);
     const dispatch = useDispatch();
 
     const onClickEdit = () => {
@@ -77,7 +77,7 @@ export const DoneEditing = () => {
     const updateInfo = async() => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/businesses", {
+            const response = await fetch(`http://localhost:8080/api/businesses/${businessToEdit.id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + jwt
