@@ -98,7 +98,39 @@ export const DoneEditing = () => {
             console.log(e);
         }
     }
-    updateInfo();
+
+    const getOwnedBusinesses = async() => {
+        try {
+            const response = await fetch("http://localhost:8080/api/users/me/owned-businesses", {
+                headers: {
+                    "Content-type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Authorization": "Bearer " + jwt
+                },
+            });
+                if(response.ok){
+                    const jsonResponse = response.json();
+                    return jsonResponse;
+                }
+            } catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
+
+
+    updateInfo().then(()=> getOwnedBusinesses()).then(response => dispatch({type:'myBusiness/changeState', payload: response})).then(() => dispatch({type:'businessToEdit/changeState', payload: null})).then(()=> {
+            document.getElementById('business-name').value = '';
+            document.getElementById('business-type').value = '';
+            document.getElementById('county').value = '';
+            document.getElementById('business-city').value = '';
+            document.getElementById('zipcode').value = '';
+            // document.getElementById('address-description').value;
+            document.getElementById('description').value = '';
+            document.getElementById('website').value = '';
+    });
 
     }
 
