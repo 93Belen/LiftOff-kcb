@@ -63,6 +63,7 @@ export const Delete = (props) => {
     return (
         <Button
         onClick={onClickDelete}
+        onTouchEnd={onClickDelete}
         id='deleteButton'
         variant='outline-danger'>
             Delete

@@ -51,6 +51,7 @@ export const DeleteLiked = (props) => {
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='deleteButton'
         variant='outline-danger'>
             Delete
