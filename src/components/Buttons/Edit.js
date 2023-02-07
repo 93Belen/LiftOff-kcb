@@ -52,6 +52,7 @@ export const Edit = (props) => {
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='likeButton'
         variant='outline-warning'>
             Edit

@@ -142,6 +142,7 @@ export const DoneEditing = () => {
     return (
         <Button
         onClick={onClickEdit}
+        onTouchEnd={onClickEdit}
         id='doneButton'
         variant='warning'
         >Edit</Button>

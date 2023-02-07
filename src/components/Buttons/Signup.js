@@ -150,6 +150,7 @@ export const SignupButton = () => {
     return (
         <Button
         onClick={handleClick}
+        onTouchEnd={handleClick}
         id='signInButton'
         className='m-2'
         variant='warning'

@@ -46,7 +46,7 @@ export const Like = (props) => {
   };
 
   return (
-    <Button onClick={onClickLike} id="likeButton" variant="outline-warning">
+    <Button onTouchEnd={onClickLike} onClick={onClickLike} id="likeButton" variant="outline-warning">
       Like
     </Button>
   );

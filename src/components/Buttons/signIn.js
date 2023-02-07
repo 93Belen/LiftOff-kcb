@@ -107,6 +107,7 @@ export const SignIn = () => {
     return (
         <Button
         onClick={handleClick}
+        onTouchEnd={handleClick}
         id='signInButton'
         className='m-3 mb-0'
         variant='warning'

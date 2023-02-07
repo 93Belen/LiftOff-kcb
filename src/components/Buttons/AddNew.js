@@ -21,6 +21,7 @@ export const AddNew = () => {
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='addNewButton'
         variant='outline-dark'
         >Add New</Button>
