@@ -24,7 +24,7 @@ export const MyBusinessFeed = () => {
             arrayOfCards.push(<li style={{listStyle: 'none'}} key={business.id}><MyBusinessCard info={business} /></li>)
         }
         if(arrayOfCards.length === 0){
-            arrayOfCards.push(<svg id='my-business-message' viewBox="0 0 385 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+            arrayOfCards.push(<li style={{listStyle: 'none'}}><svg id='my-business-message' viewBox="0 0 385 198" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M250.316 70.6396C246.949 40.982 270.149 15 299.997 15H315.295C343.943 15 366.734 39.0232 365.226 67.6315L361.356 141.063C361.27 142.693 361.317 144.327 361.497 145.95L363.5 164L367.482 182.581C367.748 183.826 366.799 185 365.526 185H252.694C251.431 185 250.484 183.844 250.733 182.606L257.661 148.128C258.275 145.069 258.409 141.934 258.057 138.834L250.316 70.6396Z" fill="#AA283C"/>
             <rect x="259" y="24" width="100" height="113" rx="50" fill="#E4B68C"/>
             <rect x="301" y="133" width="19" height="38" fill="#E4B68C"/>
@@ -103,7 +103,7 @@ export const MyBusinessFeed = () => {
             <stop offset="1" stop-color="#B56262" stop-opacity="0"/>
             </linearGradient>
             </defs>
-            </svg>
+            </svg></li>
             )
         }
         return arrayOfCards;
