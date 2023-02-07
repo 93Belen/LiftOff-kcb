@@ -130,7 +130,7 @@ export const DoneEditing = () => {
             // document.getElementById('address-description').value;
             document.getElementById('description').value = '';
             document.getElementById('website').value = '';
-    });
+    }).then(()=> dispatch({type: 'editingAdding/changeState', payload: 'adding'}));
 
     }
 
