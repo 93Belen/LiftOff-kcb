@@ -1,10 +1,5 @@
 import { Card, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
-import { Delete } from "../Buttons/Delete";
 import { Like } from "../Buttons/Like";
-import { Edit } from "../Buttons/Edit";
 import "./CardComponent.css";
 
 export const CardComponent = (props) => {
@@ -29,7 +24,7 @@ export const CardComponent = (props) => {
           <h2>{info.name}</h2>
         </Col>
         <Col className="right-col">
-          <a href="" target="_blank">
+          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank">
             {info.businessDetails.websiteUrl}
           </a>
         </Col>
@@ -50,7 +45,8 @@ export const CardComponent = (props) => {
       </Row>
       <Row>
         <Col>
-          <p id="adress">Adresss</p>
+          <p id="address">{info.businessLocation.buildingNumber} {info.businessLocation.streetName}<br></br>
+            {info.businessLocation.city}, {info.businessLocation.state} {info.businessLocation.zipCode}</p>
         </Col>
         <Col className="right-col">
           <Like id={info.id} />
