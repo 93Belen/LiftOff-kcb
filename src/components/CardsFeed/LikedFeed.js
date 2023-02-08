@@ -102,8 +102,8 @@ export const LikedFeed = () => {
     useEffect(() => {  
         document.getElementById('football').style.display = 'block'
         getLikedBusinesses().then(response => {
-            document.getElementById('football').style.display = 'none';
             document.getElementById('liked-message').style.display = 'block';
+            document.getElementById('football').style.opacity = '0';
             dispatch({type:'liked/changeState', payload: response})
         })
         
