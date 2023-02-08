@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { CardComponent } from "../Card/CardComponent";
 import { LikedCard } from "../Card/likedCard";
+import {football} from '../../waiting-icon/football'
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
@@ -30,7 +31,6 @@ export const LikedFeed = () => {
             console.log(e)
         }
     }
-    
     const displayCards = (response) => {
         let list = [];
         for(const business of response){
@@ -49,12 +49,12 @@ export const LikedFeed = () => {
             <circle cx="286" cy="77" r="9.5" fill="#242220" stroke="black"/>
             <circle cx="282.5" cy="72.5" r="2.5" fill="url(#paint0_radial_301_53)"/>
             <circle cx="240.5" cy="72.5" r="2.5" fill="url(#paint1_radial_301_53)"/>
-            <path d="M244 113H293V113C293 124.598 283.598 134 272 134H265C253.402 134 244 124.598 244 113V113Z" fill="#FFF9F9"/>
+            <path d="M244 113H293C293 124.598 283.598 134 272 134H265C253.402 134 244 124.598 244 113Z" fill="#FFF9F9"/>
             <path d="M219 51C219 39.9543 227.954 31 239 31H291C302.046 31 311 39.9543 311 51V62H219V51Z" fill="#432306"/>
             <path d="M215.895 55.0943C215.895 55.0943 213.618 72.9527 216.262 96.2501C218.906 119.547 210.095 133.375 214 141" stroke="#432306" stroke-width="15" stroke-linecap="round"/>
             <path d="M315 50.0002C315 50.0002 318.968 81.8528 323.334 100.321C327.699 118.79 318.877 145.71 318.852 140.037" stroke="#432306" stroke-width="12" stroke-linecap="round"/>
-            <path d="M190 205C190 183.461 207.461 166 229 166H303C324.539 166 342 183.461 342 205V205H190V205Z" fill="#AA283C"/>
-            <path d="M241 56L242.732 62.75H239.268L241 56Z" fill="#E4AC78"/>
+            <path d="M190 205C190 183.461 207.461 166 229 166H303C324.539 166 342 183.461 342 205H190Z" fill="#AA283C"/>
+            <path d="M241 56L242.732 62.75H239.268L241 56Z" fill="#B68960"/>
             <path d="M266.5 74.5C267.423 84.349 269.156 88.6328 274 94.5" stroke="#432306"/>
             <path d="M276.765 98.1348C277.042 98.9269 277.075 99.7544 276.86 100.557C276.646 101.359 276.19 102.117 275.527 102.774C274.863 103.431 274.008 103.971 273.023 104.355C272.039 104.74 270.95 104.958 269.836 104.995C268.722 105.031 267.611 104.885 266.583 104.567C265.556 104.249 264.638 103.767 263.897 103.156C263.156 102.545 262.61 101.821 262.298 101.036C261.987 100.25 261.918 99.4241 262.097 98.6169" stroke="#432306"/>
             <path d="M274 64.0003C281.89 60.6153 299.5 63.0003 301.5 67.0001" stroke="#432306" stroke-width="2" stroke-linecap="round"/>
@@ -99,10 +99,15 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => {
-        getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
+    useEffect(() => {  
+        document.getElementById('football').style.display = 'block'
+        getLikedBusinesses().then(response => {
+            document.getElementById('liked-message').style.display = 'block';
+            document.getElementById('football').style.opacity = '0';
+            dispatch({type:'liked/changeState', payload: response})
+        })
         
-    }, [])
+    })
 
     const parent = useRef(null);
 
@@ -116,6 +121,7 @@ export const LikedFeed = () => {
 
     return (
         <Container id='feedLiked'>
+            {football}
                 <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )

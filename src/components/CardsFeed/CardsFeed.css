@@ -17,7 +17,7 @@
         opacity: 0;
     }
     60% {
-        opacity: 0.1;
+        opacity: 0.5;
     }
     100%{
         opacity: 1;
@@ -31,7 +31,17 @@
     max-width: 80vw;
     animation-name: appear;
     animation-duration: 1s;
+    display: none;
 
+}
+#my-business-message{
+    position: fixed;
+    bottom: 0;
+    height: 350px;
+    max-width: 50vw;
+    animation-name: appear;
+    animation-duration: 2s;
+    display: block;
 }
 
 
@@ -43,5 +53,8 @@
     }
     #my-businesses-h2{
         color: white;
+    }
+    #my-business-message{
+        display: none;
     }
 }

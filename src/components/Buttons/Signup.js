@@ -61,6 +61,7 @@ export const SignupButton = () => {
                 }
                 else {
                     console.log("auth failed");
+                    window.alert("This email has already been registred")
                 }
     
             } catch(e){
@@ -149,6 +150,7 @@ export const SignupButton = () => {
     return (
         <Button
         onClick={handleClick}
+        onTouchEnd={handleClick}
         id='signInButton'
         className='m-2'
         variant='warning'

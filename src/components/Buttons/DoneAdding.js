@@ -126,6 +126,7 @@ export const DoneAdding = () => {
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='doneButton'
         variant='warning'
         >Add</Button>
