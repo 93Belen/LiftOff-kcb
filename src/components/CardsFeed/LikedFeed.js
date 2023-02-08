@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { CardComponent } from "../Card/CardComponent";
 import { LikedCard } from "../Card/likedCard";
+import football from '../../waiting-icon/football'
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
@@ -116,6 +117,7 @@ export const LikedFeed = () => {
 
     return (
         <Container id='feedLiked'>
+            {football}
                 <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )

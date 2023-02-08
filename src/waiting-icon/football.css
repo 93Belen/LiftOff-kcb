@@ -1,0 +1,23 @@
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+#football {
+    height: 70px;
+    width: auto;
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+    display: none;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    transform-origin: center;
+}
