@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { CardComponent } from "../Card/CardComponent";
 import { LikedCard } from "../Card/likedCard";
-import football from '../../waiting-icon/football'
+import {football} from '../../waiting-icon/football'
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
@@ -31,7 +31,6 @@ export const LikedFeed = () => {
             console.log(e)
         }
     }
-    
     const displayCards = (response) => {
         let list = [];
         for(const business of response){
@@ -100,10 +99,15 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => {
-        getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
+    useEffect(() => {  
+        document.getElementById('football').style.display = 'block'
+        getLikedBusinesses().then(response => {
+            document.getElementById('football').style.display = 'none';
+            document.getElementById('liked-message').style.display = 'block';
+            dispatch({type:'liked/changeState', payload: response})
+        })
         
-    }, [])
+    })
 
     const parent = useRef(null);
 

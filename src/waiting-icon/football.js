@@ -1,7 +1,7 @@
 import './football.css';
 
 
-export const football = <div id='football'><svg viewBox="0 0 258 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const football =<svg id='football' viewBox="0 0 258 139" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M257 69.5C257 78.5191 199.692 139 129 139C58.3075 139 1 77.458 1 69.5C1 61.542 58.3075 0 129 0C199.692 0 257 60.4809 257 69.5Z" fill="url(#paint0_radial_306_49)"/>
 <path d="M59.9834 27.0099C115.251 7.04388 145.485 6.69942 198.016 27.0099" stroke="url(#paint1_linear_306_49)" stroke-width="3" stroke-linecap="round"/>
 <path d="M68.4993 14.9734C70.9689 21.6063 71.0795 25.8033 69.4993 33.9734" stroke="white"/>
@@ -47,4 +47,4 @@ export const football = <div id='football'><svg viewBox="0 0 258 139" fill="none
 </linearGradient>
 </defs>
 </svg>
-</div>
+
