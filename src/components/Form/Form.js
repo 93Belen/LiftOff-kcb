@@ -6,84 +6,104 @@ import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
 
-
-
-
-
-
 export const FormElement = () => {
     const editingAdding = useSelector(selectEditingAdding);
-
+    const [selectedOwnerTypes, setSelectedOwnerTypes] = useState([]);
+    const [form, setForm] = useState({});
+    const [errors, setErrors] = useState({});
+    const [disabled, setDisabled] = useState(true);
+    console.log(disabled)
 
     let button;
     if (editingAdding === 'adding') {
-        button = <DoneAdding />
+        button = <DoneAdding disabled={disabled} />
     }
     else if (editingAdding === 'editing') {
-        button = <DoneEditing />
+        button = <DoneEditing disabled={disabled} />
     }
 
-    // Testing Zone #2
-
-    const [selectedOwnerTypes, setSelectedOwnerTypes] = useState([]);
-
-    const handleChange = event => {
-        setSelectedOwnerTypes(prevTypes => {
-            const newTypes = [...prevTypes];
-            if (event.target.checked) {
-                newTypes.push(event.target.value);
-            } else {
-                const index = newTypes.indexOf(event.target.value);
-                newTypes.splice(index, 1);
-            }
-            setForm({ ...form, businessIdentity: newTypes });
-            return newTypes;
-        });
-    };
-
-    // End Testing Zone #2
-    const [form, setForm] = useState({});
-    const [errors, setErrors] = useState({});
-
     const setField = (field, value) => {
-
         setForm({ ...form, [field]: value });
-
         if (!!errors[field])
             setErrors({ ...errors, [field]: null });
     }
 
     const validateForm = () => {
+        const woman = document.getElementById('woman-owned').checked;
+        const black = document.getElementById('black-owned').checked;
+        const latino = document.getElementById('latino-owned').checked;
+        const asian = document.getElementById('asian-owned').checked;
+        const immigrant = document.getElementById('inmigrant-owned').checked;
+        const lgbtqia = document.getElementById('lgbtqia-owned').checked;
+        const checkInputs = [woman, black, latino, asian, immigrant, lgbtqia];
+
+        // This regex matches empty strings and strings containing whitespaces only -> /^[\s]*$/
+        // This regex matches any string that doesn't contain any special characters or numbers -> /^[a-zA-Z\s]+$/
+    
         const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink, businessIdentity } = form
         const newErrors = {}
+            // ---------------------- Business Name ----------------------
+            if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your name.'              // Not empty & no whitespace
+            else if (businessName.length < 2 || businessName.length > 20) newErrors.businessName = 'Name must be between 2-20 characters in length.'    // Checks length
+            else if ((!/^[a-zA-Z\s]+$/.test(businessName))) newErrors.businessName = 'Please remove any special characters or numbers.'                 // No special char's or #'s
 
-        if (!businessName || businessName === '') newErrors.businessName = 'Please enter your name.'
-        else if (businessName.length <= 2) newErrors.businessName = 'Name must be longer than two characters.'
-        if (!businessTypes || businessTypes === '') newErrors.businessTypes = 'Please select your Business Type.'
-        if (!businessCounty || businessCounty === '') newErrors.businessCounty = 'Please select a County.'
-        if (!businessCity || businessCity === '') newErrors.businessCity = 'Please select a City.'
-        if (!businessZipCode || businessZipCode === '') newErrors.businessZipCode = 'Please enter your Zip Code.'
-        if (!businessStreetNumber || businessStreetNumber === '') newErrors.businessStreetNumber = 'Please enter your Business street name and number.'
-        if (!businessDescription || businessDescription === '') newErrors.businessDescription = 'Please enter a description for your business.'
-        if (!businessWebsiteLink || businessWebsiteLink === '') newErrors.businessWebsiteLink = 'Please enter your business website link.'
-        if (!businessIdentity || !businessIdentity.length === 0) newErrors.businessIdentity = 'Please select one or more values for business identity.'
-        return newErrors
-    };
+            // ---------------------- Business Type ----------------------
+            if (!businessTypes || businessTypes === '' || (/^[\s]*$/.test(businessTypes))) newErrors.businessTypes = 'Please select or enter your Business Type.'
+            else if (businessTypes.length < 2 || businessTypes.length > 20) newErrors.businessTypes = 'Business Type must be between 2-20 characters in length.'
+            else if ((!/^[a-zA-Z\s]+$/.test(businessTypes))) newErrors.businessTypes = 'Please remove any special characters or numbers.'
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+            // ---------------------- County ----------------------
+            if (!businessCounty || businessCounty === '') newErrors.businessCounty = 'Please select a County.'
 
+            // ---------------------- City ----------------------
+            if (!businessCity || businessCity === '' || (/^[\s]*$/.test(businessCity))) newErrors.businessCity = 'Please select a City.'                // Not empty & no whitespace
+            else if (businessCity.length < 2 || businessCity.length > 20) newErrors.businessCity = 'City must be between 2-20 characters in length.'    // Checks length
+            else if ((!/^[a-zA-Z\s']+$/.test(businessCity))) newErrors.businessCity = 'Please remove any special characters or numbers.'                // No special char's or #'s (except: ')
+            // This regext ↑↑↑↑↑ allows the → ' ← symbol to pass so City options like "Lee's Summit" passes. This can be updated to include other special characters.
+
+            // ---------------------- Zip Code ----------------------
+            if (!businessZipCode || businessZipCode === '') newErrors.businessZipCode = 'Please enter your Zip Code.'
+            else if ((!/^\d+$/.test(businessZipCode))) newErrors.businessZipCode = 'Please remove any special characters.'
+
+            // ---------------------- Street & Number ----------------------
+            if (!businessStreetNumber || businessStreetNumber === '' || (/^[\s]*$/.test(businessStreetNumber))) newErrors.businessStreetNumber = 'Please enter your Business street name and number.'
+            else if (businessStreetNumber.length < 2 || businessStreetNumber.length > 20) newErrors.businessStreetNumber = 'This Field must be between 2-20 characters in length.'
+
+            // ---------------------- Description ----------------------
+            if (!businessDescription || businessDescription === '' || (/^[\s]*$/.test(businessDescription))) newErrors.businessDescription = 'Please enter a description for your business.'
+            else if (businessDescription.length < 10 || businessDescription.length > 160) newErrors.businessDescription = 'Description must be between 10-160 characters in length.'
+
+            // ---------------------- Web Link ----------------------
+            if (!businessWebsiteLink || businessWebsiteLink === '' || (/^[\s]*$/.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter your business website link.'
+            else if (businessWebsiteLink.length < 2 || businessWebsiteLink.length > 100) newErrors.businessWebsiteLink = 'Website link must be between 2-100 characters in length.'
+            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\/\w\d-]+)*(\?[\w\d]+=[\w\d]+)*(\&[\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
+           
+            // ---------------------- Identity ----------------------
+            if(!checkInputs.includes(true)) newErrors.businessIdentity = 'Please select at least one options.'
+        
+        
+        return newErrors   
+    }
+    const showMessages = () => {        
         const formErrors = validateForm()
         if (Object.keys(formErrors).length > 0) {
             setErrors(formErrors)
+            setDisabled(() => true);
         } else {
             console.log('Form Submitted')
             console.log(form)
+            setDisabled(() => false);
+
         }
-    };
+    }
+
+   
 
     return (
         <Container
+            onKeyDown={showMessages}
+            onKeyUp={showMessages}
+            onClick={showMessages}
             id='formDiv'
         >
             <svg id='svg' viewBox="0 0 734 909" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,8 +118,8 @@ export const FormElement = () => {
                         <FormControl
                             id='business-name'
                             type='text'
-                            value={form.businessName}
-                            onChange={(e) => setField('businessName', e.target.value)}
+                            onChange={(e) =>setField('businessName', e.target.value)}
+                            onFocus={(e) =>setField('businessName', e.target.value)}
                             isInvalid={!!errors.businessName} />
                         <Form.Control.Feedback type='invalid'>
                             {errors.businessName}
@@ -113,9 +133,9 @@ export const FormElement = () => {
                         <FormControl
                             id='business-type'
                             type='text'
-                            value={form.businessTypes}
                             list='businessType'
                             onChange={(e) => setField('businessTypes', e.target.value)}
+                            onFocus={(e) => setField('businessTypes', e.target.value)}
                             isInvalid={!!errors.businessTypes} />
                         <Form.Control.Feedback type='invalid'>
                             {errors.businessTypes}
@@ -137,8 +157,8 @@ export const FormElement = () => {
                                 <FormSelect
                                     id='county'
                                     type='text'
-                                    value={form.businessCounty}
                                     onChange={(e) => setField('businessCounty', e.target.value)}
+                                    onFocus={(e) => setField('businessCounty', e.target.value)}
                                     isInvalid={!!errors.businessCounty}>
                                     <option selected></option>
                                     <option>Jackson</option>
@@ -169,8 +189,8 @@ export const FormElement = () => {
                                     id='business-city'
                                     type='text'
                                     list='city'
-                                    value={form.businessCity}
                                     onChange={(e) => setField('businessCity', e.target.value)}
+                                    onFocus={(e) => setField('businessCity', e.target.value)}
                                     isInvalid={!!errors.businessCity} />
                                 <Form.Control.Feedback type='invalid'>
                                     {errors.businessCity}
@@ -215,6 +235,7 @@ export const FormElement = () => {
                                     value={form.businessZipCode}
                                     max='68000' min='64000'
                                     onChange={(e) => setField('businessZipCode', e.target.value)}
+                                    onFocus={(e) => setField('businessZipCode', e.target.value)}
                                     isInvalid={!!errors.businessZipCode} />
                                 <Form.Control.Feedback type='invalid'>
                                     {errors.businessZipCode}
@@ -230,8 +251,8 @@ export const FormElement = () => {
                                 <FormControl
                                     id='address-description'
                                     type='text'
-                                    value={form.businessStreetNumber}
                                     onChange={(e) => setField('businessStreetNumber', e.target.value)}
+                                    onFocus={(e) => setField('businessStreetNumber', e.target.value)}
                                     isInvalid={!!errors.businessStreetNumber} />
                                 <Form.Control.Feedback type='invalid'>
                                     {errors.businessStreetNumber}
@@ -247,8 +268,8 @@ export const FormElement = () => {
                         <FormControl
                             id='description'
                             as='textarea'
-                            value={form.businessDescription}
                             onChange={(e) => setField('businessDescription', e.target.value)}
+                            onFocus={(e) => setField('businessDescription', e.target.value)}
                             isInvalid={!!errors.businessDescription} />
                         <Form.Control.Feedback type='invalid'>
                             {errors.businessDescription}
@@ -268,7 +289,6 @@ export const FormElement = () => {
                                     value='Woman'
                                     type='switch'
                                     label='Woman'
-                                    onChange={handleChange}
                                 />
                             </Col>
 
@@ -280,7 +300,6 @@ export const FormElement = () => {
                                     value='Black'
                                     type='switch'
                                     label='Black'
-                                    onChange={handleChange}
                                 />
                             </Col>
                         </Row>
@@ -294,7 +313,6 @@ export const FormElement = () => {
                                     value='Latino'
                                     type='switch'
                                     label='Latino'
-                                    onChange={handleChange}
                                 />
                             </Col>
                             <Col>
@@ -304,7 +322,6 @@ export const FormElement = () => {
                                     value='Immigrant'
                                     type='switch'
                                     label='Inmigrant'
-                                    onChange={handleChange}
                                 />
                             </Col>
                         </Row>
@@ -318,7 +335,6 @@ export const FormElement = () => {
                                     value='LGBTQIA'
                                     className='ownerType'
                                     label='LGBTQIA'
-                                    onChange={handleChange}
                                 />
                             </Col>
 
@@ -330,7 +346,6 @@ export const FormElement = () => {
                                     value='Asian'
                                     type='switch'
                                     label='Asian'
-                                    onChange={handleChange}
                                 />
 
 
@@ -353,8 +368,8 @@ export const FormElement = () => {
                                 <FormControl
                                     id='website'
                                     type='text'
-                                    value={form.businessWebsiteLink}
                                     onChange={(e) => setField('businessWebsiteLink', e.target.value)}
+                                    onFocus={(e) => setField('businessWebsiteLink', e.target.value)}
                                     isInvalid={!!errors.businessWebsiteLink} />
                                 <Form.Control.Feedback type='invalid'>
                                     {errors.businessWebsiteLink}
@@ -365,12 +380,6 @@ export const FormElement = () => {
                     <Col>
                         {/* Done Editing and Done Adding buttons have to be changed when needed */}
                         {button}
-                        <Button
-                            type='submit'
-                            onClick={handleSubmit}
-                            variant='primary'>
-                            Test Button
-                        </Button>
                     </Col>
                 </Row>
             </Form>
