@@ -3,8 +3,15 @@ import { NavLink } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React from "react";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router";
 
 export const NavBarSearcher = () => {
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem('jwt')
+    localStorage.removeItem('role')
+    navigate("/login", {replace: true})
+  }
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 900;
   React.useEffect(() => {
@@ -64,7 +71,7 @@ export const NavBarSearcher = () => {
             Liked
           </NavLink>
           </NavDropdown.Item>
-          <NavDropdown.Item>Logout</NavDropdown.Item>
+          <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
         </NavDropdown>
       </Button>
     );

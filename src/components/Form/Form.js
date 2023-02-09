@@ -181,8 +181,6 @@ export const FormElement = () => {
                                 </Form.Control.Feedback>
                             </FloatingLabel>
                         </Col>
-
-
                         <Col>
                             <FloatingLabel label='City' controlId="businessCity">
                                 <FormControl
@@ -225,8 +223,6 @@ export const FormElement = () => {
                                 </datalist>
                             </FloatingLabel>
                         </Col>
-
-
                         <Col>
                             <FloatingLabel label='Zipcode' controlId="businessZipCode">
                                 <FormControl
@@ -258,6 +254,7 @@ export const FormElement = () => {
                                     {errors.businessStreetNumber}
                                 </Form.Control.Feedback>
                             </FloatingLabel>
+
                         </Col>
                     </Row>
                 </FormGroup>
@@ -285,7 +282,7 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='woman-owned'
-                                    className='ownerType'
+                                    className='ownerType-switch'
                                     value='Woman'
                                     type='switch'
                                     label='Woman'
@@ -296,7 +293,7 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='black-owned'
-                                    className='ownerType'
+                                    className='ownerType-switch'
                                     value='Black'
                                     type='switch'
                                     label='Black'
@@ -309,7 +306,7 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='latino-owned'
-                                    className='ownerType'
+                                    className='ownerType-switch'
                                     value='Latino'
                                     type='switch'
                                     label='Latino'
@@ -318,7 +315,7 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='inmigrant-owned'
-                                    className='ownerType'
+                                   className='ownerType-switch'
                                     value='Immigrant'
                                     type='switch'
                                     label='Inmigrant'
@@ -333,7 +330,7 @@ export const FormElement = () => {
                                     id='lgbtqia-owned'
                                     type='switch'
                                     value='LGBTQIA'
-                                    className='ownerType'
+                                    className='ownerType-switch'
                                     label='LGBTQIA'
                                 />
                             </Col>
@@ -342,7 +339,7 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='asian-owned'
-                                    className='ownerType'
+                                    className='ownerType-switch'
                                     value='Asian'
                                     type='switch'
                                     label='Asian'

@@ -44,6 +44,7 @@ export const SignIn = () => {
                     }
                     else {
                         console.log("auth failed");
+                        window.alert("Wrong password or email")
                     }
         
                 } catch(e){
@@ -106,6 +107,7 @@ export const SignIn = () => {
     return (
         <Button
         onClick={handleClick}
+        onTouchEnd={handleClick}
         id='signInButton'
         className='m-3 mb-0'
         variant='warning'

@@ -1,7 +1,7 @@
 .cardComponent {
     box-sizing: border-box;
     min-height: 200px;
-    height: fit-content;
+    height: 100%;
     width: 100%;
     background: #F8F6F5;
     border: 3px solid #000000;
@@ -9,6 +9,7 @@
     border-radius: 15px;
     padding: 1.5rem;
     text-align: start;
+    max-width: 40vw;
 }
 
 .right-col{
@@ -30,10 +31,23 @@ a:hover {
 #adress {
     font-weight: 400;
 }
+.skeleton {
+    opacity: .7;
+    animation: loading 1s linear infinite alternate;
+}
+@keyframes loading {
+    0%{
+        background-color: hsl(200, 20%, 70%);
+    }
+    100%{
+        background-color: hsl(200, 20%, 95%);
+    }
+}
 
 @media screen and (max-width: 900px) {
  .cardComponent{
      box-shadow: 4px 4px 0px #AA283C;
+     max-width: 90vw;
  }
  
 }

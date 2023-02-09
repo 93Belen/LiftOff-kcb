@@ -28,7 +28,7 @@ export const Edit = (props) => {
             }
         }
         getBusinessToEdit().then(response => {
-            console.log(response)
+            //console.log(response)
            dispatch({type:'businessToEdit/changeState', payload: response})
             document.getElementById('business-name').value = response.name;
             document.getElementById('business-type').value = response.businessType.name;
@@ -52,6 +52,7 @@ export const Edit = (props) => {
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='likeButton'
         variant='outline-warning'>
             Edit

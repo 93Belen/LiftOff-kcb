@@ -62,6 +62,7 @@ export const SignupButton = (props) => {
                 }
                 else {
                     console.log("auth failed");
+                    window.alert("This email has already been registred")
                 }
     
             } catch(e){
@@ -151,6 +152,7 @@ export const SignupButton = (props) => {
         <Button
         disabled={disabled}
         onClick={handleClick}
+        onTouchEnd={handleClick}
         id='signInButton'
         className='m-2'
         variant='warning'

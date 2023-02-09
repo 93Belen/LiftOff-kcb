@@ -869,10 +869,10 @@ export const getAllBusinesses = async() => {
 
 // Get business type into right sections that they fall in
 const getRightBusinessType = (str) => {
-    let food = ['food', 'restaurant'];
+    let food = ['food', 'restaurant', 'dinning', 'cocktail', 'cocktails', 'bakery', 'ice-cream', "baked", 'snacks', 'pizza', 'smoothies', 'smoothy', 'catering', 'dinner', 'eatery', 'breakfast', 'brunch'];
     let coffee = ['coffee'];
     let clothing = ['clothing', 'fashion'];
-    let homegoods = ['home', 'homegoods'];
+    let homegoods = ['home', 'homegoods', 'furniture', 'appliances', 'decor', 'electronics', 'rugs', 'tools', 'dishes', 'bed', 'bath', 'kitchen', 'pet'];
     let arr = str.split(' ');
     let type = [];
     arr.forEach(word => {

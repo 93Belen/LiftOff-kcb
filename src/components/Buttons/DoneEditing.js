@@ -2,10 +2,12 @@ import { Button } from 'react-bootstrap';
 import './Buttons.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectbusinessToEdit, selectJwt } from '../../state-redux/Store/Selectors';
+import { useEffect } from 'react';
 
 export const DoneEditing = () => {
     const jwt = localStorage.getItem("jwt");
     const businessToEdit = useSelector(selectbusinessToEdit);
+    //console.log(businessToEdit);
     const dispatch = useDispatch();
 
     const onClickEdit = () => {
@@ -51,6 +53,7 @@ export const DoneEditing = () => {
 
     // Body
     const reqBody = {
+        "id": businessToEdit.id,
         "name": businessName,
         "businessDetails": {
             "description": description,
@@ -69,11 +72,12 @@ export const DoneEditing = () => {
             "zipCode": Number(zipcode)
         }
     }
+    console.log(reqBody)
 
     const updateInfo = async() => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/businesses", {
+            const response = await fetch(`http://localhost:8080/api/businesses/${businessToEdit.id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + jwt
@@ -94,7 +98,39 @@ export const DoneEditing = () => {
             console.log(e);
         }
     }
-    updateInfo();
+
+    const getOwnedBusinesses = async() => {
+        try {
+            const response = await fetch("http://localhost:8080/api/users/me/owned-businesses", {
+                headers: {
+                    "Content-type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Authorization": "Bearer " + jwt
+                },
+            });
+                if(response.ok){
+                    const jsonResponse = response.json();
+                    return jsonResponse;
+                }
+            } catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
+
+
+    updateInfo().then(()=> getOwnedBusinesses()).then(response => dispatch({type:'myBusiness/changeState', payload: response})).then(() => dispatch({type:'businessToEdit/changeState', payload: null})).then(()=> {
+            document.getElementById('business-name').value = '';
+            document.getElementById('business-type').value = '';
+            document.getElementById('county').value = '';
+            document.getElementById('business-city').value = '';
+            document.getElementById('zipcode').value = '';
+            // document.getElementById('address-description').value;
+            document.getElementById('description').value = '';
+            document.getElementById('website').value = '';
+    }).then(()=> dispatch({type: 'editingAdding/changeState', payload: 'adding'}));
 
     }
 
@@ -106,6 +142,7 @@ export const DoneEditing = () => {
     return (
         <Button
         onClick={onClickEdit}
+        onTouchEnd={onClickEdit}
         id='doneButton'
         variant='warning'
         >Edit</Button>

@@ -6,3 +6,4 @@ export const selectLoginInfo = (state) => state.loginInfo;
 export const selectEditingAdding = (state) => state.editingAdding;
 export const selectMyBusinesses = (state) => state.myBusiness;
 export const selectbusinessToEdit = (state) => state.businessToEdit;
+export const filtersSelected = (state) => state.filters
