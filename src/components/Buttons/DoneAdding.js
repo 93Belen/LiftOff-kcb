@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectJwt } from '../../state-redux/Store/Selectors';
 import './Buttons.css';
 
-export const DoneAdding = () => {
+export const DoneAdding = (props) => {
+    let disabled = props.disabled
+    console.log(disabled);
     const jwt = localStorage.getItem("jwt");
     const dispatch = useDispatch();
 
@@ -114,6 +116,7 @@ export const DoneAdding = () => {
     }
 
 
+
     postInfo().then(()=> getOwnedBusinesses()).then(response => dispatch({type:'myBusiness/changeState', payload: response}))
 
     
@@ -125,6 +128,8 @@ export const DoneAdding = () => {
 
     return (
         <Button
+        type="submit"
+        disabled={disabled}
         onClick={onClick}
         onTouchEnd={onClick}
         id='doneButton'
