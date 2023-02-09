@@ -6,6 +6,7 @@ import jwtSlice from '../Slices/jwt';
 import loginInfoSlice from "../Slices/loginInfoSlice";
 import editingAddingSlice from "../Slices/editing-adding";
 import businessToEditSlice from "../Slices/businessToEditSlice";
+import filtersSlice from "../Slices/filtersSlice";
 
 const store = configureStore({
     reducer: {
@@ -15,7 +16,8 @@ const store = configureStore({
         jwt: jwtSlice,
         loginInfo: loginInfoSlice,
         editingAdding: editingAddingSlice,
-        businessToEdit: businessToEditSlice
+        businessToEdit: businessToEditSlice,
+        filters: filtersSlice
     }
 })
 

@@ -1,19 +1,17 @@
 import autoAnimate from "@formkit/auto-animate";
 import { useEffect, useRef, useState } from "react";
 import { Container, Stack } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getAllBusinesses } from "../../call-backend/getAllBusinesses";
-import {
-  selectBusinesses,
-  selectIsBusinessOwner,
-} from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
+import { filtersSelected } from "../../state-redux/Store/Selectors";
 import { CardComponent } from "../Card/CardComponent";
 import "./CardsFeed.css";
 
 export const CardsFeed = () => {
   const [businesses, setBusinesses] = useState([]);
   const parent = useRef(null);
+
+  const selectedFilters = useSelector(filtersSelected);
 
   useEffect(() => {
     getAllBusinesses()
@@ -30,8 +28,36 @@ export const CardsFeed = () => {
   }, [parent]);
 
   const displayCards = () => {
+    let filteredBusinesses = businesses;
+
+    if (selectedFilters.length) {
+      filteredBusinesses = businesses.filter((business) => {
+        for (const ownerType of business.ownerTypes) {
+          if (selectedFilters.includes(ownerType.name.toLowerCase())) {
+            return true;
+          }
+        }
+
+        if (
+          selectedFilters.includes(
+            business.businessLocation.county.toLowerCase()
+          )
+        ) {
+          return true;
+        }
+
+        if (
+          selectedFilters.includes(business.businessType.name.toLowerCase())
+        ) {
+          return true;
+        }
+
+        return false;
+      });
+    }
+
     let arrayOfCards = [];
-    for (const business of businesses) {
+    for (const business of filteredBusinesses) {
       arrayOfCards.push(
         <li style={{ listStyle: "none" }} key={business.id}>
           <CardComponent info={business} />
