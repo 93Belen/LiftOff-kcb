@@ -151,7 +151,7 @@ export const FormElement = () => {
                         <Col>
                             <FormCheck
                             id='woman-owned'
-                            className='ownerType'
+                            className='ownerType-switch'
                             value='Woman'
                             type='switch'
                             label='Woman'
@@ -160,7 +160,7 @@ export const FormElement = () => {
                         <Col>
                             <FormCheck
                             id='black-owned'
-                            className='ownerType'
+                            className='ownerType-switch'
                             value='Black'
                             type='switch'
                             label='Black'
@@ -171,7 +171,7 @@ export const FormElement = () => {
                         <Col>
                             <FormCheck
                             id='latino-owned'
-                            className='ownerType'
+                            className='ownerType-switch'
                             value='Latino'
                             type='switch'
                             label='Latino'
@@ -180,7 +180,7 @@ export const FormElement = () => {
                         <Col>
                             <FormCheck
                             id='inmigrant-owned'
-                            className='ownerType'
+                            className='ownerType-switch'
                             value='Immigrant'
                             type='switch'
                             label='Inmigrant'
@@ -193,14 +193,14 @@ export const FormElement = () => {
                             id='lgbtqia-owned'
                             type='switch'
                             value='LGBTQIA'
-                            className='ownerType'
+                            className='ownerType-switch'
                             label='LGBTQIA'
                             />
                         </Col>
                         <Col>
                             <FormCheck
                             id='asian-owned'
-                            className='ownerType'
+                            className='ownerType-switch'
                             value='Asian'
                             type='switch'
                             label='Asian'
