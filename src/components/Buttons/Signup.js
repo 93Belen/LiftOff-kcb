@@ -11,7 +11,8 @@ import store from "../../state-redux/Store/Store";
 
 
 // React Element => Sign-in Button
-export const SignupButton = () => {
+export const SignupButton = (props) => {
+    let disabled = props.disabled
     // USE THIS TO NAVIGATE TO EACH HOME PAGE
     const navigate = useNavigate();
 
@@ -149,6 +150,7 @@ export const SignupButton = () => {
 
     return (
         <Button
+        disabled={disabled}
         onClick={handleClick}
         onTouchEnd={handleClick}
         id='signInButton'
