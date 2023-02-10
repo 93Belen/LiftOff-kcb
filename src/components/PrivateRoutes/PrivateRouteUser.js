@@ -25,7 +25,7 @@ export const PrivateRouteUser = () => {
     // Compare times to check if it is expired
     // Check that is the right role for this UI
     let canLogIn;
-    if(jwt === null){
+    if(jwt === null || now > d){
         canLogIn = false;
     }
     else {
