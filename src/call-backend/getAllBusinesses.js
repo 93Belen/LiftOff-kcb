@@ -900,7 +900,7 @@ const getRightBusinessType = (str) => {
 
 
 // Populate object witn businesses ids
-const tranformIntoObj = (arr) => {
+export const tranformIntoObj = (arr) => {
     // Loop throw businesses aaray
     arr.forEach(business => {
         // Get business types selection based in what owner wrote as business type
