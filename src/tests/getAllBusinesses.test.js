@@ -3,7 +3,48 @@ import { tranformIntoObj } from "../call-backend/getAllBusinesses";
 
     // Test 1
         // Response from API
-        const mockResponse1 = []
+        const mockResponse1 = [
+            {
+                businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+                businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+                businessType: {id: 132, name: "Diner"},
+                id: 132,
+                likes: 1,
+                name: "Business name is different account",
+                owner: {id: 43, username: "owner@test.com"},
+                ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+            },
+            {
+                businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+                businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+                businessType: {id: 132, name: "Restaurant"},
+                id: 132,
+                likes: 1,
+                name: "Business name is different account",
+                owner: {id: 43, username: "owner@test.com"},
+                ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+            },
+            {
+                businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+                businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+                businessType: {id: 132, name: "Food"},
+                id: 132,
+                likes: 1,
+                name: "Business name is different account",
+                owner: {id: 43, username: "owner@test.com"},
+                ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+            },
+            {
+                businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+                businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+                businessType: {id: 132, name: "Brunch"},
+                id: 132,
+                likes: 1,
+                name: "Business name is different account",
+                owner: {id: 43, username: "owner@test.com"},
+                ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+            },
+        ]
         // Expected
         const expected1 = {
         all : {
@@ -3431,13 +3472,13 @@ import { tranformIntoObj } from "../call-backend/getAllBusinesses";
 
 
 // What object from response array looks like
-const bObj = {
-    businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
-    businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-    businessType: {id: 132, name: "Diner and Breakfast"},
-    id: 132,
-    likes: 1,
-    name: "Business name is different account",
-    owner: {id: 43, username: "owner@test.com"},
-    ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
-}
+// const bObj = {
+//     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+//     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+//     businessType: {id: 132, name: "Diner"},
+//     id: 132,
+//     likes: 1,
+//     name: "Business name is different account",
+//     owner: {id: 43, username: "owner@test.com"},
+//     ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+// }
