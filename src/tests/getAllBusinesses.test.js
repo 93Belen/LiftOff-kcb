@@ -1,2 +1,2 @@
-import { getAllBusinesses } from "../call-backend/getAllBusinesses";
+import { tranformIntoObj } from "../call-backend/getAllBusinesses";
 

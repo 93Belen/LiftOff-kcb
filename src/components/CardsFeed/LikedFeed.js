@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from "react";
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
-import { CardComponent } from "../Card/CardComponent";
 import { LikedCard } from "../Card/likedCard";
 import {football} from '../../waiting-icon/football'
 import './CardsFeed.css';
@@ -12,7 +11,6 @@ export const LikedFeed = () => {
     const jwt = localStorage.getItem("jwt");
     const dispatch = useDispatch();
     let businesses = useSelector(selectLiked);
-    const [arrayOfCards, setArrayOfCards] = useState();
 
     const getLikedBusinesses = async() => {
         try {
@@ -104,6 +102,7 @@ export const LikedFeed = () => {
         getLikedBusinesses().then(response => {
             document.getElementById('liked-message').style.display = 'block';
             document.getElementById('football').style.opacity = '0';
+            document.getElementById('football').style.display = 'none';
             dispatch({type:'liked/changeState', payload: response})
         })
         
