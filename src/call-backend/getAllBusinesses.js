@@ -854,6 +854,7 @@ export const getAllBusinesses = async() => {
         const response = await fetch("http://localhost:8080/api/businesses");
         if(response.ok){
             const jsonResponse = response.json();
+            console.log(jsonResponse)
             return jsonResponse;
         }
         else {
