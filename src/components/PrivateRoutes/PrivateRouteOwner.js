@@ -8,11 +8,17 @@ export const PrivateRouteOwner = () => {
     const jwt = localStorage.getItem("jwt");
     const role = localStorage.getItem('role')
 
-    // Decode jwt to get expiration date (set to one hour)
-    const decoded = jwt_decode(jwt)
-    console.log(decoded)
+   
+    //console.log(decoded)
     const d = new Date(0);
-    d.setUTCSeconds(decoded.exp);
+    try{
+        // Decode jwt to get expiration date (set to one hour)
+        const decoded = jwt_decode(jwt)
+        d.setUTCSeconds(decoded.exp);
+    } catch(e){
+        console.log(e)
+    }
+    
 
     // Get current time
     const now = new Date();
