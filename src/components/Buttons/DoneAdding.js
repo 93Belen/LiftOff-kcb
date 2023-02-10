@@ -128,7 +128,6 @@ export const DoneAdding = (props) => {
 
     return (
         <Button
-        type="submit"
         disabled={disabled}
         onClick={onClick}
         onTouchEnd={onClick}
