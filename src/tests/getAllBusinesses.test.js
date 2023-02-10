@@ -3392,35 +3392,52 @@ import { tranformIntoObj } from "../call-backend/getAllBusinesses";
             }
         }
 
-test("Adds different food businesses to food type", () => {
+// BUSINESS TYPE TESTS
+    // Basic tests: business type composed of one word
+    test("Adds different food businesses to food type when given one word", () => {
 
-})
-test("Adds different clothing businesses to clothing type", () => {
-    
-})
-test("Adds different home goods businesses to home goods type", () => {
-    
-})
-test("Adds not-included businesses types to others type", () => {
-    
-})
+    })
+    test("Adds different clothing businesses to clothing type when given one word", () => {
+        
+    })
+    test("Adds different home goods businesses to home goods type when given one word", () => {
+        
+    })
+    test("Adds not-included businesses types to others type when given one word", () => {
+        
+    })
+
+    // Second level test: business type composed of to words of same category
+    test("Adds different food businesses to food type when given two words", () => {
+
+    })
+    test("Adds different clothing businesses to clothing type when given two words", () => {
+        
+    })
+    test("Adds different home goods businesses to home goods type when given two words", () => {
+        
+    })
+    test("Adds not-included businesses types to others type when given two words", () => {
+        
+    })
+
+    // Third level tests: business type composed of multiple words of different categories
+
+
+// LOCATION TESTS
+
+// OWNER TYPE TESTS
 
 
 
 // What object from response array looks like
-
-        // businessDetails: {id: 132, description: "description very good fandango", websiteUrl: "link.com"}
-
-        // businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null, …}
-
-        // businessType: {id: 132, name: ["homegoods", "others"]}
-
-        // id: 132
-
-        // likes: 1
-
-        // name: "Business name is different account"
-
-        // owner: {id: 43, username: "owner@test.com"}
-
-        // ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}] (2)
+const bObj = {
+    businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+    businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
+    businessType: {id: 132, name: "Diner and Breakfast"},
+    id: 132,
+    likes: 1,
+    name: "Business name is different account",
+    owner: {id: 43, username: "owner@test.com"},
+    ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
+}
