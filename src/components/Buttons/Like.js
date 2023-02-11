@@ -2,15 +2,33 @@ import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import "./Buttons.css";
+import jwt_decode from 'jwt-decode';
 
 export const Like = (props) => {
   const jwt = localStorage.getItem("jwt");
   const dispatch = useDispatch();
   let id = props.id;
   let navigate = useNavigate();
+  // Decode jwt to get expiration date (set to one hour)
+  const d = new Date(0);
+  try{
+    const decoded = jwt_decode(jwt)
+    d.setUTCSeconds(decoded.exp);
+  }
+  catch(e){
+    console.log(e)
+  }
+ 
+
+  // Get current time
+  const now = new Date();
+
 
   const onClickLike = () => {
     if (jwt === null) {
+      navigate("/login", { replace: true });
+    }
+    else if(now > d){
       navigate("/login", { replace: true });
     }
 

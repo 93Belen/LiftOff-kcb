@@ -6,11 +6,6 @@ import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 import { useDispatch } from "react-redux";
 
 export const HomePage = () => {
-  const dispatch = useDispatch();
-  // fetch all businesses here and store them in redux
-  getBusinessFromBackEnd().then((response) =>
-    dispatch({ type: "businesses/changeState", payload: response })
-  );
 
   return (
     <div id="homepage">

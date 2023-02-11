@@ -97,12 +97,13 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => {  
-        document.getElementById('football').style.display = 'block'
+    useEffect(() => { 
+        if(businesses === {}){
+            document.getElementById('football').style.display = 'block'
+        }        
         getLikedBusinesses().then(response => {
             document.getElementById('liked-message').style.display = 'block';
-            document.getElementById('football').style.opacity = '0';
-            document.getElementById('football').style.display = 'none';
+            document.getElementById('football').style.display = 'none'
             dispatch({type:'liked/changeState', payload: response})
         })
         
@@ -113,7 +114,7 @@ export const LikedFeed = () => {
   useEffect(() => {
     parent.current && autoAnimate(parent.current)
   }, [parent])
-
+  
 
 
 

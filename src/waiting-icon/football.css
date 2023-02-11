@@ -15,7 +15,6 @@
     position: absolute;
     top: 50vh;
     left: 45vw;
-    display: none;
     animation-name: spin;
     animation-iteration-count: infinite;
     animation-duration: 3s;
