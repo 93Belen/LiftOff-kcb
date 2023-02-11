@@ -1,4 +1,4 @@
-//const transformIntoObj = require('../call-backend/getAllBusinesses')
+const transformIntoObj = require('../call-backend/getAllBusinesses')
 // Testing with mock response from API
 
     // Test 1
@@ -3559,7 +3559,7 @@
 
     // Test 5
             // Response from API
-            const mockResponse5 = [
+        const mockResponse5 = [
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
@@ -3600,8 +3600,8 @@
                     owner: {id: 43, username: "owner@test.com"},
                     ownerTypes: [{id: 203, name: "Woman"}],
                 }
-            ]
-            // Expectes same result as test 1
+        ]
+        // Expectes same result as test 1
 
     
     // Test 6
@@ -3610,7 +3610,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "Clothing"},
+                    businessType: {id: 132, name: "Clothing and Fashion"},
                     id: 1,
                     likes: 1,
                     name: "Business name is different account",
@@ -3620,7 +3620,7 @@
                 {
                     businessDetails: {id: 2, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "clothing"},
+                    businessType: {id: 132, name: "clothing and fashion"},
                     id: 2,
                     likes: 1,
                     name: "Business name is different account",
@@ -3630,7 +3630,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "Fashion"},
+                    businessType: {id: 132, name: "Fashion and clothing"},
                     id: 3,
                     likes: 1,
                     name: "Business name is different account",
@@ -3640,7 +3640,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "fashion"},
+                    businessType: {id: 132, name: "fashion Clothing"},
                     id: 4,
                     likes: 1,
                     name: "Business name is different account",
@@ -3656,7 +3656,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "home"},
+                    businessType: {id: 132, name: "Furniture and Electronics"},
                     id: 1,
                     likes: 1,
                     name: "Business name is different account",
@@ -3666,7 +3666,7 @@
                 {
                     businessDetails: {id: 2, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "furniture"},
+                    businessType: {id: 132, name: "Rugs and Appliances"},
                     id: 2,
                     likes: 1,
                     name: "Business name is different account",
@@ -3676,7 +3676,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "decor"},
+                    businessType: {id: 132, name: "Decor and Tools"},
                     id: 3,
                     likes: 1,
                     name: "Business name is different account",
@@ -3686,7 +3686,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "rugs"},
+                    businessType: {id: 132, name: "Bed and Bath"},
                     id: 4,
                     likes: 1,
                     name: "Business name is different account",
@@ -3702,7 +3702,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "caballo"},
+                    businessType: {id: 132, name: "caballo and whatever"},
                     id: 1,
                     likes: 1,
                     name: "Business name is different account",
@@ -3712,7 +3712,7 @@
                 {
                     businessDetails: {id: 2, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "lolailo"},
+                    businessType: {id: 132, name: "lolailo descomunal"},
                     id: 2,
                     likes: 1,
                     name: "Business name is different account",
@@ -3722,7 +3722,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "raton"},
+                    businessType: {id: 132, name: "raton and lawyer"},
                     id: 3,
                     likes: 1,
                     name: "Business name is different account",
@@ -3732,7 +3732,7 @@
                 {
                     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-                    businessType: {id: 132, name: "abracadabra"},
+                    businessType: {id: 132, name: "abracadabra catapum"},
                     id: 4,
                     likes: 1,
                     name: "Business name is different account",
@@ -3740,7 +3740,7 @@
                     ownerTypes: [{id: 203, name: "Woman"}],
                 }
         ]
-        // Expectes same result as test 1
+        // Expectes same result as test 4
 
 
 // BUSINESS TYPE TESTS
@@ -3764,13 +3764,13 @@
         expect(transformIntoObj(mockResponse5)).toEqual(expected1)
     })
     test("Adds different clothing businesses to clothing type when given two words", () => {
-        
+        expect(transformIntoObj(mockResponse6)).toEqual(expected2)
     })
     test("Adds different home goods businesses to home goods type when given two words", () => {
-        
+        expect(transformIntoObj(mockResponse7)).toEqual(expected3)
     })
     test("Adds not-included businesses types to others type when given two words", () => {
-        
+        expect(transformIntoObj(mockResponse8)).toEqual(expected4)
     })
 
     // Third level tests: business type composed of multiple words of different categories
