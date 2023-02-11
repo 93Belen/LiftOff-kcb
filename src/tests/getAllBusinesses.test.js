@@ -1,4 +1,5 @@
-const transformIntoObj = require('../call-backend/getAllBusinesses')
+// When testing uncomment this:
+//const transformIntoObj = require('../call-backend/getAllBusinesses')
 // Testing with mock response from API
 
     // Test 1
