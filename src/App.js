@@ -13,6 +13,8 @@ import { HeaderSearcher } from './components/Header/HeaderSearcher';
 import { PrivateRouteUser } from './components/PrivateRoutes/PrivateRouteUser';
 import { PrivateRouteOwner} from './components/PrivateRoutes/PrivateRouteOwner';
 import { SignUp } from './components/Log-in/SignUp';
+import { getBusinessFromBackEnd } from "./call-backend/getAllBusinesses";
+import { useDispatch } from "react-redux";
 
 
 
@@ -20,6 +22,11 @@ function App() {
 
 
   // ================================= 
+  const dispatch = useDispatch();
+  // fetch all businesses here and store them in redux
+  getBusinessFromBackEnd().then((response) =>
+    dispatch({ type: "businesses/changeState", payload: response })
+  );
 
 
   return (
