@@ -1,7 +1,7 @@
 
 // Get array of all businesses
 // when testing, comment out const
-export const getAllBusinesses = async() => {
+/*export*/ const getAllBusinesses = async() => {
     try{
 
         const response = await fetch("http://localhost:8080/api/businesses");
@@ -943,7 +943,7 @@ const tranformIntoObj = (arr) => {
 
     // fetch all businesses here and store them in redux
     // when testing, comment out const
-  export const getBusinessFromBackEnd = () => {        
+  /*export*/ const getBusinessFromBackEnd = () => {        
         const response = getAllBusinesses().then(resp => tranformIntoObj(resp));
         return response
     
@@ -954,5 +954,5 @@ const tranformIntoObj = (arr) => {
 
 
 // when testing, uncomment this:
-//module.exports = tranformIntoObj;
+module.exports = tranformIntoObj;
 
