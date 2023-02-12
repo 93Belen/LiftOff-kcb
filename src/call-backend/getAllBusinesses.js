@@ -43,7 +43,7 @@ const getRightBusinessType = (str) => {
             type.push('homegoods')
         }
         else {
-            if(word.toLowerCase() !== 'and'){
+            if(word.toLowerCase() !== 'and' && word !== '&'){
                 type.push('others')
             }
         }

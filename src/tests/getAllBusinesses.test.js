@@ -5526,7 +5526,7 @@ const transformIntoObj = require('../call-backend/getAllBusinesses')
             {
                 businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
                 businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
-                businessType: {id: 132, name: "Clothing Food and Rugs"},
+                businessType: {id: 132, name: "Clothing Food & Rugs"},
                 id: 1,
                 likes: 1,
                 name: "Business name is different account",
