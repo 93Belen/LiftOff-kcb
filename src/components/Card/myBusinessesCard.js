@@ -38,7 +38,7 @@ export const MyBusinessCard = (props) => {
                 <Col></Col>
             </Row>
             <Row>
-                <Col><p id='adress'>Adresss</p></Col>
+                <Col><p id='adress'>{info.businessLocation.streetAddress}</p></Col>
                 <Col lg={6} className='right-col'><Delete id={info.id} /><Edit id={info.id} /></Col>
             </Row>
         </Card>

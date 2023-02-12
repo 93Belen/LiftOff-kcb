@@ -45,8 +45,7 @@ export const CardComponent = (props) => {
       </Row>
       <Row>
         <Col>
-          <p id="address">{info.businessLocation.buildingNumber} {info.businessLocation.streetName}<br></br>
-            {info.businessLocation.city}, {info.businessLocation.state} {info.businessLocation.zipCode}</p>
+          <p id="address">{info.businessLocation.streetAddress}</p>
         </Col>
         <Col className="right-col">
           <Like id={info.id} />
