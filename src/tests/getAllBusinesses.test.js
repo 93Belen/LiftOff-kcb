@@ -1,6 +1,5 @@
 // When testing uncomment this:
-const tranformIntoObj = require('../call-backend/getAllBusinesses')
-const transformIntoObj = require('../call-backend/getAllBusinesses')
+//const transformIntoObj = require('../call-backend/getAllBusinesses')
 // Testing with mock response from API
 
     // Test 1
@@ -7346,14 +7345,3 @@ const transformIntoObj = require('../call-backend/getAllBusinesses')
     })
 
 
-// What object from response array looks like
-// const bObj = {
-//     businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
-//     businessLocation: {id: 132, county: "Clinton", city: "Gladston", state: null, buildingNumber: null},
-//     businessType: {id: 132, name: "Diner"},
-//     id: 132,
-//     likes: 1,
-//     name: "Business name is different account",
-//     owner: {id: 43, username: "owner@test.com"},
-//     ownerTypes: [{id: 203, name: "Woman"}, {id: 204, name: "Latino"}],
-// }
