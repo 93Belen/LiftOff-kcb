@@ -67,8 +67,7 @@ export const DoneEditing = () => {
             "county": county,
             "city": city,
             "state": null,
-            "buildingNumber": null,
-            "streetName": null,
+            "streetAddress": addressDescription,
             "zipCode": Number(zipcode)
         }
     }

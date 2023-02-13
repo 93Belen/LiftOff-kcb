@@ -39,7 +39,7 @@ export const LikedCard = (props) => {
                 <Col></Col>
             </Row>
             <Row>
-                <Col><p id='adress'>Adresss</p></Col>
+                <Col><p id='adress'>{info.businessLocation.streetAddress}</p></Col>
                 <Col className='right-col'><DeleteLiked id={info.id} /></Col>
             </Row>
         </Card>
