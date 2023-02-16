@@ -9,7 +9,6 @@ import { filtersSelected } from "../../state-redux/Store/Selectors";
 
 function MobileAccordion() {
   const dispatch = useDispatch();
-  const selectedFilters = useSelector(filtersSelected);
   const handleClick = (id) => {
     dispatch({ type: "filters/toggleFilter", payload: id });
   };

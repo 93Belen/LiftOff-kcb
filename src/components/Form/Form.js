@@ -8,7 +8,6 @@ import "./Form.css";
 
 export const FormElement = () => {
     const editingAdding = useSelector(selectEditingAdding);
-    const [selectedOwnerTypes, setSelectedOwnerTypes] = useState([]);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [disabled, setDisabled] = useState(true);
@@ -40,7 +39,7 @@ export const FormElement = () => {
         // This regex matches empty strings and strings containing whitespaces only -> /^[\s]*$/
         // This regex matches any string that doesn't contain any special characters or numbers -> /^[a-zA-Z\s]+$/
     
-        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink, businessIdentity } = form
+        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink } = form
         const newErrors = {}
             // ---------------------- Business Name ----------------------
             if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your name.'              // Not empty & no whitespace

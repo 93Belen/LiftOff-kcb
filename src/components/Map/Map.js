@@ -5,7 +5,6 @@ import "./Map.css";
 export const Map = () => {
   // onClick events adds info that changes displayed in Redux state
   const dispatch = useDispatch();
-  const selectedFilters = useSelector(filtersSelected);
   const handleClick = (id) => {
     dispatch({ type: "filters/toggleFilter", payload: id });
   };

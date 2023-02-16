@@ -22,7 +22,7 @@ export const LikedCard = (props) => {
         <Card className='cardComponent'>
             <Row>
                 <Col xs={9} lg={9}><h2>{info.name}</h2></Col>
-                <Col xs={3} lg={3} className='right-col'><a href={info.businessDetails.websiteUrl} target='_blank'>{info.businessDetails.websiteUrl}</a></Col>
+                <Col xs={3} lg={3} className='right-col'><a href={info.businessDetails.websiteUrl} target='_blank' rel="noreferrer">{info.businessDetails.websiteUrl}</a></Col>
             </Row>
             <Row>
                 <Col><p className='details'>{displayAllOwnerTypes()} owned</p></Col>
