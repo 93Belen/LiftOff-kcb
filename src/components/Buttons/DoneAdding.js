@@ -3,14 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectJwt } from '../../state-redux/Store/Selectors';
 import './Buttons.css';
 
-export const DoneAdding = () => {
+export const DoneAdding = (props) => {
+    let disabled = props.disabled
+    console.log(disabled);
     const jwt = localStorage.getItem("jwt");
-
-
-    // USE THIS TO ADD INFO INTO REDUX (bussinesses & myBusiness)
     const dispatch = useDispatch();
-    // dispatch({type:'businesses/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
-    // dispatch({type:'myBusiness/changeState', payload: RESPONSE FROM CALLING BACKEND HERE})
 
     // Adds data to business table in database
     const onClick = () => {
@@ -28,45 +25,66 @@ export const DoneAdding = () => {
     const black = document.getElementById('black-owned').checked;
     const latino = document.getElementById('latino-owned').checked;
     const asian = document.getElementById('asian-owned').checked;
-    const inmigrant = document.getElementById('inmigrant-owned').checked;
+    const immigrant = document.getElementById('inmigrant-owned').checked;
     const lgbtqia = document.getElementById('lgbtqia-owned').checked;
     
     
     const owner = {
-        woman: woman,
-        black: black,
-        latino: latino,
-        asian: asian,
-        inmigrant: inmigrant,
-        lgbtqia: lgbtqia
+        woman: ["Woman", woman],
+        black: ["Black", black],
+        latino: ["Latino", latino],
+        asian: ["Asian", asian],
+        inmigrant: ["Immigrant", immigrant],
+        lgbtqia: ["LGBTQIA", lgbtqia]
     }
 
 
+    // Get ownerTypes in needed format
+    let ownerTypeToSend = [];
+
+    for(const ownerType in owner){
+        if(owner[ownerType][1] === true){
+            ownerTypeToSend.push({
+                name: owner[ownerType][0]
+            })
+        }
+    }
+
+    // Body
     const reqBody = {
-        "business-name": businessName,
-        "business-type": businessType,
-        "county": county,
-        "city": city,
-        "zipcode": zipcode,
-        "address-description": addressDescription,
-        "drescription": description,
-        "website": website,
-        "owner": owner
+        "name": businessName,
+        "businessDetails": {
+            "description": description,
+            "websiteUrl": website
+        },
+        "businessType": {
+            "name": businessType
+        },
+        "ownerTypes": ownerTypeToSend,
+        "businessLocation": {
+            "county": county,
+            "city": city,
+            "state": null,
+            "streetAddress": addressDescription,
+            "zipCode": Number(zipcode)
+        }
     }
 
-    const postInfo = async(jwt) => {
+    // Post Request
+    const postInfo = async() => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/business/add", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses", {
                 headers: {
-                    "Content-type": "application/json",
-                    "Authorization": jwt
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + jwt
                 },
                 method: "post",
                 body: JSON.stringify(reqBody)
             });
             if(response.ok){
                 const jsonResponse = response.json();
+                
                 return jsonResponse;
             }
             else {
@@ -78,7 +96,29 @@ export const DoneAdding = () => {
         }
     }
 
+    const getOwnedBusinesses = async() => {
+        try {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/owned-businesses", {
+                headers: {
+                    "Content-type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Authorization": "Bearer " + jwt
+                },
+            });
+                if(response.ok){
+                    const jsonResponse = response.json();
+                    return jsonResponse;
+                }
+            } catch (e) {
+            console.log(e)
+        }
+    }
 
+
+
+    postInfo().then(()=> getOwnedBusinesses()).then(response => dispatch({type:'myBusiness/changeState', payload: response}))
+
+    
 
     }
     
@@ -87,7 +127,9 @@ export const DoneAdding = () => {
 
     return (
         <Button
+        disabled={disabled}
         onClick={onClick}
+        onTouchEnd={onClick}
         id='doneButton'
         variant='warning'
         >Add</Button>

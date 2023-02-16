@@ -1,12 +1,50 @@
 #feed{
     height: fit-content;
-    width: 45vw;
+    width: 42vw;
 }
 #feedLiked{
-    width: 100vw;
+    width: 99vw;
     height: fit-content;
     margin-left: 0;
 }
+
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#liked-message {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    height: 350px;
+    max-width: 80vw;
+    animation-name: appear;
+    animation-duration: 1s;
+    display: none;
+
+}
+#my-business-message{
+    position: fixed;
+    bottom: 0;
+    height: 350px;
+    max-width: 50vw;
+    animation-name: appear;
+    animation-duration: 2s;
+    display: block;
+}
+
+
 
 @media screen and (max-width: 900px) {
     #feed {
@@ -15,5 +53,8 @@
     }
     #my-businesses-h2{
         color: white;
+    }
+    #my-business-message{
+        display: none;
     }
 }

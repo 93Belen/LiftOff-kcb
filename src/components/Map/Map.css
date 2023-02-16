@@ -2,7 +2,12 @@
     fill: #AA283C;
 }
 
-.bussinesType:hover {
+.businessType:hover {
+    filter: none;
+    transform: translate(4px, 4px);
+}
+
+.ownerType:hover {
     filter: none;
     transform: translate(4px, 4px);
 }

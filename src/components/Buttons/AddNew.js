@@ -7,11 +7,21 @@ export const AddNew = () => {
 
     const onClick = () => {
         dispatch({type: 'editingAdding/changeState', payload: 'adding'})
+        dispatch({type: 'businessToEdit/changeState', payload: null})
+        document.getElementById('business-name').value = "";
+            document.getElementById('business-type').value = "";
+            document.getElementById('county').value = "";
+            document.getElementById('business-city').value = "";
+            document.getElementById('zipcode').value = "";
+            // document.getElementById('address-description').value;
+            document.getElementById('description').value = "";
+            document.getElementById('website').value = "";
     }
 
     return (
         <Button
         onClick={onClick}
+        onTouchEnd={onClick}
         id='addNewButton'
         variant='outline-dark'
         >Add New</Button>

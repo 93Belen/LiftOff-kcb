@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
-    name: 'businesses',
-    initialState: {},
+    name: 'businessToEdit',
+    initialState: null,
     reducers: {
         changeState: (state, action) => {
             state = action.payload
@@ -12,8 +12,6 @@ const options = {
 }
 
 
-const businessesSlice = createSlice(options);
-export const { changeState } = businessesSlice.actions;
-export default businessesSlice.reducer;
-
-
+const businessToEdit = createSlice(options);
+export const { changeState } = businessToEdit.actions;
+export default businessToEdit.reducer;

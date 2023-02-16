@@ -1,33 +1,56 @@
-import { Card, Row, Col } from "react-bootstrap"
-import { useSelector } from "react-redux";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
-import { Delete } from "../Buttons/Delete";
+import { Card, Row, Col } from "react-bootstrap";
 import { Like } from "../Buttons/Like";
-import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 
-export const CardComponent = () => {
+export const CardComponent = (props) => {
+  let info = props.info;
 
+  const displayAllOwnerTypes = () => {
+    let arrayCol = [];
+    info.ownerTypes.forEach((owner, index) => {
+      if (index > 0) {
+        arrayCol.push(" & " + owner.name);
+      } else {
+        arrayCol.push(owner.name);
+      }
+    });
+    return arrayCol;
+  };
 
-    return (
-        <Card className='cardComponent'>
-            <Row>
-                <Col><h2>Business name</h2></Col>
-                <Col className='right-col'><a href='' target='_blank'>Websitelink.com</a></Col>
-            </Row>
-            <Row>
-                <Col><p className='details'>Women owned</p></Col>
-                <Col className='right-col details'><p>Coffee</p></Col>
-            </Row>
-            <Row>
-                <Col lg={8} xs={10}><p id='description'>Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></Col>
-                <Col></Col>
-            </Row>
-            <Row>
-                <Col><p id='adress'>Adresss</p></Col>
-                <Col className='right-col'><Like /></Col>
-            </Row>
-        </Card>
-    )
-}
+  return (
+    <Card key={info.id} className="cardComponent">
+      <Row>
+        <Col>
+          <h2>{info.name}</h2>
+        </Col>
+        <Col className="right-col">
+          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank">
+            {info.businessDetails.websiteUrl}
+          </a>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p className="details">{displayAllOwnerTypes()} owned</p>
+        </Col>
+        <Col className="right-col details">
+          <p>{info.businessType.name}</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col lg={8} xs={10}>
+          <p id="description">{info.businessDetails.description}</p>
+        </Col>
+        <Col></Col>
+      </Row>
+      <Row>
+        <Col>
+          <p id="address">{info.businessLocation.streetAddress}</p>
+        </Col>
+        <Col className="right-col">
+          <Like id={info.id} />
+        </Col>
+      </Row>
+    </Card>
+  );
+};
