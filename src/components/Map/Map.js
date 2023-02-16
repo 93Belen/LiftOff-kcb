@@ -1,12 +1,20 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filtersSelected } from "../../state-redux/Store/Selectors";
 import "./Map.css";
 
 export const Map = () => {
   // onClick events adds info that changes displayed in Redux state
+  const [clickedItems, setClickedItems] = useState([]);
   const dispatch = useDispatch();
   const selectedFilters = useSelector(filtersSelected);
   const handleClick = (id) => {
+    const index = clickedItems.indexOf(id);
+    if (index === -1) {
+      setClickedItems([...clickedItems, id]);
+    } else {
+      setClickedItems(clickedItems.filter((item) => item !== id));
+    }
     dispatch({ type: "filters/toggleFilter", payload: id });
   };
 
@@ -41,7 +49,11 @@ export const Map = () => {
       />
       <path
         id="leavenworth"
-        className="county"
+        className={
+          clickedItems.includes("leavenworth")
+            ? "county countyClicked"
+            : "county"
+        }
         d="M249.909 422.791L253.068 418.517L248.457 362.707L251.447 362.46L248.936 332.063L288.302 328.811L277.01 325.731L269.54 320.327L271.999 307.582L244.07 285.305L240.389 265.039L249.24 256.783L243.557 248.723L231.886 253.199L222.884 241.4L215.203 239.526L148.431 245.042L158.722 369.618L154.237 369.989L160.124 441.246L164.608 440.875L169.18 435.481L177.399 437.812L186.867 437.03L191.306 442.182L198.616 439.571L193.596 433.464L203.855 430.108L212.532 431.899L216.815 423.017L235.957 423.944L249.497 417.808L249.909 422.791Z"
         fill="#FABD38"
         stroke="#242220"
@@ -56,7 +68,9 @@ export const Map = () => {
       />
       <path
         id="lafayette"
-        className="county"
+        className={
+          clickedItems.includes("lafayette") ? "county countyClicked" : "county"
+        }
         d="M520.173 433.076L515.593 335.12L532.741 336.212L544.083 327.75L540.645 316.495L550.702 304.626L561.912 306.711L562.57 314.683L556.042 326.762L563.929 331.127L604.107 295.198L620.963 298.822L628.935 298.164L635.249 295.635L641.891 297.093L646.376 296.723L659.423 284.608L674.87 283.331L680.603 279.848L688.576 279.189L703.269 287.006L720.714 279.544L716.494 258.821L721.687 254.881L728.468 409.848L614.069 415.787L615.015 427.248L520.173 433.076Z"
         fill="#FABD38"
         stroke="#242220"
@@ -71,7 +85,9 @@ export const Map = () => {
       />
       <path
         id="cass"
-        className="county"
+        className={
+          clickedItems.includes("cass") ? "county countyClicked" : "county"
+        }
         d="M372.249 634.438L359.159 475.977L521.601 468.579L525.906 544.984L528.896 544.737L531.983 582.109L550.42 580.586L554.084 624.935L554.244 632.949L548.475 629.914L541.997 630.449L539.172 632.689L535.185 633.019L531.574 631.812L527.212 633.677L520.734 634.212L518.449 636.91L515.834 635.621L508.857 636.197L506.741 634.867L504.871 636.526L496.985 632.161L495.49 632.284L490.795 636.184L487.805 636.431L480.376 631.526L478.09 634.223L471.782 630.731L471.617 628.738L372.249 634.438Z"
         fill="#FABD38"
         stroke="#242220"
@@ -90,7 +106,9 @@ export const Map = () => {
       />
       <path
         id="bates"
-        className="county"
+        className={
+          clickedItems.includes("bates") ? "county countyClicked" : "county"
+        }
         d="M385.034 813.493L371.833 635.476L462.647 629.479L471.617 628.738L471.782 630.731L478.09 634.223L480.376 631.526L487.805 636.431L490.795 636.184L495.49 632.284L496.985 632.161L504.871 636.526L506.741 634.867L508.857 636.197L515.834 635.621L518.449 636.91L520.734 634.212L527.212 633.677L531.574 631.812L535.185 633.019L539.172 632.689L541.997 630.449L548.475 629.914L554.244 632.949L559.944 732.317L567.917 731.659L572.181 807.565L570.27 808.727L570.352 809.723L568.359 809.888L566.16 807.561L563.458 811.296L561.593 806.935L559.6 807.1L556.322 803.858L553.83 804.064L554.118 807.552L548.102 801.527L547.105 801.61L547.023 800.613L544.532 800.819L544.573 801.317L542.081 801.523L542.164 802.52L537.181 802.931L534.977 806.625L531.987 806.872L532.07 807.869L526.588 808.322L526.835 811.311L525.921 812.39L524.842 811.476L524.348 805.496L525.345 805.414L525.221 803.919L522.73 804.125L522.812 805.122L521.317 805.245L521.399 806.242L520.901 806.283L520.403 806.324L520.815 811.307L519.818 811.389L519.941 812.884L517.45 813.09L517.409 812.592L517.326 811.595L516.33 811.677L516.247 810.681L515.251 810.763L515.58 814.75L515.662 815.746L515.164 815.787L514.748 816.825L511.758 817.072L511.717 816.574L510.721 816.656L509.642 815.742L510.556 814.663L512.051 814.539L511.68 810.055L512.677 809.972L513.632 809.392L513.55 808.395L510.56 808.642L510.354 806.151L385.034 813.493Z"
         fill="#FABD38"
         stroke="#242220"
@@ -105,7 +123,9 @@ export const Map = () => {
       />
       <path
         id="linn"
-        className="county"
+        className={
+          clickedItems.includes("linn") ? "county countyClicked" : "county"
+        }
         d="M385.034 813.493L374.422 672.889L222.938 685.403L227.631 742.21L224.266 743.993L230.345 835.804L385.816 822.961L385.034 813.493Z"
         fill="#FABD38"
         stroke="#242220"
@@ -120,7 +140,9 @@ export const Map = () => {
       />
       <path
         id="ray"
-        className="county"
+        className={
+          clickedItems.includes("ray") ? "county countyClicked" : "county"
+        }
         d="M480.898 309.891L479.321 309.018L467.919 170.988L617.533 160.134L630.389 297.542L628.935 298.164L620.464 298.863L604.107 295.198L563.928 331.127L556.042 326.762L562.57 314.683L561.911 306.711L550.702 304.626L540.645 316.495L544.083 327.75L532.741 336.212L515.593 335.12L510.244 325.026L489.32 320.735L488.99 316.748L493.356 308.862L490.119 306.119L480.898 309.891Z"
         fill="#FABD38"
         stroke="#242220"
@@ -135,7 +157,9 @@ export const Map = () => {
       />
       <path
         id="caldwell"
-        className="county"
+        className={
+          clickedItems.includes("caldwell") ? "county countyClicked" : "county"
+        }
         d="M617.533 160.134L467.919 170.988L459.489 56.7944L608.024 45.0258L617.533 160.134Z"
         fill="#FABD38"
         stroke="#242220"
@@ -150,7 +174,9 @@ export const Map = () => {
       />
       <path
         id="clinton"
-        className="county"
+        className={
+          clickedItems.includes("clinton") ? "county countyClicked" : "county"
+        }
         d="M339.417 212.709L329.003 86.6384L461.135 76.7265L470.635 203.876L339.417 212.709Z"
         fill="#FABD38"
         stroke="#242220"
@@ -165,7 +191,9 @@ export const Map = () => {
       />
       <path
         id="platte"
-        className="county"
+        className={
+          clickedItems.includes("platte") ? "county countyClicked" : "county"
+        }
         d="M222.884 241.4L215.203 239.526L211.308 228.811L202.05 226.064L194.123 221.2L186.908 206.745L169.769 193.611L335.827 181.398L339.417 212.709L348.044 341.436L334.59 342.547L327.952 335.068L320.77 333.153L309.304 340.121L299.837 340.903L287.763 328.354L277.01 325.731L269.54 320.327L271.999 307.582L244.07 285.305L240.389 265.039L249.24 256.783L243.557 248.723L231.886 253.199L222.884 241.4Z"
         fill="#FABD38"
         stroke="#242220"
@@ -180,7 +208,9 @@ export const Map = () => {
       />
       <path
         id="clay"
-        className="county"
+        className={
+          clickedItems.includes("clay") ? "county countyClicked" : "county"
+        }
         d="M354.518 346.921L348.044 341.436L339.417 212.709L470.594 203.378L479.362 309.516L473.136 307.02L465.418 298.627L446.19 302.724L438.163 320.947L427.732 334.351L420.225 322.429L414.245 322.923L417.56 332.683L402.931 349.946L387.282 342.71L376.32 343.615L350.436 364.316L349.86 357.34L354.518 346.921Z"
         fill="#FABD38"
         stroke="#242220"
@@ -199,7 +229,9 @@ export const Map = () => {
       />
       <path
         id="miami"
-        className="county"
+        className={
+          clickedItems.includes("miami") ? "county countyClicked" : "county"
+        }
         d="M374.879 672.35L362.53 522.859L212.541 535.25L214.064 553.687L211.572 553.893L222.398 684.946L374.879 672.35Z"
         fill="#FABD38"
         stroke="#242220"
@@ -214,7 +246,9 @@ export const Map = () => {
       />
       <path
         id="wyandotte"
-        className="county"
+        className={
+          clickedItems.includes("wyandotte") ? "county countyClicked" : "county"
+        }
         d="M258.43 410.548L253.027 418.018L248.457 362.707L251.447 362.46L248.936 332.063L288.302 328.811L299.837 340.903L309.305 340.121L320.77 333.153L327.952 335.068L334.59 342.547L348.543 341.395L354.518 346.921L349.86 357.34L350.436 364.316L352.577 390.228L284.309 395.868L274.928 391.626L264.962 392.449L257.854 403.572L258.43 410.548Z"
         fill="#FABD38"
         stroke="#242220"
@@ -233,7 +267,9 @@ export const Map = () => {
       />
       <path
         id="johnson"
-        className="county"
+        className={
+          clickedItems.includes("johnson") ? "county countyClicked" : "county"
+        }
         d="M363.028 522.818L212.541 535.249L203.855 430.108L212.532 431.899L216.815 423.017L235.957 423.944L249.497 417.808L249.909 422.791L258.43 410.548L257.854 403.572L264.962 392.449L274.928 391.626L284.309 395.868L292.78 395.168L352.078 390.269L359.159 475.977L363.028 522.818Z"
         fill="#FABD38"
         stroke="#242220"
@@ -264,7 +300,9 @@ export const Map = () => {
       />
       <path
         id="jackson"
-        className="county"
+        className={
+          clickedItems.includes("jackson") ? "county countyClicked" : "county"
+        }
         d="M359.616 475.438L350.436 364.317L376.32 343.615L387.282 342.71L402.931 349.946L417.56 332.683L414.245 322.923L420.225 322.429L427.732 334.351L438.163 320.947L446.19 302.724L465.418 298.627L473.675 307.478L480.898 309.891L490.119 306.119L493.356 308.862L488.99 316.748L489.32 320.735L510.244 325.026L515.593 335.12L522.099 468.538L359.616 475.438Z"
         fill="#FABD38"
         stroke="#242220"
@@ -302,7 +340,11 @@ export const Map = () => {
         fill="#242220"
       />
       <g
-        className="businessType"
+        className={
+          clickedItems.includes("coffee")
+            ? "businessType businessClicked"
+            : "businessType"
+        }
         id="coffee"
         filter="url(#filter0_d_237_108)"
         onClick={() => handleClick("coffee")}
@@ -337,7 +379,11 @@ export const Map = () => {
         <rect x="1007.26" y="172.267" width="38" height="4" fill="black" />
       </g>
       <g
-        className="businessType"
+        className={
+          clickedItems.includes("food")
+            ? "businessType businessClicked"
+            : "businessType"
+        }
         id="food"
         filter="url(#filter1_d_237_108)"
         onClick={() => handleClick("food")}
@@ -389,7 +435,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="businessType"
+        className={
+          clickedItems.includes("clothing")
+            ? "businessType businessClicked"
+            : "businessType"
+        }
         id="clothing"
         filter="url(#filter2_d_237_108)"
         onClick={() => handleClick("clothing")}
@@ -421,7 +471,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="businessType"
+        className={
+          clickedItems.includes("home goods")
+            ? "businessType businessClicked"
+            : "businessType"
+        }
         id="homeGoods"
         filter="url(#filter3_d_237_108)"
         onClick={() => handleClick("home goods")}
@@ -471,7 +525,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="businessType"
+        className={
+          clickedItems.includes("others")
+            ? "businessType businessClicked"
+            : "businessType"
+        }
         id="others"
         filter="url(#filter4_d_237_108)"
         onClick={() => handleClick("others")}
@@ -516,7 +574,11 @@ export const Map = () => {
         <circle cx="1039.76" cy="663.767" r="4.5" fill="black" />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("woman")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="woman"
         filter="url(#filter5_d_237_108)"
         onClick={() => handleClick("woman")}
@@ -537,7 +599,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("latino")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="latino"
         filter="url(#filter6_d_237_108)"
         onClick={() => handleClick("latino")}
@@ -558,7 +624,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("black")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="black"
         filter="url(#filter7_d_237_108)"
         onClick={() => handleClick("black")}
@@ -579,7 +649,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("asian")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="asian"
         filter="url(#filter8_d_237_108)"
         onClick={() => handleClick("asian")}
@@ -600,7 +674,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("immigrant")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="immigrant"
         filter="url(#filter9_d_237_108)"
         onClick={() => handleClick("immigrant")}
@@ -621,7 +699,11 @@ export const Map = () => {
         />
       </g>
       <g
-        className="ownerType"
+        className={
+          clickedItems.includes("lgbtqia")
+            ? "ownerType ownerClicked"
+            : "ownerType"
+        }
         id="lgbtqia"
         filter="url(#filter10_d_237_108)"
         onClick={() => handleClick("lgbtqia")}
