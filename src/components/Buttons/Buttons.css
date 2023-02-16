@@ -1,41 +1,38 @@
-
-
 #doneButton {
     float: right;
     margin-top: 7%;
     border: black 2px solid;
     padding: 0.3rem 1.65rem;
     font-size: 1.2rem;
-}
-
-#likeButton {
+  }
+  
+  #likeButton {
     width: 40%;
     align-self: flex-end;
     min-width: fit-content;
-    border: 2px solid #FABD38;
+    border: 2px solid #fabd38;
     color: black;
-}
-#likeButton:hover {
-    background: #FABD38;
+  }
+  #likeButton:hover {
+    background: #fabd38;
     color: white;
-}
-
-#deleteButton {
+  }
+  
+  #deleteButton {
     width: 40%;
     align-self: flex-end;
     margin-right: 1rem;
     min-width: fit-content;
-    border: 2px solid #AA283C;
+    border: 2px solid #aa283c;
     color: black;
-}
-
-#deleteButton:hover {
-    background: #AA283C;
+  }
+  
+  #deleteButton:hover {
+    background: #aa283c;
     color: white;
-}
-
-
-#addNewButton {
+  }
+  
+  #addNewButton {
     margin-bottom: 5%;
     width: 20%;
     background: white;
@@ -44,37 +41,43 @@
     padding: 0.3rem 1.65rem;
     font-size: 1.2rem;
     float: right;
-}
-
-#addNewButton:hover {
+  }
+  
+  #addNewButton:hover {
     background: black;
     color: white;
-}
-
-
-
-#signInButton{
+  }
+  
+  #signInButton {
     width: 40%;
     align-self: center;
     justify-self: center;
-}
-
-@media screen and (max-width: 900px) {
-    #signInButton{
-        align-self: flex-end;
-        background: #AA283C;
-        border-color: #AA283C;
-        color: white;
+  }
+  
+  .toast-message {
+    background: darkblue !important;
+    color: #fff;
+    font-size: 20px;
+    width: 34vw;
+    padding: 30px 20px;
+  }
+  
+  @media screen and (max-width: 900px) {
+    #signInButton {
+      align-self: flex-end;
+      background: #aa283c;
+      border-color: #aa283c;
+      color: white;
     }
-    #sign-up-link{
-       margin-top: 7rem;
-       height: 2.5rem;
-       padding: 0.5rem;
-       width: 10rem;
-       border-radius: 10px;
-       background-color: #FABD38;
-       align-self: center;
-       color: black;
+    #sign-up-link {
+      margin-top: 7rem;
+      height: 2.5rem;
+      padding: 0.5rem;
+      width: 10rem;
+      border-radius: 10px;
+      background-color: #fabd38;
+      align-self: center;
+      color: black;
     }
-
-}
+  }
+  
