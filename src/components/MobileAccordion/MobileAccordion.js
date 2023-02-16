@@ -4,8 +4,7 @@ import "./MobileAccordion.css";
 import { county } from "../../svg-buttons/county";
 import { businessType } from "../../svg-buttons/business-type";
 import { ownerType } from "../../svg-buttons/ownerType";
-import { useDispatch, useSelector } from "react-redux";
-import { filtersSelected } from "../../state-redux/Store/Selectors";
+import { useDispatch, } from "react-redux";
 
 function MobileAccordion() {
   const dispatch = useDispatch();
