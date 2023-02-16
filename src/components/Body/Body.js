@@ -1,12 +1,10 @@
-import { Container, Row, Col, Stack } from "react-bootstrap";
+import { Row, Col, Stack } from "react-bootstrap";
 import { Map } from "../Map/Map";
 import "./Body.css";
 import { Routes, Route } from "react-router";
 import { CardsFeed } from "../CardsFeed/CardsFeed";
 import { LikedFeed } from "../CardsFeed/LikedFeed";
 import MobileAccordion from "../MobileAccordion/MobileAccordion";
-import { useDispatch } from "react-redux";
-import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 
 export const Body = () => {
   return (

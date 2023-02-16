@@ -1,5 +1,4 @@
 import "./LogoName.css";
-import { Container } from 'react-bootstrap';
 
 export const LogoName = () => {
     return (
