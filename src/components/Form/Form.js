@@ -75,7 +75,7 @@ export const FormElement = () => {
             // ---------------------- Web Link ----------------------
             if (!businessWebsiteLink || businessWebsiteLink === '' || (/^[\s]*$/.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter your business website link.'
             else if (businessWebsiteLink.length < 2 || businessWebsiteLink.length > 100) newErrors.businessWebsiteLink = 'Website link must be between 2-100 characters in length.'
-            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\/\w\d-]+)*(\?[\w\d]+=[\w\d]+)*(\&[\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
+            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\w\d-]+)*(\?[\w\d]+=[\w\d]+)*([\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
            
             // ---------------------- Identity ----------------------
             if(!checkInputs.includes(true)) newErrors.businessIdentity = 'Please select at least one options.'
