@@ -96,13 +96,9 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => {      
-        getLikedBusinesses().then(response => {
-            document.getElementById('liked-message').style.display = 'block';
-            dispatch({type:'liked/changeState', payload: response})
-        })
+    
+        getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
         
-    })
 
     const parent = useRef(null);
 
