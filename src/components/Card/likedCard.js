@@ -1,13 +1,7 @@
 import { Card, Row, Col } from "react-bootstrap"
-import { useSelector } from "react-redux";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
-import { Delete } from "../Buttons/Delete";
-import { Like } from "../Buttons/Like";
-import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 import { DeleteLiked } from "../Buttons/DeleteLiked";
-import { InvalidTokenError } from "jwt-decode";
+
 
 export const LikedCard = (props) => {
     const info = props.info;

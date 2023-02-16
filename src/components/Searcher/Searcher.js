@@ -1,9 +1,6 @@
 import { HeaderSearcher } from "../Header/HeaderSearcher"
 import { Body } from "../Body/Body"
 import './Searcher.css';
-import { useDispatch, useSelector } from "react-redux";
-import { selectJwt } from "../../state-redux/Store/Selectors";
-import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 export const Searcher = () => {
 
     return (

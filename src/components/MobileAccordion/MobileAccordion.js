@@ -1,6 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
-import { Button, Card, Col, Row, Stack } from "react-bootstrap";
-import { Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./MobileAccordion.css";
 import { county } from "../../svg-buttons/county";
 import { businessType } from "../../svg-buttons/business-type";

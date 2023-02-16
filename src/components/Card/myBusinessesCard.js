@@ -1,9 +1,5 @@
 import { Card, Row, Col } from "react-bootstrap"
-import { useSelector } from "react-redux";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
 import { Delete } from "../Buttons/Delete";
-import { Like } from "../Buttons/Like";
 import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 

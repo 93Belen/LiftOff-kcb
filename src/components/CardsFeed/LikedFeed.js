@@ -1,6 +1,6 @@
 import autoAnimate from '@formkit/auto-animate'
-import { useRef, useEffect, useState } from "react";
-import { Col, Container, Row, Stack } from "react-bootstrap";
+import { useRef, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { LikedCard } from "../Card/likedCard";

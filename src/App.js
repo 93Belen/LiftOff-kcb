@@ -1,18 +1,11 @@
-import { ThemeProvider, Row, Col } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { ThemeProvider } from 'react-bootstrap';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { BusinessOwner } from './components/BusinessOwner/BusinessOwner';
 import { HomePage } from './components/HomePage/HomePage';
 import { Searcher } from './components/Searcher/Searcher';
-import { Map } from './components/Map/Map';
-import { CardsFeed } from './components/CardsFeed/CardsFeed';
-import { LikedFeed } from './components/CardsFeed/LikedFeed';
-import { FormElement } from './components/Form/Form';
-import { HeaderSearcher } from './components/Header/HeaderSearcher';
 import { PrivateRouteUser } from './components/PrivateRoutes/PrivateRouteUser';
 import { PrivateRouteOwner} from './components/PrivateRoutes/PrivateRouteOwner';
-import { SignUp } from './components/Log-in/SignUp';
 import { getBusinessFromBackEnd } from "./call-backend/getAllBusinesses";
 import { useDispatch } from "react-redux";
 
