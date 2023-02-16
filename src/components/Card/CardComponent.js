@@ -24,7 +24,7 @@ export const CardComponent = (props) => {
           <h2>{info.name}</h2>
         </Col>
         <Col className="right-col">
-          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank">
+          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank" rel="noreferrer" >
             {info.businessDetails.websiteUrl}
           </a>
         </Col>
