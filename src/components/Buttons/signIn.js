@@ -31,7 +31,7 @@ export const SignIn = () => {
             const callBackEndAuth = async() => {
                 try{
 
-                    const response = await fetch("http://localhost:8080/api/auth/login", {
+                    const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/auth/login", {
                         headers: {
                             "Content-type": "application/json"
                         },
@@ -56,7 +56,7 @@ export const SignIn = () => {
                 const auth = "Bearer " + jwt.payload.accessToken
                 console.log(auth);
                 try{
-                    const response = await fetch("http://localhost:8080/api/users/me/roles", {
+                    const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/roles", {
                         headers: {
                             "Content-type": "application/json",
                             "Cache-Control": "no-cache",

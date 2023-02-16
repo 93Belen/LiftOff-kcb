@@ -14,7 +14,7 @@ export const LikedFeed = () => {
 
     const getLikedBusinesses = async() => {
         try {
-            const response = await fetch("http://localhost:8080/api/users/me/liked-businesses", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/liked-businesses", {
                 headers: {
                     "Content-type": "application/json",
                     "Cache-Control": "no-cache",

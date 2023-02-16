@@ -74,7 +74,7 @@ export const DoneAdding = (props) => {
     const postInfo = async() => {
         try{
 
-            const response = await fetch("http://localhost:8080/api/businesses", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses", {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + jwt
@@ -98,7 +98,7 @@ export const DoneAdding = (props) => {
 
     const getOwnedBusinesses = async() => {
         try {
-            const response = await fetch("http://localhost:8080/api/users/me/owned-businesses", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/owned-businesses", {
                 headers: {
                     "Content-type": "application/json",
                     "Cache-Control": "no-cache",
