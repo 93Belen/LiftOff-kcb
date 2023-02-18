@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { Container, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { getAllBusinesses } from "../../call-backend/getAllBusinesses";
-import { filtersSelected } from "../../state-redux/Store/Selectors";
+import { locationFiltersSelected } from "../../state-redux/Store/Selectors";
+import { businessTypeFiltersSelected } from "../../state-redux/Store/Selectors";
+import { ownerTypeFiltersSelected } from "../../state-redux/Store/Selectors";
 import { CardComponent } from "../Card/CardComponent";
 import "./CardsFeed.css";
 
@@ -11,7 +13,9 @@ export const CardsFeed = () => {
   const [businesses, setBusinesses] = useState([]);
   const parent = useRef(null);
 
-  const selectedFilters = useSelector(filtersSelected);
+  const locationFilters = useSelector(locationFiltersSelected);
+  const ownerTypeFilters = useSelector(ownerTypeFiltersSelected);
+  const businessTypeFilters = useSelector(businessTypeFiltersSelected);
 
   useEffect(() => {
     getAllBusinesses()
@@ -29,30 +33,107 @@ export const CardsFeed = () => {
 
   const displayCards = () => {
     let filteredBusinesses = businesses;
-
-    if (selectedFilters.length) {
+    console.log(filteredBusinesses);
+    if (
+      locationFilters.length ||
+      ownerTypeFilters.length ||
+      businessTypeFilters.length
+    ) {
       filteredBusinesses = businesses.filter((business) => {
-        for (const ownerType of business.ownerTypes) {
-          if (selectedFilters.includes(ownerType.name.toLowerCase())) {
+        if (
+          locationFilters.length &&
+          ownerTypeFilters.length &&
+          businessTypeFilters.length
+        ) {
+          if (
+            locationFilters.includes(
+              business.businessLocation.county.toLowerCase()
+            ) &&
+            ownerTypeFilters.includes(
+              business.ownerTypes[0].name.toLowerCase()
+            ) &&
+            businessTypeFilters.includes(
+              business.businessType.name.toLowerCase()
+            )
+          ) {
             return true;
           }
-        }
-
-        if (
-          selectedFilters.includes(
-            business.businessLocation.county.toLowerCase()
-          )
+          return false;
+        } else if (locationFilters.length && ownerTypeFilters.length) {
+          if (
+            locationFilters.includes(
+              business.businessLocation.county.toLowerCase()
+            ) &&
+            ownerTypeFilters.includes(business.ownerTypes[0].name.toLowerCase())
+          ) {
+            return true;
+          }
+          return false;
+        } else if (locationFilters.length && businessTypeFilters.length) {
+          if (
+            locationFilters.includes(
+              business.businessLocation.county.toLowerCase()
+            ) &&
+            businessTypeFilters.includes(
+              business.businessType.name.toLowerCase()
+            )
+          ) {
+            return true;
+          }
+          return false;
+        } else if (ownerTypeFilters.length && businessTypeFilters.length) {
+          if (
+            ownerTypeFilters.includes(
+              business.ownerTypes[0].name.toLowerCase()
+            ) &&
+            businessTypeFilters.includes(
+              business.businessType.name.toLowerCase()
+            )
+          ) {
+            return true;
+          }
+          return false;
+        } else if (
+          locationFilters.length &&
+          !ownerTypeFilters.length &&
+          !businessTypeFilters.length
         ) {
-          return true;
-        }
-
-        if (
-          selectedFilters.includes(business.businessType.name.toLowerCase())
+          if (
+            locationFilters.includes(
+              business.businessLocation.county.toLowerCase()
+            )
+          ) {
+            return true;
+          }
+          return false;
+        } else if (
+          ownerTypeFilters.length &&
+          !locationFilters.length &&
+          !businessTypeFilters.length
         ) {
-          return true;
+          if (
+            ownerTypeFilters.includes(business.ownerTypes[0].name.toLowerCase())
+          ) {
+            return true;
+          }
+          return false;
+        } else if (
+          businessTypeFilters.length &&
+          !locationFilters.length &&
+          !ownerTypeFilters.length
+        ) {
+          if (
+            businessTypeFilters.includes(
+              business.businessType.name.toLowerCase()
+            )
+          ) {
+            return true;
+          }
+
+          return false;
         }
 
-        return false;
+        return business;
       });
     }
 
