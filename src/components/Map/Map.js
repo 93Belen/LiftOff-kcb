@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { useState } from "react";
->>>>>>> 9710961e4d69dd417afaf5ebd31ec8cbc2c99d43
 import { useDispatch } from "react-redux";
 import "./Map.css";
 
