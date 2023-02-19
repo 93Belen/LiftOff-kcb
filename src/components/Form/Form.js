@@ -42,17 +42,18 @@ export const FormElement = () => {
         const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink } = form
         const newErrors = {}
             // ---------------------- Business Name ----------------------
-            if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your name.'              // Not empty & no whitespace
-            else if (businessName.length < 2 || businessName.length > 20) newErrors.businessName = 'Name must be between 2-20 characters in length.'    // Checks length
+            if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your Business Name.'              // Not empty & no whitespace
+            else if (businessName.length < 2 || businessName.length > 20) newErrors.businessName = 'Business Name must be between 2-20 characters in length.'    // Checks length
             else if ((!/^[a-zA-Z\s]+$/.test(businessName))) newErrors.businessName = 'Please remove any special characters or numbers.'                 // No special char's or #'s
 
             // ---------------------- Business Type ----------------------
             if (!businessTypes || businessTypes === '' || (/^[\s]*$/.test(businessTypes))) newErrors.businessTypes = 'Please select or enter your Business Type.'
             else if (businessTypes.length < 2 || businessTypes.length > 20) newErrors.businessTypes = 'Business Type must be between 2-20 characters in length.'
-            else if ((!/^[a-zA-Z\s]+$/.test(businessTypes))) newErrors.businessTypes = 'Please remove any special characters or numbers.'
+            else if ((!/^[a-zA-Z\s&]+$/.test(businessTypes))) newErrors.businessTypes = 'Please remove any special characters or numbers.'
 
             // ---------------------- County ----------------------
             if (!businessCounty || businessCounty === '') newErrors.businessCounty = 'Please select a County.'
+            else if ((!/^[A-Z][a-z]/.test(businessCounty))) newErrors.businessCounty = 'Please Capitalize the first letter in the County name.'
 
             // ---------------------- City ----------------------
             if (!businessCity || businessCity === '' || (/^[\s]*$/.test(businessCity))) newErrors.businessCity = 'Please select a City.'                // Not empty & no whitespace

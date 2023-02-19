@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { filtersSelected } from "../../state-redux/Store/Selectors";
+import { useDispatch } from "react-redux";
 import "./Map.css";
 
 export const Map = () => {

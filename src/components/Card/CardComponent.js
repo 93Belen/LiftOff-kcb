@@ -47,9 +47,6 @@ export const CardComponent = (props) => {
         <Col>
           <p id="address">
             {info.businessLocation.streetAddress}
-            <br></br>
-            {info.businessLocation.city}, {info.businessLocation.state}{" "}
-            {info.businessLocation.zipCode}
           </p>
         </Col>
         <Col className="right-col">
