@@ -1,5 +1,4 @@
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Button, FormCheck } from "react-bootstrap"
-import { Link } from "react-router-dom";
+import { Container, FloatingLabel, Form, FormControl, FormGroup, FormCheck } from "react-bootstrap"
 import { SignupButton } from "../Buttons/Signup";
 import './LogIn.css';
 import React, { useState, useEffect } from "react";

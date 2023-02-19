@@ -1,7 +1,6 @@
 import { Button } from 'react-bootstrap';
 import './Buttons.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectJwt } from '../../state-redux/Store/Selectors';
+import { useDispatch } from 'react-redux';
 
 export const DeleteLiked = (props) => {
     const jwt = localStorage.getItem("jwt");

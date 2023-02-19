@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck, Button } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux";
-import { selectbusinessToEdit, selectEditingAdding } from "../../state-redux/Store/Selectors";
+import { useState } from "react";
+import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
+import { useSelector } from "react-redux";
+import { selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
 
 export const FormElement = () => {
     const editingAdding = useSelector(selectEditingAdding);
-    const [selectedOwnerTypes, setSelectedOwnerTypes] = useState([]);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [disabled, setDisabled] = useState(true);
@@ -40,7 +39,7 @@ export const FormElement = () => {
         // This regex matches empty strings and strings containing whitespaces only -> /^[\s]*$/
         // This regex matches any string that doesn't contain any special characters or numbers -> /^[a-zA-Z\s]+$/
     
-        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink, businessIdentity } = form
+        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink } = form
         const newErrors = {}
             // ---------------------- Business Name ----------------------
             if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your name.'              // Not empty & no whitespace
@@ -76,7 +75,7 @@ export const FormElement = () => {
             // ---------------------- Web Link ----------------------
             if (!businessWebsiteLink || businessWebsiteLink === '' || (/^[\s]*$/.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter your business website link.'
             else if (businessWebsiteLink.length < 2 || businessWebsiteLink.length > 100) newErrors.businessWebsiteLink = 'Website link must be between 2-100 characters in length.'
-            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\/\w\d-]+)*(\?[\w\d]+=[\w\d]+)*(\&[\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
+            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\w\d-]+)*(\?[\w\d]+=[\w\d]+)*([\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
            
             // ---------------------- Identity ----------------------
             if(!checkInputs.includes(true)) newErrors.businessIdentity = 'Please select at least one options.'

@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { BodyBusinessOwner } from "../Body/BodyBusinessOwner"
 import { HeaderBusiness } from "../Header/HeaderBusinessOwner"
-import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 
 
 export const BusinessOwner = () => {

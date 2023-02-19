@@ -1,35 +1,38 @@
 .county:hover {
-    fill: #AA283C;
+  fill: #aa283c;
 }
 
 .businessType:hover {
-    filter: none;
-    transform: translate(4px, 4px);
+  filter: none;
+  transform: translate(4px, 4px);
 }
 
 .ownerType:hover {
-    filter: none;
-    transform: translate(4px, 4px);
+  filter: none;
+  transform: translate(4px, 4px);
 }
 
-
 #map {
-    margin-left: -10%;
-    margin-right: 7%;
-    display: block;
+  margin-left: -10%;
+  margin-right: 7%;
+  display: block;
+}
+
+.countyClicked {
+  fill: #aa283c;
+}
+
+.ownerClicked rect {
+  fill: #aa283c;
+}
+
+.businessClicked rect {
+  stroke: #aa283c;
 }
 
 @media screen and (max-width: 900px) {
-    #map {
-        background: black;
-        display: none;
-    }
+  #map {
+    background: black;
+    display: none;
+  }
 }
-
-
-
-
-
-
-
-
