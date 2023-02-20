@@ -7,6 +7,7 @@ import loginInfoSlice from "../Slices/loginInfoSlice";
 import editingAddingSlice from "../Slices/editing-adding";
 import businessToEditSlice from "../Slices/businessToEditSlice";
 import filtersSlice from '../Slices/filersSlice';
+import idsToDisplaySlice from "../Slices/idsToDisplaySlice";
 
 const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ const store = configureStore({
     loginInfo: loginInfoSlice,
     editingAdding: editingAddingSlice,
     businessToEdit: businessToEditSlice,
-    filters: filtersSlice
+    filters: filtersSlice,
+    idsToDisplay: idsToDisplaySlice
   },
 });
 

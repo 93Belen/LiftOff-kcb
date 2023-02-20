@@ -10,9 +10,11 @@ export const Map = () => {
     const handleCountyClick = (county) => {
       if(filters.county.includes(county)){
         dispatch({type: 'filters/removeCounty', payload: county})
+        document.getElementById(county.toLowerCase()).style.fill = '#FABD38'
       }
       else {
         dispatch({type: 'filters/addCounty', payload: county})
+        document.getElementById(county.toLowerCase()).style.fill = '#AA283C'
       }   
     }
 

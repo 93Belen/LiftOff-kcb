@@ -7,3 +7,4 @@ export const selectEditingAdding = (state) => state.editingAdding;
 export const selectMyBusinesses = (state) => state.myBusiness;
 export const selectbusinessToEdit = (state) => state.businessToEdit;
 export const selectFilters = (state) => state.filters;
+export const selectIdsToDisplay= (state) => state.idsToDisplay;
