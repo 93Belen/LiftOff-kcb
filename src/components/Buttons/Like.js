@@ -20,7 +20,7 @@ export const Like = (props) => {
     const decoded = jwt_decode(jwt);
     d.setUTCSeconds(decoded.exp);
   } catch (e) {
-    //console.log(e);
+    console.log(e);
   }
 
   // Get current time
@@ -56,7 +56,7 @@ export const Like = (props) => {
     const likeBusiness = async () => {
       try {
         const response = await fetch(
-          `https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses/${id}/like`,
+          `http://localhost:8080/api/businesses/${id}/like`,
           {
             headers: {
               "Content-type": "application/json",
