@@ -55,7 +55,7 @@ function MobileAccordion() {
   };
 
   return (
-    <Accordion class="accordion" className="filter-button">
+    <Accordion className="filter-button accordion">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Choose county</Accordion.Header>
         <Accordion.Body>

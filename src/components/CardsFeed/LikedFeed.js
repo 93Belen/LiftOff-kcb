@@ -49,7 +49,7 @@ export const LikedFeed = () => {
             <circle cx="240.5" cy="72.5" r="2.5" fill="url(#paint1_radial_301_53)"/>
             <path d="M244 113H293C293 124.598 283.598 134 272 134H265C253.402 134 244 124.598 244 113Z" fill="#FFF9F9"/>
             <path d="M219 51C219 39.9543 227.954 31 239 31H291C302.046 31 311 39.9543 311 51V62H219V51Z" fill="#432306"/>
-            <path d="M215.895 55.0943C215.895 55.0943 213.618 72.9527 216.262 96.2501C218.906 119.547 210.095 133.375 214 141" stroke="#432306" stroke-width="15" stroke-linecap="round"/>
+            <path d="M215.895 55.0943C215.895 55.0943 213.618 72.9527 216.262 96.2501C218.906 119.547 210.095 133.375 214 141" stroke="#432306" stroke-width="15" strokeLinecap="round"/>
             <path d="M315 50.0002C315 50.0002 318.968 81.8528 323.334 100.321C327.699 118.79 318.877 145.71 318.852 140.037" stroke="#432306" stroke-width="12" stroke-linecap="round"/>
             <path d="M190 205C190 183.461 207.461 166 229 166H303C324.539 166 342 183.461 342 205H190Z" fill="#AA283C"/>
             <path d="M241 56L242.732 62.75H239.268L241 56Z" fill="#B68960"/>
@@ -107,21 +107,17 @@ export const LikedFeed = () => {
             dispatch({type:'liked/changeState', payload: response})
         })
         
-    })
+    },[businesses])
 
     const parent = useRef(null);
 
   useEffect(() => {
     parent.current && autoAnimate(parent.current)
   }, [parent])
-  
-
-
-
 
     return (
         <Container id='feedLiked'>
-            {football}
+            {businesses === {} ? football : null}
                 <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )

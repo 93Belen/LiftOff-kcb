@@ -1,39 +1,63 @@
 import autoAnimate from "@formkit/auto-animate";
 import { useEffect, useRef, useState } from "react";
 import { Container, Stack } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { getAllBusinesses } from "../../call-backend/getAllBusinesses";
+import { useSelector, useDispatch } from "react-redux";
 import { locationFiltersSelected } from "../../state-redux/Store/Selectors";
 import { businessTypeFiltersSelected } from "../../state-redux/Store/Selectors";
 import { ownerTypeFiltersSelected } from "../../state-redux/Store/Selectors";
 import { CardComponent } from "../Card/CardComponent";
+import { allBusinesses } from "../../state-redux/Store/Selectors";
 import "./CardsFeed.css";
 
 export const CardsFeed = () => {
+  const jwt = localStorage.getItem("jwt");
   const [businesses, setBusinesses] = useState([]);
   const parent = useRef(null);
-
+  const dispatch = useDispatch();
   const locationFilters = useSelector(locationFiltersSelected);
   const ownerTypeFilters = useSelector(ownerTypeFiltersSelected);
   const businessTypeFilters = useSelector(businessTypeFiltersSelected);
+  const getAllBusinesses = useSelector(allBusinesses);
+
+  const getLikedBusinesses = async () => {
+    try {
+        const response = await fetch("http://localhost:8080/api/users/me/liked-businesses", {
+            headers: {
+                "Content-type": "application/json",
+                "Cache-Control": "no-cache",
+                "Authorization": "Bearer " + jwt
+            },
+        });
+            if(response.ok){
+                const jsonResponse = response.json();
+                return jsonResponse;
+            }
+        } catch (e) {
+        console.log(e)
+    }
+  }
 
   useEffect(() => {
-    getAllBusinesses()
-      .then((resolvedBusinesses) => {
-        setBusinesses(resolvedBusinesses);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    setBusinesses(getAllBusinesses);
+  }, [getAllBusinesses]);
 
   useEffect(() => {
     parent.current && autoAnimate(parent.current);
   }, [parent]);
 
+  useEffect(() => {
+    getLikedBusinesses().then((response) => {
+      dispatch({ type: "liked/changeState", payload: response });
+      console.log(response);
+    });
+  }, []);
+
   const displayCards = () => {
-    let filteredBusinesses = businesses;
-    console.log(filteredBusinesses);
+    let filteredBusinesses;
+    if (businesses.length) {
+      filteredBusinesses = businesses;
+    }
+
     if (
       locationFilters.length ||
       ownerTypeFilters.length ||
@@ -49,8 +73,8 @@ export const CardsFeed = () => {
             locationFilters.includes(
               business.businessLocation.county.toLowerCase()
             ) &&
-            ownerTypeFilters.includes(
-              business.ownerTypes[0].name.toLowerCase()
+            business.ownerTypes.some((owner) =>
+              ownerTypeFilters.includes(owner.name.toLowerCase())
             ) &&
             businessTypeFilters.includes(
               business.businessType.name.toLowerCase()
@@ -64,7 +88,9 @@ export const CardsFeed = () => {
             locationFilters.includes(
               business.businessLocation.county.toLowerCase()
             ) &&
-            ownerTypeFilters.includes(business.ownerTypes[0].name.toLowerCase())
+            business.ownerTypes.some((owner) =>
+              ownerTypeFilters.includes(owner.name.toLowerCase())
+            )
           ) {
             return true;
           }
@@ -83,8 +109,8 @@ export const CardsFeed = () => {
           return false;
         } else if (ownerTypeFilters.length && businessTypeFilters.length) {
           if (
-            ownerTypeFilters.includes(
-              business.ownerTypes[0].name.toLowerCase()
+            business.ownerTypes.some((owner) =>
+              ownerTypeFilters.includes(owner.name.toLowerCase())
             ) &&
             businessTypeFilters.includes(
               business.businessType.name.toLowerCase()
@@ -112,7 +138,9 @@ export const CardsFeed = () => {
           !businessTypeFilters.length
         ) {
           if (
-            ownerTypeFilters.includes(business.ownerTypes[0].name.toLowerCase())
+            business.ownerTypes.some((owner) =>
+              ownerTypeFilters.includes(owner.name.toLowerCase())
+            )
           ) {
             return true;
           }
@@ -138,12 +166,14 @@ export const CardsFeed = () => {
     }
 
     let arrayOfCards = [];
-    for (const business of filteredBusinesses) {
-      arrayOfCards.push(
-        <li style={{ listStyle: "none" }} key={business.id}>
-          <CardComponent info={business} />
-        </li>
-      );
+    if (filteredBusinesses) {
+      for (const business of filteredBusinesses) {
+        arrayOfCards.push(
+          <li style={{ listStyle: "none" }} key={business.id}>
+            <CardComponent info={business} />
+          </li>
+        );
+      }
     }
     return arrayOfCards;
   };
