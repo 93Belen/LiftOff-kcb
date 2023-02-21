@@ -14,7 +14,7 @@ export const Map = () => {
       }
       else {
         dispatch({type: 'filters/addCounty', payload: county})
-          dispatch({type: 'filters/removeCounty', payload: 'all'})
+        dispatch({type: 'filters/removeCounty', payload: 'all'})
         document.getElementById(county.toLowerCase()).style.fill = '#AA283C'
       }   
     }
@@ -27,7 +27,7 @@ export const Map = () => {
       }
       else {
         dispatch({type: 'filters/addBusinessType', payload: businessType})
-          dispatch({type: 'filters/removeBusinessType', payload: 'all'})
+        dispatch({type: 'filters/removeBusinessType', payload: 'all'})
         document.getElementById(businessType).style.transform = 'translate(4px, 4px)';
         document.getElementById(businessType).style.filter = 'none';
       }

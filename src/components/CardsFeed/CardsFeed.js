@@ -1,5 +1,5 @@
 import autoAnimate from "@formkit/auto-animate";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import { Container, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBusinesses, selectBusinessesToDisplay, selectFilters, selectIdsToDisplay } from "../../state-redux/Store/Selectors";
@@ -13,7 +13,6 @@ export const CardsFeed = () => {
   let filters = useSelector(selectFilters);
   let idsToDisplay = useSelector(selectIdsToDisplay);
   let businessesToDisplay = useSelector(selectBusinessesToDisplay);
-  const [cards, setCards] = useState([]);
   console.log(filters)
   //console.log(businesses)
   const getIds = () => {
@@ -34,7 +33,7 @@ export const CardsFeed = () => {
           arrOfIds.forEach(id => {
             if(!arr.includes(id)){
               arr.push(id)
-              console.log(arr)
+              //console.log(arr)
             }
           });
         }
@@ -64,35 +63,30 @@ export const CardsFeed = () => {
   useEffect(()=> {
       getIds()
       getBusinesses().then(response => dispatch({type: 'businessToDisplay/changeState', payload: response}))
-  }, [filters, businesses])
+  }, [filters, businessesToDisplay])
 
 
   useEffect(() => {
     parent.current && autoAnimate(parent.current);
   }, [parent]);
 
-  // useEffect(() => {
-  //   let arr = [];
-  //   console.log(businessesToDisplay)
-  //   for(const business of businessesToDisplay){
-  //     arr.push(<CardComponent info={business} />)
-  //   }
-  //   setCards(() => arr)
-  // }, [businessesToDisplay, filters])
 
   const getCards = () => {
     let arr = [];
     //console.log(businessesToDisplay)
     for(const business of businessesToDisplay){
-      arr.push(<CardComponent info={business} />)
+      arr.push(<li style={{listStyle: 'none'}}><CardComponent info={business} /></li>)
     }
     return arr;
   }
+  useEffect(() => {
+    getCards()
+  }, [businessesToDisplay])
 
 
   return (
     <Container id="feed">
-      <Stack gap={4} direction="vertical">
+      <Stack gap={4} direction="vertical" ref={parent}>
         {getCards()}
       </Stack>
     </Container>
