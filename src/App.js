@@ -12,7 +12,6 @@ import {
   getBusinessFromBackEnd,
 } from "./call-backend/getAllBusinesses";
 import { useDispatch } from "react-redux";
-import { getLikedBusinesses } from "./call-backend/getLikedBusinesses";
 
 function App() {
   // =================================
