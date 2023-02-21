@@ -9,3 +9,4 @@ export const selectbusinessToEdit = (state) => state.businessToEdit;
 export const locationFiltersSelected = (state) => state.locationFilters;
 export const businessTypeFiltersSelected = (state) => state.businessTypeFilters;
 export const ownerTypeFiltersSelected = (state) => state.ownerTypeFilters;
+export const allBusinesses = (state) => state.businessesUnmodified;

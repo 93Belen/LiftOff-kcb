@@ -114,10 +114,6 @@ export const LikedFeed = () => {
   useEffect(() => {
     parent.current && autoAnimate(parent.current)
   }, [parent])
-  
-
-
-
 
     return (
         <Container id='feedLiked'>

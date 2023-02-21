@@ -9,6 +9,7 @@ import businessToEditSlice from "../Slices/businessToEditSlice";
 import locationFiltersSlice from "../Slices/locationFiltersSlice";
 import businessTypeFiltersSlice from "../Slices/businessTypeFiltersSlice";
 import ownerTypeFiltersSlice from "../Slices/ownerTypeFiltersSlice";
+import businessesUnmodifiedSlice from "../Slices/businessesUnmodifiedSlice";
 
 const store = configureStore({
   reducer: {
@@ -22,6 +23,7 @@ const store = configureStore({
     locationFilters: locationFiltersSlice,
     businessTypeFilters: businessTypeFiltersSlice,
     ownerTypeFilters: ownerTypeFiltersSlice,
+    businessesUnmodified: businessesUnmodifiedSlice,
   },
 });
 
