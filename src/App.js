@@ -25,10 +25,6 @@ function App() {
   getBusinessFromBackEnd().then((response) =>
     dispatch({ type: "businesses/changeState", payload: response })
   );
-  // fetch all liked businesses and store them in redux
-  getLikedBusinesses().then((response) => {
-    dispatch({ type: "liked/changeState", payload: {} });
-  });
 
   return (
     <div className="App">

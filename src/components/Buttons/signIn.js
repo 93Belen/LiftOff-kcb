@@ -81,10 +81,12 @@ export const SignIn = () => {
           localStorage.setItem("role", "user");
           dispatch({ type: "loginInfo/changeState", payload: "user" });
           navigate("/user/home", { replace: true });
+          window.location.reload();
         } else if (userRole === "OWNER") {
           localStorage.setItem("role", "owner");
           dispatch({ type: "loginInfo/changeState", payload: "owner" });
           navigate("/businessowner/home", { replace: true });
+          window.location.reload();
         }
       });
   };

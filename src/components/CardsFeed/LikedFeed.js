@@ -107,7 +107,7 @@ export const LikedFeed = () => {
             dispatch({type:'liked/changeState', payload: response})
         })
         
-    },[businesses])
+    })
 
     const parent = useRef(null);
 
@@ -117,7 +117,7 @@ export const LikedFeed = () => {
 
     return (
         <Container id='feedLiked'>
-            {businesses === {} ? football : null}
+            {football}
                 <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )
