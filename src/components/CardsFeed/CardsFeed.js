@@ -16,13 +16,22 @@ export const CardsFeed = () => {
   const getIds = () => {
     if(filters.county.length === 0){
       dispatch({type: 'filters/addCounty', payload: 'all'})
-    }
+     }
+    // else {
+    //   dispatch({type: 'filters/removeCounty', payload: 'all'})
+    // }
     if(filters.businesstype.length === 0){
       dispatch({type: 'filters/addBusinessType', payload: 'all'})
     }
+    // else {
+    //   dispatch({type: 'filters/removeBusinessType', payload: 'all'})
+    // }
     if(filters.ownertype.length === 0){
       dispatch({type: 'filters/addOwnerType', payload: 'all'})
     }
+    // else {
+    //   dispatch({type: 'filters/removeOwnerType', payload: 'all'})
+    // }
     for(const county of filters.county){
       for(const businessType of filters.businesstype){
         for(const ownerType of filters.ownertype){
@@ -38,7 +47,7 @@ export const CardsFeed = () => {
   }
   useEffect(()=> {
       getIds()
-      console.log(idsToDisplay)
+      console.log("DISPLAY => " + idsToDisplay)
   }, [filters, businesses])
 
 
