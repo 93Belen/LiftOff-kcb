@@ -21,21 +21,24 @@ export const CardsFeed = () => {
 
   const getLikedBusinesses = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/users/me/liked-businesses", {
-            headers: {
-                "Content-type": "application/json",
-                "Cache-Control": "no-cache",
-                "Authorization": "Bearer " + jwt
-            },
-        });
-            if(response.ok){
-                const jsonResponse = response.json();
-                return jsonResponse;
-            }
-        } catch (e) {
-        console.log(e)
+      const response = await fetch(
+        "http://localhost:8080/api/users/me/liked-businesses",
+        {
+          headers: {
+            "Content-type": "application/json",
+            "Cache-Control": "no-cache",
+            Authorization: "Bearer " + jwt,
+          },
+        }
+      );
+      if (response.ok) {
+        const jsonResponse = response.json();
+        return jsonResponse;
+      }
+    } catch (e) {
+      console.log(e);
     }
-  }
+  };
 
   useEffect(() => {
     setBusinesses(getAllBusinesses);
@@ -48,7 +51,6 @@ export const CardsFeed = () => {
   useEffect(() => {
     getLikedBusinesses().then((response) => {
       dispatch({ type: "liked/changeState", payload: response });
-      console.log(response);
     });
   }, []);
 
