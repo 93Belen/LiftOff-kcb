@@ -15,7 +15,7 @@ export const Like = (props) => {
     const decoded = jwt_decode(jwt);
     d.setUTCSeconds(decoded.exp);
   } catch (e) {
-    console.log(e);
+    //console.log(e);
   }
 
   // Get current time
