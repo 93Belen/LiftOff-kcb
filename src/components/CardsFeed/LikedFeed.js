@@ -4,7 +4,6 @@ import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { LikedCard } from "../Card/likedCard";
-import {football} from '../../waiting-icon/football'
 import './CardsFeed.css';
 
 export const LikedFeed = () => {
@@ -97,13 +96,9 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => { 
-        if(businesses === {}){
-            document.getElementById('football').style.display = 'block'
-        }        
+    useEffect(() => {        
         getLikedBusinesses().then(response => {
             document.getElementById('liked-message').style.display = 'block';
-            document.getElementById('football').style.display = 'none'
             dispatch({type:'liked/changeState', payload: response})
         })
         
@@ -117,7 +112,6 @@ export const LikedFeed = () => {
 
     return (
         <Container id='feedLiked'>
-            {football}
                 <Row lg={2} xs={2} ref={parent}>{displayCards(businesses)}</Row>
         </Container>
     )
