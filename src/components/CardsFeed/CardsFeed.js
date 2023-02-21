@@ -32,7 +32,6 @@ export const CardsFeed = () => {
          arrOfIds.forEach(id => {
            if(!arr.includes(id)){
              arr.push(id)
-             //console.log(arr)
            }
          });
        }
@@ -59,7 +58,7 @@ export const CardsFeed = () => {
   useEffect(()=> {
       getIds()
       getBusinesses().then(response => dispatch({type: 'businessToDisplay/changeState', payload: response}))
-  }, [filters, businessesToDisplay])
+  }, [businessesToDisplay])
 
 
   useEffect(() => {
@@ -74,10 +73,7 @@ export const CardsFeed = () => {
     }
     return arr;
   }
-  useEffect(() => {
-    getCards()
-  }, [businessesToDisplay])
-
+ 
 
   return (
     <Container id="feed">
