@@ -11,6 +11,7 @@ import {
   getAllBusinesses,
   getBusinessFromBackEnd,
 } from "./call-backend/getAllBusinesses";
+
 import { useDispatch } from "react-redux";
 
 function App() {

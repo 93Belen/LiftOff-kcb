@@ -1,6 +1,5 @@
-import { Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
 
 export const LogOut = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import { Button } from 'react-bootstrap';
 import './Buttons.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectbusinessToEdit, selectJwt } from '../../state-redux/Store/Selectors';
-import { useEffect } from 'react';
+import { selectbusinessToEdit } from '../../state-redux/Store/Selectors';
+
 
 export const DoneEditing = () => {
     const jwt = localStorage.getItem("jwt");
@@ -76,7 +76,7 @@ export const DoneEditing = () => {
     const updateInfo = async() => {
         try{
 
-            const response = await fetch(`http://localhost:8080/api/businesses/${businessToEdit.id}`, {
+            const response = await fetch(`https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses/${businessToEdit.id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + jwt
@@ -100,7 +100,7 @@ export const DoneEditing = () => {
 
     const getOwnedBusinesses = async() => {
         try {
-            const response = await fetch("http://localhost:8080/api/users/me/owned-businesses", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/owned-businesses", {
                 headers: {
                     "Content-type": "application/json",
                     "Cache-Control": "no-cache",

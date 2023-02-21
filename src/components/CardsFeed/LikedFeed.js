@@ -1,6 +1,6 @@
 import autoAnimate from '@formkit/auto-animate'
-import { useRef, useEffect, useState } from "react";
-import { Col, Container, Row, Stack } from "react-bootstrap";
+import { useRef, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLiked } from '../../state-redux/Store/Selectors';
 import { LikedCard } from "../Card/likedCard";
@@ -13,7 +13,7 @@ export const LikedFeed = () => {
 
     const getLikedBusinesses = async() => {
         try {
-            const response = await fetch("http://localhost:8080/api/users/me/liked-businesses", {
+            const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/liked-businesses", {
                 headers: {
                     "Content-type": "application/json",
                     "Cache-Control": "no-cache",
@@ -96,13 +96,11 @@ export const LikedFeed = () => {
         }
        return list;
     }
-    useEffect(() => {        
-        getLikedBusinesses().then(response => {
-            document.getElementById('liked-message').style.display = 'block';
-            dispatch({type:'liked/changeState', payload: response})
-        })
+
+    
+        getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
+
         
-    })
 
     const parent = useRef(null);
 
