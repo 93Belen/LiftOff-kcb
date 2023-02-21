@@ -58,6 +58,7 @@ export const CardsFeed = () => {
   useEffect(()=> {
       getIds()
       getBusinesses().then(response => dispatch({type: 'businessToDisplay/changeState', payload: response}))
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [businessesToDisplay])
 
 
