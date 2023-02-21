@@ -27,8 +27,8 @@ export const Like = (props) => {
   const now = new Date();
   const [liked, setLiked] = useState();
 
+  // update the 'liked' state based on the the currently selected business id existing in the likedBusinesses array
   useEffect(() => {
-    // update the 'liked' state based on the the currently selected business id existing in the likedBusinesses array
     let liked;
     if (likedBusinesses.length) {
       liked = likedBusinesses?.filter((business) => business.id === id);
@@ -41,13 +41,18 @@ export const Like = (props) => {
     }
   }, [likedBusinesses, id, jwt]);
 
+  // handles the like button click event
   const onClickLike = () => {
+    // If the user is not logged in, redirect to the login page
     if (jwt === null) {
       navigate("/login", { replace: true });
-    } else if (now > d) {
+    }
+    // If the JWT is expired, redirect to the login page
+    else if (now > d) {
       navigate("/login", { replace: true });
     }
 
+    // Sends a POST request to the backend API to like the current business
     const likeBusiness = async () => {
       try {
         const response = await fetch(
@@ -65,6 +70,7 @@ export const Like = (props) => {
           throw new Error("Network response was not ok");
         }
 
+        // After a successful request, update the likedBusinesses array in the redux store and set 'liked' to true
         getLikedBusinesses().then((response) => {
           dispatch({ type: "liked/changeState", payload: response });
         });
@@ -77,6 +83,7 @@ export const Like = (props) => {
     likeBusiness();
   };
 
+  // handles the unlike button click event
   const onClickUnlike = () => {
     if (jwt === null) {
       navigate("/login", { replace: true });
@@ -84,6 +91,7 @@ export const Like = (props) => {
       navigate("/login", { replace: true });
     }
 
+    // Sends a DELETE request to the backend API to unlike the current business
     const unlikeBusiness = async () => {
       try {
         const response = await fetch(
@@ -99,6 +107,7 @@ export const Like = (props) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
+        // After a successful request, update the likedBusinesses array in the redux store and set 'liked' to false
         getLikedBusinesses().then((response) => {
           dispatch({ type: "liked/changeState", payload: response });
         });

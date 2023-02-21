@@ -4,12 +4,16 @@ const options = {
   name: "locationFilters",
   initialState: [],
   reducers: {
-    toggleFilter: (state, action) => {
+    addFilter: (state, action) => {
+      if (!state.includes(action.payload)) {
+        return [...state, action.payload];
+      }
+      return state;
+    },
+    removeFilter: (state, action) => {
       const index = state.indexOf(action.payload);
-      if (index === -1) {
-        state = state.concat(action.payload);
-      } else {
-        state = [...state.slice(0, index), ...state.slice(index + 1)];
+      if (index !== -1) {
+        return [...state.slice(0, index), ...state.slice(index + 1)];
       }
       return state;
     },

@@ -10,15 +10,19 @@ import { allBusinesses } from "../../state-redux/Store/Selectors";
 import "./CardsFeed.css";
 
 export const CardsFeed = () => {
+  // get JWT from local storage
   const jwt = localStorage.getItem("jwt");
+  // initialize state variables and references
   const [businesses, setBusinesses] = useState([]);
   const parent = useRef(null);
+  // initialize Redux variables and selectors
   const dispatch = useDispatch();
   const locationFilters = useSelector(locationFiltersSelected);
   const ownerTypeFilters = useSelector(ownerTypeFiltersSelected);
   const businessTypeFilters = useSelector(businessTypeFiltersSelected);
   const getAllBusinesses = useSelector(allBusinesses);
 
+  // fetch liked businesses for current user
   const getLikedBusinesses = async () => {
     try {
       const response = await fetch(
@@ -40,20 +44,24 @@ export const CardsFeed = () => {
     }
   };
 
+  // update businesses when getAllBusinesses changes
   useEffect(() => {
     setBusinesses(getAllBusinesses);
   }, [getAllBusinesses]);
 
+  // autoAnimate on parent element when it changes
   useEffect(() => {
     parent.current && autoAnimate(parent.current);
   }, [parent]);
 
+  // fetch liked businesses and dispatch them to Redux state
   useEffect(() => {
     getLikedBusinesses().then((response) => {
       dispatch({ type: "liked/changeState", payload: response });
     });
   }, []);
 
+  // filter and display cards based on selected filters
   const displayCards = () => {
     let filteredBusinesses;
     if (businesses.length) {

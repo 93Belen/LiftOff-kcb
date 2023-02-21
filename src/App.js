@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import { BusinessOwner } from "./components/BusinessOwner/BusinessOwner";
 import { HomePage } from "./components/HomePage/HomePage";
 import { Searcher } from "./components/Searcher/Searcher";
-
 import { PrivateRouteUser } from "./components/PrivateRoutes/PrivateRouteUser";
 import { PrivateRouteOwner } from "./components/PrivateRoutes/PrivateRouteOwner";
 import {
@@ -18,7 +17,7 @@ import { getLikedBusinesses } from "./call-backend/getLikedBusinesses";
 function App() {
   // =================================
   const dispatch = useDispatch();
-  // fetch all unmodified businesses here and store them in redux
+  // fetch all businesses data and store them in redux
   getAllBusinesses().then((response) => {
     dispatch({ type: "businessesUnmodified/changeState", payload: response });
   });
@@ -26,6 +25,7 @@ function App() {
   getBusinessFromBackEnd().then((response) =>
     dispatch({ type: "businesses/changeState", payload: response })
   );
+  // fetch all liked businesses and store them in redux
   getLikedBusinesses().then((response) => {
     dispatch({ type: "liked/changeState", payload: {} });
   });

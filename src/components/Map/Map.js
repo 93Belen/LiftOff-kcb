@@ -1,52 +1,74 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  businessTypeFiltersSelected,
+  locationFiltersSelected,
+  ownerTypeFiltersSelected,
+} from "../../state-redux/Store/Selectors";
 import "./Map.css";
 
 export const Map = () => {
   // onClick events adds info that changes displayed in Redux state
-  const [locationFilters, setLocationFilters] = useState([]);
-  const [businessTypeFilters, setBusinessTypeFilters] = useState([]);
-  const [ownerTypeFilters, setOwnerTypeFilters] = useState([]);
+
+  // gets the filter state from the Redux store
+  const locationFilters = useSelector(locationFiltersSelected);
+  const ownerTypeFilters = useSelector(ownerTypeFiltersSelected);
+  const businessTypeFilters = useSelector(businessTypeFiltersSelected);
+
   const dispatch = useDispatch();
+
+  // This function is called when a 'filter' is clicked and adds or removes the selected county, businessType, ownerType from the associated array in the Redux store (locationFilters, businessTypeFilters, ownerTypeFilters)
   const handleClick = (id) => {
     if (id.includes("county")) {
       const county = id.split("-")[1];
-      const index = locationFilters.indexOf(county);
+      const index = locationFilters.indexOf(county); // Checks if the selected county is already in the locationFilters array
       if (index === -1) {
-        setLocationFilters([...locationFilters, county]);
+        // If the county is not in the locationFilters array, it gets added
+        dispatch({
+          type: "locationFilters/addFilter",
+          payload: county,
+        });
       } else {
-        setLocationFilters(
-          locationFilters.filter((location) => county !== location)
-        );
+        // If the county is already in the locationFilters array, it gets removed
+        dispatch({
+          type: "locationFilters/removeFilter",
+          payload: county,
+        });
       }
-      dispatch({ type: "locationFilters/toggleFilter", payload: county });
     }
     if (id.includes("businessType")) {
       const businessType = id.split("-")[1];
-      const index = businessTypeFilters.indexOf(businessType);
+      const index = businessTypeFilters.indexOf(businessType); // Check if the selected business type is already in the businessTypeFilters array
       if (index === -1) {
-        setBusinessTypeFilters([...businessTypeFilters, businessType]);
+        // If the business type is not in the businessTypeFilters array, it gets added
+        dispatch({
+          type: "businessTypeFilters/addFilter",
+          payload: businessType,
+        });
       } else {
-        setBusinessTypeFilters(
-          businessTypeFilters.filter((type) => businessType !== type)
-        );
+        // If the business type is already in the businessTypeFilters array, it gets removed
+        dispatch({
+          type: "businessTypeFilters/removeFilter",
+          payload: businessType,
+        });
       }
-      dispatch({
-        type: "businessTypeFilters/toggleFilter",
-        payload: businessType,
-      });
     }
     if (id.includes("ownerType")) {
       const ownerType = id.split("-")[1];
-      const index = ownerTypeFilters.indexOf(ownerType);
+      const index = ownerTypeFilters.indexOf(ownerType); // Check if the selected owner type is already in the ownerTypeFilters array
       if (index === -1) {
-        setOwnerTypeFilters([...ownerTypeFilters, ownerType]);
+        // If the owner type is not in the ownerTypeFilters array, it gets added
+        dispatch({
+          type: "ownerTypeFilters/addFilter",
+          payload: ownerType,
+        });
       } else {
-        setOwnerTypeFilters(
-          ownerTypeFilters.filter((owner) => ownerType !== owner)
-        );
+        // If the owner type is already in the ownerTypeFilters array, it gets removed
+        dispatch({
+          type: "ownerTypeFilters/removeFilter",
+          payload: ownerType,
+        });
       }
-      dispatch({ type: "ownerTypeFilters/toggleFilter", payload: ownerType });
     }
   };
 

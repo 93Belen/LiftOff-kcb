@@ -6,12 +6,13 @@ export const LogOut = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  //  reset the liked businesses state in Redux store and reloads the current window.
   const reload = () => {
     dispatch({ type: "liked/changeState", payload: {} });
     window.location.reload();
   };
 
-    const logOut = () => {
+  const logOut = () => {
     reload();
     localStorage.removeItem("jwt");
     localStorage.removeItem("role");
