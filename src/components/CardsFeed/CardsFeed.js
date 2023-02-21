@@ -13,10 +13,11 @@ export const CardsFeed = () => {
   let filters = useSelector(selectFilters);
   let idsToDisplay = useSelector(selectIdsToDisplay);
   let businessesToDisplay = useSelector(selectBusinessesToDisplay);
+  const [cards, setCards] = useState([]);
   console.log(filters)
-  console.log(businesses)
+  //console.log(businesses)
   const getIds = () => {
-    dispatch({type: 'idsToDisplay/removeAllIds', payload: [] })
+     let arr = [];
     if(filters.county.length === 0){
       dispatch({type: 'filters/addCounty', payload: 'all'})
     }
@@ -31,15 +32,18 @@ export const CardsFeed = () => {
         for(const ownerType of filters.ownertype){
           const arrOfIds = businesses[county][businessType][ownerType];
           arrOfIds.forEach(id => {
-            if(!idsToDisplay.includes(id)){
-              dispatch({type: 'idsToDisplay/addId', payload: id})
+            if(!arr.includes(id)){
+              arr.push(id)
+              console.log(arr)
             }
           });
         }
       }
     }
+    dispatch({type: 'idsToDisplay/changeAllIds', payload: arr})
   }
   const getBusinesses = async() => {
+    console.log("DISPLAY => " + idsToDisplay)
     try{
         const response = await fetch(`https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses?ids=${idsToDisplay}`);
         if(response.ok){
@@ -54,10 +58,12 @@ export const CardsFeed = () => {
         console.log(e);
     }
 }
+
+
+
   useEffect(()=> {
       getIds()
-      console.log("DISPLAY => " + idsToDisplay)
-      getBusinesses().then(response => dispatch({type: 'businessToDisplay/changeState', payload: response})).then(() => console.log(businessesToDisplay))
+      getBusinesses().then(response => dispatch({type: 'businessToDisplay/changeState', payload: response}))
   }, [filters, businesses])
 
 
@@ -65,10 +71,18 @@ export const CardsFeed = () => {
     parent.current && autoAnimate(parent.current);
   }, [parent]);
 
+  // useEffect(() => {
+  //   let arr = [];
+  //   console.log(businessesToDisplay)
+  //   for(const business of businessesToDisplay){
+  //     arr.push(<CardComponent info={business} />)
+  //   }
+  //   setCards(() => arr)
+  // }, [businessesToDisplay, filters])
 
-
-  const displayCards = () => {
-    let arr = []
+  const getCards = () => {
+    let arr = [];
+    //console.log(businessesToDisplay)
     for(const business of businessesToDisplay){
       arr.push(<CardComponent info={business} />)
     }
@@ -76,11 +90,10 @@ export const CardsFeed = () => {
   }
 
 
-
   return (
     <Container id="feed">
       <Stack gap={4} direction="vertical">
-        {displayCards()}
+        {getCards()}
       </Stack>
     </Container>
   );

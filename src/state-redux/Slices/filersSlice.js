@@ -10,6 +10,7 @@ const options = {
     reducers: {
         addCounty: (state, action) => {
             state.county.push(action.payload)
+            return state;
         },
         removeCounty: (state, action) => {
             let newStateCounty = state.county.filter((county) => county !== action.payload)
@@ -18,6 +19,7 @@ const options = {
         },
         addBusinessType: (state, action) => {
             state.businesstype.push(action.payload)
+            return state;
         },
         removeBusinessType: (state, action) => {
             let newStateBusiness = state.businesstype.filter((businesstype) => businesstype !== action.payload)
@@ -26,6 +28,7 @@ const options = {
         },
         addOwnerType: (state, action) => {
             state.ownertype.push(action.payload)
+            return state;
         },
         removeOwnerType: (state, action) => {
             let  newStateOwner = state.ownertype.filter((ownertype) => ownertype !== action.payload)

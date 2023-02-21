@@ -8,6 +8,7 @@ const options = {
             if(!state.includes(action.payload)){
                 state.push(action.payload)
             }
+            return state;
         },
         removeId: (state, action) => {
             let newStateCounty = state.filter((id) => id !== action.payload)
@@ -20,6 +21,7 @@ const options = {
         },
         changeAllIds: (state, action) => {
             state = action.payload;
+            return state;
         }
     }
 }
