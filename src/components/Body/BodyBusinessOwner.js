@@ -1,4 +1,4 @@
-import { Container, Row, Col, Stack } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Map } from '../Map/Map';
 import './Body.css';
 import { Routes, Route } from 'react-router';
@@ -6,7 +6,6 @@ import { CardsFeed } from '../CardsFeed/CardsFeed';
 import { FormElement } from '../Form/Form';
 import { MyBusinessFeed } from '../CardsFeed/myBusinessesFeed';
 import { LikedFeed } from '../CardsFeed/LikedFeed';
-import { First } from 'react-bootstrap/esm/PageItem';
 import MobileAccordion from '../MobileAccordion/MobileAccordion';
 
 export const BodyBusinessOwner = () => {

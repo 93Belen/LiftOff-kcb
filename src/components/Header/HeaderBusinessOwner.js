@@ -1,4 +1,4 @@
-import {Col, Row, Stack} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { LogOut } from '../Buttons/Log-out';
 import { LogoDecor } from "../LogoDecor/LogoDecor"

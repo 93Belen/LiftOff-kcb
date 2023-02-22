@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck, Button } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux";
-import { selectbusinessToEdit, selectEditingAdding } from "../../state-redux/Store/Selectors";
+import { useState } from "react";
+import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck } from "react-bootstrap"
+import { useSelector } from "react-redux";
+import { selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
 
 export const FormElement = () => {
     const editingAdding = useSelector(selectEditingAdding);
-    const [selectedOwnerTypes, setSelectedOwnerTypes] = useState([]);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [disabled, setDisabled] = useState(true);
@@ -40,20 +39,21 @@ export const FormElement = () => {
         // This regex matches empty strings and strings containing whitespaces only -> /^[\s]*$/
         // This regex matches any string that doesn't contain any special characters or numbers -> /^[a-zA-Z\s]+$/
     
-        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink, businessIdentity } = form
+        const { businessName, businessTypes, businessCounty, businessCity, businessZipCode, businessStreetNumber, businessDescription, businessWebsiteLink } = form
         const newErrors = {}
             // ---------------------- Business Name ----------------------
-            if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your name.'              // Not empty & no whitespace
-            else if (businessName.length < 2 || businessName.length > 20) newErrors.businessName = 'Name must be between 2-20 characters in length.'    // Checks length
+            if (!businessName || businessName === '' || (/^[\s]*$/.test(businessName))) newErrors.businessName = 'Please enter your Business Name.'              // Not empty & no whitespace
+            else if (businessName.length < 2 || businessName.length > 20) newErrors.businessName = 'Business Name must be between 2-20 characters in length.'    // Checks length
             else if ((!/^[a-zA-Z\s]+$/.test(businessName))) newErrors.businessName = 'Please remove any special characters or numbers.'                 // No special char's or #'s
 
             // ---------------------- Business Type ----------------------
             if (!businessTypes || businessTypes === '' || (/^[\s]*$/.test(businessTypes))) newErrors.businessTypes = 'Please select or enter your Business Type.'
             else if (businessTypes.length < 2 || businessTypes.length > 20) newErrors.businessTypes = 'Business Type must be between 2-20 characters in length.'
-            else if ((!/^[a-zA-Z\s]+$/.test(businessTypes))) newErrors.businessTypes = 'Please remove any special characters or numbers.'
+            else if ((!/^[a-zA-Z\s&]+$/.test(businessTypes))) newErrors.businessTypes = 'Please remove any special characters or numbers.'
 
             // ---------------------- County ----------------------
             if (!businessCounty || businessCounty === '') newErrors.businessCounty = 'Please select a County.'
+            else if ((!/^[A-Z][a-z]/.test(businessCounty))) newErrors.businessCounty = 'Please Capitalize the first letter in the County name.'
 
             // ---------------------- City ----------------------
             if (!businessCity || businessCity === '' || (/^[\s]*$/.test(businessCity))) newErrors.businessCity = 'Please select a City.'                // Not empty & no whitespace
@@ -76,7 +76,7 @@ export const FormElement = () => {
             // ---------------------- Web Link ----------------------
             if (!businessWebsiteLink || businessWebsiteLink === '' || (/^[\s]*$/.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter your business website link.'
             else if (businessWebsiteLink.length < 2 || businessWebsiteLink.length > 100) newErrors.businessWebsiteLink = 'Website link must be between 2-100 characters in length.'
-            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\/\w\d-]+)*(\?[\w\d]+=[\w\d]+)*(\&[\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
+            else if ((!/^(https?:\/\/)?([\w\d]+\.)+[\w]+([\w\d-]+)*(\?[\w\d]+=[\w\d]+)*([\w\d]+=[\w\d]+)*\/?$/i.test(businessWebsiteLink))) newErrors.businessWebsiteLink = 'Please enter a valid webiste format.'
            
             // ---------------------- Identity ----------------------
             if(!checkInputs.includes(true)) newErrors.businessIdentity = 'Please select at least one options.'

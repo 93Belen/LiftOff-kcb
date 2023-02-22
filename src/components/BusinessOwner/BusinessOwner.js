@@ -5,6 +5,7 @@ import { getBusinessFromBackEnd } from "../../call-backend/getAllBusinesses";
 import { getLikedBusinesses } from '../../call-backend/getLikedBusinesses';
 
 
+
 export const BusinessOwner = () => {
   const dispatch = useDispatch();
 

@@ -1,68 +1,51 @@
-import autoAnimate from "@formkit/auto-animate";
-import { useEffect, useRef, useState } from "react";
-import { Container, Stack } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { locationFiltersSelected } from "../../state-redux/Store/Selectors";
-import { businessTypeFiltersSelected } from "../../state-redux/Store/Selectors";
-import { ownerTypeFiltersSelected } from "../../state-redux/Store/Selectors";
-import { CardComponent } from "../Card/CardComponent";
-import { allBusinesses } from "../../state-redux/Store/Selectors";
-import "./CardsFeed.css";
-
-export const CardsFeed = () => {
-  // get JWT from local storage
-  const jwt = localStorage.getItem("jwt");
-  // initialize state variables and references
-  const [businesses, setBusinesses] = useState([]);
-  const parent = useRef(null);
-  // initialize Redux variables and selectors
-  const dispatch = useDispatch();
-  const locationFilters = useSelector(locationFiltersSelected);
-  const ownerTypeFilters = useSelector(ownerTypeFiltersSelected);
-  const businessTypeFilters = useSelector(businessTypeFiltersSelected);
-  const getAllBusinesses = useSelector(allBusinesses);
-
-  // fetch liked businesses for current user
-  const getLikedBusinesses = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8080/api/users/me/liked-businesses",
-        {
-          headers: {
-            "Content-type": "application/json",
-            "Cache-Control": "no-cache",
-            Authorization: "Bearer " + jwt,
-          },
-        }
-      );
-      if (response.ok) {
-        const jsonResponse = response.json();
-        return jsonResponse;
-      }
-    } catch (e) {
-      console.log(e);
+const businesses = [
+    {
+        businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+        businessLocation: {id: 132, county: "Jackson", city: "Gladston", state: null, buildingNumber: null},
+        businessType: {id: 132, name: "Coffee"},
+        id: 1,
+        likes: 1,
+        name: "Business name is different account",
+        owner: {id: 43, username: "owner@test.com"},
+        ownerTypes: [{id: 203, name: "Woman"}],
+    },
+    {
+        businessDetails: {id: 2, description: "description goes here", websiteUrl: "link.com"},
+        businessLocation: {id: 132, county: "Platte", city: "Gladston", state: null, buildingNumber: null},
+        businessType: {id: 132, name: "Coffee"},
+        id: 2,
+        likes: 1,
+        name: "Business name is different account",
+        owner: {id: 43, username: "owner@test.com"},
+        ownerTypes: [{id: 203, name: "Woman"}, {id: 203, name: "Black"}],
+    },
+    {
+        businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+        businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
+        businessType: {id: 132, name: "Coffee"},
+        id: 3,
+        likes: 1,
+        name: "Business name is different account",
+        owner: {id: 43, username: "owner@test.com"},
+        ownerTypes: [{id: 203, name: "Woman"}, {id: 203, name: "Black"}, {id: 203, name: "Latino"}],
+    },
+    {
+        businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
+        businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
+        businessType: {id: 132, name: "Food"},
+        id: 4,
+        likes: 1,
+        name: "Business name is different account",
+        owner: {id: 43, username: "owner@test.com"},
+        ownerTypes: [{id: 203, name: "LGBTQIA"}, {id: 203, name: "Immigrant"}, {id: 203, name: "Asian"}],
     }
-  };
+]
 
-  // update businesses when getAllBusinesses changes
-  useEffect(() => {
-    setBusinesses(getAllBusinesses);
-  }, [getAllBusinesses]);
 
-  // autoAnimate on parent element when it changes
-  useEffect(() => {
-    parent.current && autoAnimate(parent.current);
-  }, [parent]);
 
-  // fetch liked businesses and dispatch them to Redux state
-  useEffect(() => {
-    getLikedBusinesses().then((response) => {
-      dispatch({ type: "liked/changeState", payload: response });
-    });
-  }, [businesses]);
 
-  // function to filter and display cards based on selected filters
-  const displayCards = () => {
+
+const displayCards = (locationFilters, ownerTypeFilters, businessTypeFilters) => {
     let filteredBusinesses;
     if (businesses.length) {
       filteredBusinesses = businesses;
@@ -178,21 +161,11 @@ export const CardsFeed = () => {
     let arrayOfCards = [];
     if (filteredBusinesses) {
       for (const business of filteredBusinesses) {
-        arrayOfCards.push(
-          <li style={{ listStyle: "none" }} key={business.id}>
-            <CardComponent info={business} />
-          </li>
-        );
+        arrayOfCards.push(business.id);
       }
     }
     return arrayOfCards;
   };
 
-  return (
-    <Container id="feed">
-      <Stack gap={4} direction="vertical">
-        {displayCards()}
-      </Stack>
-    </Container>
-  );
-};
+
+  module.exports = displayCards;

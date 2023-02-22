@@ -1,9 +1,5 @@
 import { Card, Row, Col } from "react-bootstrap"
-import { useSelector } from "react-redux";
-import { selectLoginInfo } from "../../state-redux/Store/Selectors";
-import { AddNew } from "../Buttons/AddNew";
 import { Delete } from "../Buttons/Delete";
-import { Like } from "../Buttons/Like";
 import { Edit } from '../Buttons/Edit'
 import "./CardComponent.css";
 
@@ -27,7 +23,7 @@ export const MyBusinessCard = (props) => {
         <Card key={info.id} className='cardComponent'>
             <Row>
                 <Col><h2>{info.name}</h2></Col>
-                <Col className='right-col'><a href='' target='_blank'>{info.businessDetails.websiteUrl}</a></Col>
+                <Col className='right-col'><a href={info.businessDetails.websiteUrl} target='_blank' rel="noreferrer">{info.businessDetails.websiteUrl}</a></Col>
             </Row>
             <Row>
                 <Col><p className='details'>{displayAllOwnerTypes()} owned</p></Col>
