@@ -161,7 +161,7 @@ const displayCards = (locationFilters, ownerTypeFilters, businessTypeFilters) =>
     let arrayOfCards = [];
     if (filteredBusinesses) {
       for (const business of filteredBusinesses) {
-        arrayOfCards.push(1);
+        arrayOfCards.push(business.id);
       }
     }
     return arrayOfCards;
