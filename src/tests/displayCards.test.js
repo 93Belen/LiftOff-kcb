@@ -50,3 +50,24 @@ test("Returns all business of selected owner type and county when no business ty
     const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
     expect(actual).toEqual([3])
 })
+test("Returns all business of selected owner type, county, and business type when all filters are selected", () => {
+    let locationFilters = ['bates'];
+    let ownerTypeFilters = ['asian'];
+    let businessTypeFilters = ['food'];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([4])
+})
+test("Returns empty array when all filters are selected and no business fullfil the search", () => {
+    let locationFilters = ['bates'];
+    let ownerTypeFilters = ['black'];
+    let businessTypeFilters = ['food'];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([])
+})
+test("Returns all business of selected owner type, county, and business type when all filters are selected with multiple options", () => {
+    let locationFilters = ['bates', 'jackson', 'platte'];
+    let ownerTypeFilters = ['asian', 'woman'];
+    let businessTypeFilters = ['food', 'coffee'];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([1, 2, 3, 4])
+})
