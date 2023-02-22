@@ -1,7 +1,7 @@
 const businesses = [
     {
         businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
-        businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
+        businessLocation: {id: 132, county: "Jackson", city: "Gladston", state: null, buildingNumber: null},
         businessType: {id: 132, name: "Coffee"},
         id: 1,
         likes: 1,
@@ -32,7 +32,7 @@ const businesses = [
     {
         businessDetails: {id: 1, description: "description goes here", websiteUrl: "link.com"},
         businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
-        businessType: {id: 132, name: "Coffee"},
+        businessType: {id: 132, name: "Food"},
         id: 4,
         likes: 1,
         name: "Business name is different account",

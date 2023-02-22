@@ -8,3 +8,24 @@ test("Returns all the results when no filter is clicked", () => {
     const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
     expect(actual).toEqual([1, 2, 3, 4])
 })
+test("Returns all business of selected business type when no other filter is selected", () => {
+    let locationFilters = [];
+    let ownerTypeFilters = [];
+    let businessTypeFilters = ['coffee'];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([1, 2, 3])
+})
+test("Returns all business of selected owner type when no other filter is selected", () => {
+    let locationFilters = [];
+    let ownerTypeFilters = ['black'];
+    let businessTypeFilters = [];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([2, 3])
+})
+test("Returns all business of selected county when no other filter is selected", () => {
+    let locationFilters = ['jackson'];
+    let ownerTypeFilters = [];
+    let businessTypeFilters = [];
+    const actual = displayCards(locationFilters, ownerTypeFilters, businessTypeFilters)
+    expect(actual).toEqual([1])
+})
