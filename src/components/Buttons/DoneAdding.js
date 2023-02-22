@@ -1,6 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectJwt } from '../../state-redux/Store/Selectors';
+import { useDispatch } from 'react-redux';
 import './Buttons.css';
 
 export const DoneAdding = (props) => {

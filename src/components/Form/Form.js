@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Row, Col, FormSelect, FormCheck, Button } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux";
-import { selectbusinessToEdit, selectEditingAdding } from "../../state-redux/Store/Selectors";
+import { useState } from "react";
+import { Col, Container, FloatingLabel, Form, FormCheck, FormControl, FormGroup, FormSelect, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { selectEditingAdding } from "../../state-redux/Store/Selectors";
 import { DoneAdding } from "../Buttons/DoneAdding";
 import { DoneEditing } from "../Buttons/DoneEditing";
 import "./Form.css";
@@ -115,7 +115,7 @@ export const FormElement = () => {
 
 
                 <FormGroup className='mb-3 input' controlId="businessName">
-                    <FloatingLabel label='Name'>
+                    <FloatingLabel label='Business Name'>
                         <FormControl
                             id='business-name'
                             type='text'
@@ -244,7 +244,7 @@ export const FormElement = () => {
 
                     <Row className='mt-1'>
                         <Col>
-                            <FloatingLabel label='Street and number' controlId="businessStreetNumber">
+                            <FloatingLabel label='Business Street & Number' controlId="businessStreetNumber">
                                 <FormControl
                                     id='address-description'
                                     type='text'
@@ -316,10 +316,10 @@ export const FormElement = () => {
                             <Col>
                                 <FormCheck
                                     id='inmigrant-owned'
-                                   className='ownerType-switch'
+                                    className='ownerType-switch'
                                     value='Immigrant'
                                     type='switch'
-                                    label='Inmigrant'
+                                    label='Immigrant'
                                 />
                             </Col>
                         </Row>

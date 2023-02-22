@@ -1,11 +1,7 @@
-import { Container, FloatingLabel, Form, FormControl, FormGroup, Button, FormCheck } from "react-bootstrap"
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Container, FloatingLabel, Form, FormCheck, FormControl, FormGroup } from "react-bootstrap";
 import { SignupButton } from "../Buttons/Signup";
 import './LogIn.css';
-import React, { useState, useEffect } from "react";
-
-//Ian's attempt at form validation following 'Dented Code' youtube tutorial
-//Link: https://www.youtube.com/watch?v=Vf9jqXm0kTU
 
 const initialState = {
     email: "",
