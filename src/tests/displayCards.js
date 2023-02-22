@@ -11,7 +11,7 @@ const businesses = [
     },
     {
         businessDetails: {id: 2, description: "description goes here", websiteUrl: "link.com"},
-        businessLocation: {id: 132, county: "Bates", city: "Gladston", state: null, buildingNumber: null},
+        businessLocation: {id: 132, county: "Platte", city: "Gladston", state: null, buildingNumber: null},
         businessType: {id: 132, name: "Coffee"},
         id: 2,
         likes: 1,
