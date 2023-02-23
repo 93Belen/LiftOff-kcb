@@ -50,7 +50,7 @@ export const CardComponent = (props) => {
           </p>
         </Col>
         <Col className="right-col">
-          <Like id={info.id} />
+          <Like id={info.id} info={info} />
         </Col>
       </Row>
     </Card>

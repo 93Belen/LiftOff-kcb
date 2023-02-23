@@ -96,8 +96,10 @@ export const LikedFeed = () => {
         }
        return list;
     }
+
     
         getLikedBusinesses().then(response => dispatch({type:'liked/changeState', payload: response}))
+
         
 
     const parent = useRef(null);
@@ -105,10 +107,6 @@ export const LikedFeed = () => {
   useEffect(() => {
     parent.current && autoAnimate(parent.current)
   }, [parent])
-  
-
-
-
 
     return (
         <Container id='feedLiked'>

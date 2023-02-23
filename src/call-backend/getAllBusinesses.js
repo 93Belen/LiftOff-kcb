@@ -1,4 +1,3 @@
-
 // Get array of all businesses
 // when testing, comment out export
 export const getAllBusinesses = async() => {
@@ -955,4 +954,3 @@ const transformIntoObj = (arr) => {
 
 // when testing, uncomment this:
 //module.exports = transformIntoObj;
-
