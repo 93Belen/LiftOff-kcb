@@ -24,7 +24,7 @@ export const CardComponent = (props) => {
           <h2>{info.name}</h2>
         </Col>
         <Col className="right-col">
-          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank">
+          <a href={"http://" + info.businessDetails.websiteUrl } target="_blank" rel="noreferrer" >
             {info.businessDetails.websiteUrl}
           </a>
         </Col>
@@ -45,11 +45,12 @@ export const CardComponent = (props) => {
       </Row>
       <Row>
         <Col>
-          <p id="address">{info.businessLocation.buildingNumber} {info.businessLocation.streetName}<br></br>
-            {info.businessLocation.city}, {info.businessLocation.state} {info.businessLocation.zipCode}</p>
+          <p id="address">
+            {info.businessLocation.streetAddress}
+          </p>
         </Col>
         <Col className="right-col">
-          <Like id={info.id} />
+          <Like id={info.id} info={info} />
         </Col>
       </Row>
     </Card>

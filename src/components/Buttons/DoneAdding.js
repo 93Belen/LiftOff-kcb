@@ -16,7 +16,7 @@ export const DoneAdding = (props) => {
     const county = document.getElementById('county').value;
     const city = document.getElementById('business-city').value;
     const zipcode = document.getElementById('zipcode').value;
-    // const addressDescription = document.getElementById('address-description').value;
+    const addressDescription = document.getElementById('address-description').value;
     const description = document.getElementById('description').value;
     const website = document.getElementById('website').value;
 
@@ -64,8 +64,7 @@ export const DoneAdding = (props) => {
             "county": county,
             "city": city,
             "state": null,
-            "buildingNumber": null,
-            "streetName": null,
+            "streetAddress": addressDescription,
             "zipCode": Number(zipcode)
         }
     }
@@ -127,7 +126,6 @@ export const DoneAdding = (props) => {
 
     return (
         <Button
-        type="submit"
         disabled={disabled}
         onClick={onClick}
         onTouchEnd={onClick}

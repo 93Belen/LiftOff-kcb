@@ -1,4 +1,3 @@
-import { Container } from 'react-bootstrap';
 import './LogoDecor.css';
 
 export const LogoDecor = () => {

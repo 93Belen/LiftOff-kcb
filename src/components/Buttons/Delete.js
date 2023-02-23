@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import './Buttons.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 export const Delete = (props) => {

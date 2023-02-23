@@ -1,853 +1,6 @@
 
-let obj = {
-    all : {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            LGBTQIA: [],
-            Asian: []
-        },
-        coffee: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-
-    },
-    Bates: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Linn: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Miami: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Johnson: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Wyandotte: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Leavenworth: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Platte: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Clay: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Clinton: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Caldwell: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Ray: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Lafayette: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Jackson: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    },
-    Cass: {
-        all: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        coffee:{
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        food: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        clothing: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        homegoods: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        },
-        others: {
-            all: [],
-            Woman: [],
-            Latino: [],
-            Black: [],
-            Immigrant: [],
-            Asian: [],
-            LGBTQIA: []
-        }
-    }
-}
-
-
-
-
-
 // Get array of all businesses
+// when testing, comment out export
 export const getAllBusinesses = async() => {
     try{
 
@@ -869,7 +22,7 @@ export const getAllBusinesses = async() => {
 
 // Get business type into right sections that they fall in
 const getRightBusinessType = (str) => {
-    let food = ['food', 'restaurant', 'dinning', 'cocktail', 'cocktails', 'bakery', 'ice-cream', "baked", 'snacks', 'pizza', 'smoothies', 'smoothy', 'catering', 'dinner', 'eatery', 'breakfast', 'brunch'];
+    let food = ['food', 'restaurant', 'dinning', 'cocktail', 'cocktails', 'bakery', 'ice-cream', "baked", 'snacks', 'pizza', 'smoothies', 'smoothy', 'catering', 'dinner', 'eatery', 'breakfast', 'brunch', "diner"];
     let coffee = ['coffee'];
     let clothing = ['clothing', 'fashion'];
     let homegoods = ['home', 'homegoods', 'furniture', 'appliances', 'decor', 'electronics', 'rugs', 'tools', 'dishes', 'bed', 'bath', 'kitchen', 'pet'];
@@ -889,7 +42,9 @@ const getRightBusinessType = (str) => {
             type.push('homegoods')
         }
         else {
-            type.push('others')
+            if(word.toLowerCase() !== 'and' && word !== '&'){
+                type.push('others')
+            }
         }
     })
     // return array of business types
@@ -900,7 +55,850 @@ const getRightBusinessType = (str) => {
 
 
 // Populate object witn businesses ids
-const tranformIntoObj = (arr) => {
+const transformIntoObj = (arr) => {
+    let obj = {
+        all : {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                LGBTQIA: [],
+                Asian: []
+            },
+            coffee: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+    
+        },
+        Bates: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Linn: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Miami: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Johnson: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Wyandotte: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Leavenworth: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Platte: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Clay: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Clinton: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Caldwell: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Ray: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Lafayette: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Jackson: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        },
+        Cass: {
+            all: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            coffee:{
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            food: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            clothing: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            homegoods: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            },
+            others: {
+                all: [],
+                Woman: [],
+                Latino: [],
+                Black: [],
+                Immigrant: [],
+                Asian: [],
+                LGBTQIA: []
+            }
+        }
+    }
     // Loop throw businesses aaray
     arr.forEach(business => {
         // Get business types selection based in what owner wrote as business type
@@ -943,8 +941,9 @@ const tranformIntoObj = (arr) => {
 
 
     // fetch all businesses here and store them in redux
-    export const getBusinessFromBackEnd = () => {        
-        const response = getAllBusinesses().then(resp => tranformIntoObj(resp));
+    // when testing, comment out export
+  export const getBusinessFromBackEnd = () => {        
+        const response = getAllBusinesses().then(resp => transformIntoObj(resp));
         return response
     
     }
@@ -953,5 +952,6 @@ const tranformIntoObj = (arr) => {
 
 
 
-
+// when testing, uncomment this:
+//module.exports = transformIntoObj;
 

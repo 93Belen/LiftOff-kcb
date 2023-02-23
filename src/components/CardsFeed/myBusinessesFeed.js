@@ -1,6 +1,5 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import businesses from "../../state-redux/Slices/businesses";
 import { selectMyBusinesses } from "../../state-redux/Store/Selectors";
 import { AddNew } from "../Buttons/AddNew";
 import { MyBusinessCard } from "../Card/myBusinessesCard";
