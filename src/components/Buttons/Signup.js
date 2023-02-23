@@ -60,7 +60,7 @@ export const SignupButton = (props) => {
                 }
                 else {
                     console.log("auth failed");
-                    window.alert("This email has already been registred")
+                    window.alert("This email has already been registered")
                 }
     
             } catch(e){
