@@ -1,12 +1,12 @@
-
 // Get array of all businesses
 // when testing, comment out export
 export const getAllBusinesses = async() => {
     try{
 
-        const response = await fetch("http://localhost:8080/api/businesses");
+        const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses");
         if(response.ok){
             const jsonResponse = response.json();
+            console.log(jsonResponse)
             return jsonResponse;
         }
         else {
@@ -954,4 +954,3 @@ const transformIntoObj = (arr) => {
 
 // when testing, uncomment this:
 //module.exports = transformIntoObj;
-
