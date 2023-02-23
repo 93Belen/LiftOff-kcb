@@ -6,9 +6,10 @@ import jwtSlice from "../Slices/jwt";
 import loginInfoSlice from "../Slices/loginInfoSlice";
 import editingAddingSlice from "../Slices/editing-adding";
 import businessToEditSlice from "../Slices/businessToEditSlice";
-import filtersSlice from '../Slices/filersSlice';
-import idsToDisplaySlice from "../Slices/idsToDisplaySlice";
-import businessToDisplaySlice from "../Slices/businessToDisplay";
+import locationFiltersSlice from "../Slices/locationFiltersSlice";
+import businessTypeFiltersSlice from "../Slices/businessTypeFiltersSlice";
+import ownerTypeFiltersSlice from "../Slices/ownerTypeFiltersSlice";
+import businessesUnmodifiedSlice from "../Slices/businessesUnmodifiedSlice";
 
 const store = configureStore({
   reducer: {
@@ -19,9 +20,10 @@ const store = configureStore({
     loginInfo: loginInfoSlice,
     editingAdding: editingAddingSlice,
     businessToEdit: businessToEditSlice,
-    filters: filtersSlice,
-    idsToDisplay: idsToDisplaySlice,
-    businessToDisplay: businessToDisplaySlice
+    locationFilters: locationFiltersSlice,
+    businessTypeFilters: businessTypeFiltersSlice,
+    ownerTypeFilters: ownerTypeFiltersSlice,
+    businessesUnmodified: businessesUnmodifiedSlice,
   },
 });
 
