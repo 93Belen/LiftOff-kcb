@@ -27,8 +27,12 @@ export const Edit = (props) => {
                 console.log(e)
             }
         }
+
+
         getBusinessToEdit().then(response => {
-            //console.log(response)
+            console.log(response)
+            let arrOfOwnerType = response.ownerTypes.map(owner => owner.name);
+            console.log(arrOfOwnerType)
            dispatch({type:'businessToEdit/changeState', payload: response})
             document.getElementById('business-name').value = response.name;
             document.getElementById('business-type').value = response.businessType.name;
@@ -39,12 +43,12 @@ export const Edit = (props) => {
             document.getElementById('description').value = response.businessDetails.description;
             document.getElementById('website').value = response.businessDetails.websiteUrl;
 
-            // document.getElementById('woman-owned').checked;
-            // document.getElementById('black-owned').checked;
-            // document.getElementById('latino-owned').checked;
-            // document.getElementById('asian-owned').checked;
-            // document.getElementById('inmigrant-owned').checked;
-            // document.getElementById('lgbtqia-owned').checked;
+            document.getElementById('woman-owned').checked = arrOfOwnerType.includes('Woman');
+            document.getElementById('black-owned').checked = arrOfOwnerType.includes('Black');
+            document.getElementById('latino-owned').checked = arrOfOwnerType.includes('Latino');
+            document.getElementById('asian-owned').checked = arrOfOwnerType.includes('Asian');
+            document.getElementById('inmigrant-owned').checked = arrOfOwnerType.includes('Immigrant');
+            document.getElementById('lgbtqia-owned').checked = arrOfOwnerType.includes('LGBTQIA');
     
         })
     }
