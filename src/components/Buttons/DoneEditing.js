@@ -129,6 +129,12 @@ export const DoneEditing = () => {
             document.getElementById('address-description').value ="";
             document.getElementById('description').value = '';
             document.getElementById('website').value = '';
+            document.getElementById('woman-owned').checked = false;
+            document.getElementById('black-owned').checked = false;
+            document.getElementById('latino-owned').checked = false;
+            document.getElementById('asian-owned').checked = false;
+            document.getElementById('inmigrant-owned').checked = false;
+            document.getElementById('lgbtqia-owned').checked = false;
     }).then(()=> dispatch({type: 'editingAdding/changeState', payload: 'adding'}));
 
     }
