@@ -35,7 +35,7 @@ export const Edit = (props) => {
             document.getElementById('county').value = response.businessLocation.county;
             document.getElementById('business-city').value = response.businessLocation.city;
             document.getElementById('zipcode').value = response.businessLocation.zipCode;
-            // document.getElementById('address-description').value;
+            document.getElementById('address-description').value = response.businessLocation.streetAddress;
             document.getElementById('description').value = response.businessDetails.description;
             document.getElementById('website').value = response.businessDetails.websiteUrl;
 

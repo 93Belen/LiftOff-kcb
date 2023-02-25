@@ -126,7 +126,7 @@ export const DoneEditing = () => {
             document.getElementById('county').value = '';
             document.getElementById('business-city').value = '';
             document.getElementById('zipcode').value = '';
-            // document.getElementById('address-description').value;
+            document.getElementById('address-description').value ="";
             document.getElementById('description').value = '';
             document.getElementById('website').value = '';
     }).then(()=> dispatch({type: 'editingAdding/changeState', payload: 'adding'}));
