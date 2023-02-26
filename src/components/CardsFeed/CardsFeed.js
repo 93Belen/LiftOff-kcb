@@ -42,7 +42,7 @@ export const CardsFeed = () => {
   const getBusinesses = async() => {
     console.log("DISPLAY => " + idsToDisplay)
     try{
-        const response = await fetch(`https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses?ids=${idsToDisplay}`);
+        const response = await fetch(`https://liftoff-kcb-backend-production.up.railway.app/api/businesses?ids=${idsToDisplay}`);
         if(response.ok){
             const jsonResponse = response.json();
             return jsonResponse;
