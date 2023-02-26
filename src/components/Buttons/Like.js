@@ -56,7 +56,7 @@ export const Like = (props) => {
     const likeBusiness = async () => {
       try {
         const response = await fetch(
-          `https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses/${id}/like`,
+          `https://liftoff-kcb-backend-production.up.railway.app/api/businesses/${id}/like`,
           {
             headers: {
               "Content-type": "application/json",
@@ -95,7 +95,7 @@ export const Like = (props) => {
     const unlikeBusiness = async () => {
       try {
         const response = await fetch(
-          `https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses/${id}/like`,
+          `https://liftoff-kcb-backend-production.up.railway.app/api/businesses/${id}/like`,
           {
             headers: {
               "Content-Type": "application/json",
