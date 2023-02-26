@@ -87,6 +87,7 @@ export const SignUp = () => {
                 <FormGroup className="mb-2">
                     <FloatingLabel label='Email'>
                     <FormControl
+                        aria-label="Please enter a valid email address, here."
                         type="email"
                         name="email"
                         id="register-email"
@@ -101,6 +102,7 @@ export const SignUp = () => {
                 <FormGroup className="mb-2">
                     <FloatingLabel label='Password'>
                     <FormControl
+                        aria-label="Please enter a secure password for your account containting at least one uppercase character, one lowercase character, one number and at least one special character such as the exlamation mark, question mark, number symbol, percentage symbol, or the dollar sign symbol, here."
                         type="password"
                         name="password"
                         id="register-password"
@@ -112,6 +114,7 @@ export const SignUp = () => {
                 <FormGroup className="mb-2">
                     <FloatingLabel label='Confirm Password'>
                     <FormControl
+                        aria-label="Please re-enter the same password to confirm it for your account's login information."
                         type="password"
                         name="confirmPass"
                         id="confirm-password"
