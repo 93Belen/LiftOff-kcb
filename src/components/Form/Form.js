@@ -118,6 +118,7 @@ export const FormElement = () => {
                 <FormGroup className='mb-3 input' controlId="businessName">
                     <FloatingLabel label='Business Name'>
                         <FormControl
+                            aria-label="Please enter your business name, here."
                             id='business-name'
                             type='text'
                             onChange={(e) =>setField('businessName', e.target.value)}
@@ -133,6 +134,7 @@ export const FormElement = () => {
                 <FormGroup className='mb-3'>
                     <FloatingLabel label='Business Type' controlId="businessTypes">
                         <FormControl
+                            aria-label="Please select or enter your business type, here."
                             id='business-type'
                             type='text'
                             list='businessType'
@@ -157,6 +159,7 @@ export const FormElement = () => {
                         <Col>
                             <FloatingLabel label='County' controlId="businessCounty">
                                 <FormSelect
+                                    aria-label="Please select what county your business is in, here."
                                     id='county'
                                     type='text'
                                     onChange={(e) => setField('businessCounty', e.target.value)}
@@ -186,6 +189,7 @@ export const FormElement = () => {
                         <Col>
                             <FloatingLabel label='City' controlId="businessCity">
                                 <FormControl
+                                    aria-label="Please select what city your business is in, here."
                                     id='business-city'
                                     type='text'
                                     list='city'
@@ -228,6 +232,7 @@ export const FormElement = () => {
                         <Col>
                             <FloatingLabel label='Zipcode' controlId="businessZipCode">
                                 <FormControl
+                                    aria-label="Please enter your businesses zipcode, here."
                                     id='zipcode'
                                     type='number'
                                     value={form.businessZipCode}
@@ -247,6 +252,7 @@ export const FormElement = () => {
                         <Col>
                             <FloatingLabel label='Business Street & Number' controlId="businessStreetNumber">
                                 <FormControl
+                                    aria-label="Please enter your businesses street name & number if applicable, here."
                                     id='address-description'
                                     type='text'
                                     onChange={(e) => setField('businessStreetNumber', e.target.value)}
@@ -265,6 +271,7 @@ export const FormElement = () => {
                 <FormGroup className='mb-3 input' controlId="businessDescription">
                     <FloatingLabel label='Description'>
                         <FormControl
+                            aria-label="Please enter a description between 10 and 160 characters in length, here."
                             id='description'
                             as='textarea'
                             onChange={(e) => setField('businessDescription', e.target.value)}
@@ -365,6 +372,7 @@ export const FormElement = () => {
                         <FormGroup className='mb-3 input' controlId="businessWebsiteLink">
                             <FloatingLabel label='Website link'>
                                 <FormControl
+                                    aria-label="Please enter a link to your business's website, here."
                                     id='website'
                                     type='text'
                                     onChange={(e) => setField('businessWebsiteLink', e.target.value)}
