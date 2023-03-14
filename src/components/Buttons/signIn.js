@@ -23,7 +23,7 @@ export const SignIn = () => {
 
     const callBackEndAuth = async () => {
       try {
-        const response = await fetch("https://liftoff-kcb-backend-production.up.railway.app/api/auth/login", {
+        const response = await fetch("https://liftoff-kcb-backend-maven-production.up.railway.app/api/auth/login", {
           headers: {
             "Content-type": "application/json",
           },
@@ -47,7 +47,7 @@ export const SignIn = () => {
       console.log(auth);
       try {
         const response = await fetch(
-          "https://liftoff-kcb-backend-production.up.railway.app/api/users/me/roles",
+          "https://liftoff-kcb-backend-maven-production.up.railway.app/api/users/me/roles",
           {
             headers: {
               "Content-type": "application/json",

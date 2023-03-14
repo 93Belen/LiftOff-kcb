@@ -12,7 +12,7 @@ export const Edit = (props) => {
         dispatch({type: 'editingAdding/changeState', payload: 'editing'})
         const getBusinessToEdit = async() => {
             try {
-                const response = await fetch(`https://liftoff-kcb-backend-production.up.railway.app/api/businesses/${id}`, {
+                const response = await fetch(`https://liftoff-kcb-backend-maven-production.up.railway.app/api/businesses/${id}`, {
                     headers: {
                         "Content-type": "application/json",
                         "Cache-Control": "no-cache",
